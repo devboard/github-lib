@@ -1,0 +1,23 @@
+machine:
+  php:
+    version: 7.0.11
+  environment:
+    COMPOSER_DISCARD_CHANGES: true
+general:
+  artifacts:
+    - "build/"
+    - "tmp/"
+dependencies:
+  override:
+    - composer install --no-interaction
+  cache_directories:
+    - "vendor"
+    - "bin"
+test:
+  override:
+    - ./bin/phpunit
+    - ./bin/phpspec run --no-interaction
+    #- ./bin/behat --strict
+    - ./bin/phing check-codestandards
+    #- ./bin/coveralls
+    #- ./bin/test-reporter

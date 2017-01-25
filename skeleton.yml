@@ -1,0 +1,16 @@
+
+nulldev_skeleton:
+    code:
+      path: "src/"
+      prefix: "Devboard\\Github\\"
+      autoload_type: "psr4"
+    phpspec:
+      path: "spec/"
+      prefix: "spec\\Devboard\\Github\\"
+      autoload_type: "psr4"
+      enabled: true
+    phpunit:
+      path: "tests/"
+      prefix: "tests\\Devboard\\Github\\"
+      autoload_type: "psr4"
+      enabled: true
