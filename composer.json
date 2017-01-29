@@ -34,7 +34,8 @@
         "sebastian/phpcpd":                         "^2.0",
         "phing/phing":                              "^2.15",
         "nulldevelopmenthr/generator":              "^0.6.1",
-        "phpstan/phpstan":                          "^0.6.1"
+        "phpstan/phpstan":                          "^0.6.1",
+        "humbug/humbug": "~1.0@dev"
     },
     "config": {
         "platform": {
