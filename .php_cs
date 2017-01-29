@@ -7,6 +7,7 @@ $finder = PhpCsFixer\Finder::create()
     ->notName('*.xml');
 
 return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
     ->setRules(array(
         '@Symfony' => true,
         'array_syntax' => ['syntax' => 'short'],
@@ -15,7 +16,8 @@ return PhpCsFixer\Config::create()
             'align_equals' => true
         ],
         'ordered_imports' => true,
-        'phpdoc_order' => true
+        'phpdoc_order' => true,
+        'declare_strict_types' => true
 
     ))
     ->setFinder($finder)
