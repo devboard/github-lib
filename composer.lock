@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e79f160c5225401d3b14e2f2d1904a6c",
+    "content-hash": "f748720d04c2a91b00a420b4a35fcf71",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1098,6 +1098,73 @@
             "time": "2016-08-02T06:07:43+00:00"
         },
         {
+            "name": "humbug/humbug",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/padraic/humbug.git",
+                "reference": "06b1c059e432dab8c22c36bc8b6e1ffc7e587c07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/padraic/humbug/zipball/06b1c059e432dab8c22c36bc8b6e1ffc7e587c07",
+                "reference": "06b1c059e432dab8c22c36bc8b6e1ffc7e587c07",
+                "shasum": ""
+            },
+            "require": {
+                "padraic/phar-updater": "^1.0.0",
+                "padraic/phpunit-accelerator": "^1.0.2",
+                "padraic/phpunit-extensions": "^1.0.0",
+                "php": ">=5.4.0",
+                "phpunit/phpunit": "^4.5|^5.0",
+                "sebastian/diff": "^1.1",
+                "symfony/console": "^2.6|^3.0",
+                "symfony/event-dispatcher": "^2.6|^3.0",
+                "symfony/finder": "^2.6|^3.0",
+                "symfony/process": "^2.6|^3.0"
+            },
+            "require-dev": {
+                "behat/behat": "^3.0.15",
+                "mikey179/vfsstream": "^1.4",
+                "mockery/mockery": "^0.9",
+                "symfony/filesystem": "^2.6|^3.0"
+            },
+            "bin": [
+                "bin/humbug"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Humbug\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pádraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "homepage": "http://blog.astrumfutura.com"
+                }
+            ],
+            "description": "Humbug is a Mutation Testing framework for PHP. Whereas Code Coverage can tell you what code your tests are executing, Mutation Testing is intended to help you judge how well your unit tests actually perform and where they could be improved.",
+            "homepage": "https://github.com/padraic/humbug",
+            "keywords": [
+                "coverage",
+                "mutation testing",
+                "testing",
+                "unit testing"
+            ],
+            "time": "2016-08-01T10:27:00+00:00"
+        },
+        {
             "name": "mockery/mockery",
             "version": "0.9.7",
             "source": {
@@ -1900,6 +1967,111 @@
                 "update"
             ],
             "time": "2016-01-05T23:08:01+00:00"
+        },
+        {
+            "name": "padraic/phpunit-accelerator",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/padraic/phpunit-accelerator.git",
+                "reference": "0b3b58e6e9a794eec22df712776058850d5fe0c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/padraic/phpunit-accelerator/zipball/0b3b58e6e9a794eec22df712776058850d5fe0c1",
+                "reference": "0b3b58e6e9a794eec22df712776058850d5fe0c1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/phpunit": ">=3.7"
+            },
+            "replace": {
+                "mybuilder/phpunit-accelerator": "1.0.x"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MyBuilder\\PhpunitAccelerator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Keyvan Akbary",
+                    "email": "keyvan@mybuilder.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Padraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "PHPUnit Accelerator: Speeds up PHPUnit by freeing memory after test runs",
+            "keywords": [
+                "accelerator",
+                "fast",
+                "free",
+                "memory",
+                "phpunit",
+                "property"
+            ],
+            "time": "2015-01-15T21:18:21+00:00"
+        },
+        {
+            "name": "padraic/phpunit-extensions",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/padraic/phpunit-extensions.git",
+                "reference": "a6942fa3ada5487e1b9a409c235013a677c2689b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/padraic/phpunit-extensions/zipball/a6942fa3ada5487e1b9a409c235013a677c2689b",
+                "reference": "a6942fa3ada5487e1b9a409c235013a677c2689b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "phpunit/phpunit": "^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Humbug\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pádraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "homepage": "http://blog.astrumfutura.com"
+                }
+            ],
+            "description": "Collection of Listeners to log and manipulate test run order",
+            "keywords": [
+                "extension",
+                "humbug",
+                "listener",
+                "phpunit",
+                "testing",
+                "tests"
+            ],
+            "time": "2016-01-06T12:16:20+00:00"
         },
         {
             "name": "pdepend/pdepend",
@@ -5070,7 +5242,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "broadway/broadway": 20
+        "broadway/broadway": 20,
+        "humbug/humbug": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
