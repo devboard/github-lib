@@ -29,7 +29,7 @@ class GithubUserLoginTest extends \PHPUnit_Framework_TestCase
     public function provideUserLogins()
     {
         return [
-            ['octocat'],
+            ['devboard-test'],
             ['devboard'],
         ];
     }

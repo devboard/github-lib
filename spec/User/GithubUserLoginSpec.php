@@ -11,7 +11,7 @@ class GithubUserLoginSpec extends ObjectBehavior
 {
     public function let()
     {
-        $this->beConstructedWith('octocat');
+        $this->beConstructedWith('devboard-test');
     }
 
     public function it_is_initializable()
@@ -21,11 +21,11 @@ class GithubUserLoginSpec extends ObjectBehavior
 
     public function it_should_expose_value()
     {
-        $this->getValue()->shouldReturn('octocat');
+        $this->getValue()->shouldReturn('devboard-test');
     }
 
     public function it_should_be_castable_to_string()
     {
-        $this->__toString()->shouldReturn('octocat');
+        $this->__toString()->shouldReturn('devboard-test');
     }
 }
