@@ -13,7 +13,7 @@ class GithubRepoFullNameSpec extends ObjectBehavior
 {
     public function let(GithubUserLogin $owner, GithubRepoName $repoName)
     {
-        $owner->getValue()->willReturn('octocat');
+        $owner->getValue()->willReturn('devboard-test');
         $repoName->getValue()->willReturn('super-library');
 
         $this->beConstructedWith($owner, $repoName);
@@ -26,7 +26,7 @@ class GithubRepoFullNameSpec extends ObjectBehavior
 
     public function it_can_be_created_from_string()
     {
-        $this->createFromString('octocat/super-library')->shouldReturnAnInstanceOf(GithubRepoFullName::class);
+        $this->createFromString('devboard-test/super-library')->shouldReturnAnInstanceOf(GithubRepoFullName::class);
     }
 
     public function it_should_expose_owner_as_object(GithubUserLogin $owner)
@@ -41,11 +41,11 @@ class GithubRepoFullNameSpec extends ObjectBehavior
 
     public function it_should_expose_value()
     {
-        $this->getValue()->shouldReturn('octocat/super-library');
+        $this->getValue()->shouldReturn('devboard-test/super-library');
     }
 
     public function it_should_be_castable_to_string()
     {
-        $this->__toString()->shouldReturn('octocat/super-library');
+        $this->__toString()->shouldReturn('devboard-test/super-library');
     }
 }

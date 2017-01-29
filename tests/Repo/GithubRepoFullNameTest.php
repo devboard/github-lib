@@ -54,7 +54,7 @@ class GithubRepoFullNameTest extends \PHPUnit_Framework_TestCase
     public function provideRepositoryNames()
     {
         return [
-            [new GithubUserLogin('octocat'), new GithubRepoName('super-library'), 'octocat/super-library'],
+            [new GithubUserLogin('devboard-test'), new GithubRepoName('super-library'), 'devboard-test/super-library'],
         ];
     }
 }
