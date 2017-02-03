@@ -13,7 +13,7 @@ use Devboard\Github\Repo\GithubRepoStats;
  */
 class GithubRepoStatsTest extends \PHPUnit_Framework_TestCase
 {
-    /** @dataProvider provideDateTimeStrings */
+    /** @dataProvider prodivideExamples */
     public function testGetters(int $networkCount, int $watchersCount, int $stargazersCount, int $openIssueCount, GithubRepoSize $repoSize)
     {
         $sut = new GithubRepoStats($networkCount, $watchersCount, $stargazersCount, $openIssueCount, $repoSize);
@@ -25,7 +25,7 @@ class GithubRepoStatsTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($repoSize, $sut->getRepoSize());
     }
 
-    public function provideDateTimeStrings()
+    public function prodivideExamples()
     {
         return [
             [1, 2, 3, 4, new GithubRepoSize(4)],
