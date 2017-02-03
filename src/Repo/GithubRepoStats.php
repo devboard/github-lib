@@ -18,13 +18,16 @@ class GithubRepoStats
     private $stargazersCount;
     /** @var int */
     private $openIssueCount;
+    /** @var GithubRepoSize */
+    private $repoSize;
 
-    public function __construct(int $networkCount, int $watchersCount, int $stargazersCount, int $openIssueCount)
+    public function __construct(int $networkCount, int $watchersCount, int $stargazersCount, int $openIssueCount, GithubRepoSize $repoSize)
     {
         $this->networkCount    = $networkCount;
         $this->watchersCount   = $watchersCount;
         $this->stargazersCount = $stargazersCount;
         $this->openIssueCount  = $openIssueCount;
+        $this->repoSize        = $repoSize;
     }
 
     public function getNetworkCount(): int
@@ -45,5 +48,10 @@ class GithubRepoStats
     public function getOpenIssueCount(): int
     {
         return $this->openIssueCount;
+    }
+
+    public function getRepoSize(): GithubRepoSize
+    {
+        return $this->repoSize;
     }
 }
