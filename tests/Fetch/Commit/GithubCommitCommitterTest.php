@@ -18,7 +18,7 @@ use Devboard\Github\User\GithubUserLogin;
 use Devboard\Github\User\Type\User;
 
 /**
- * @covers \Devboard\Github\Fetch\Repo\GithubCommitCommitter
+ * @covers \Devboard\Github\Fetch\Commit\GithubCommitCommitter
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
