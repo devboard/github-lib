@@ -35,7 +35,8 @@
         "phing/phing":                              "^2.15",
         "nulldevelopmenthr/generator":              "^0.6.1",
         "phpstan/phpstan":                          "^0.6.1",
-        "humbug/humbug": "~1.0@dev"
+        "humbug/humbug": "~1.0@dev",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "config": {
         "platform": {
