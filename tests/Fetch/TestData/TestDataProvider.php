@@ -15,6 +15,11 @@ class TestDataProvider
         'octocat/test-repo1',
     ];
 
+    public function getRepos(): array
+    {
+        return $this->repos;
+    }
+
     public function getRandomGitHubRepoData(): array
     {
         $repo = $this->repos[0];
