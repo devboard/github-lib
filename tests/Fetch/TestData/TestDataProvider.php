@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace tests\Devboard\Github\Fetch\TestData;
 
+use Symfony\Component\Finder\Finder;
+
 class TestDataProvider
 {
     private $repos = [
@@ -27,7 +29,7 @@ class TestDataProvider
     {
         $repo = $this->repos[0];
 
-        return json_decode($this->loadContent($repo), true);
+        return json_decode($this->loadRepoContent($repo), true);
     }
 
     public function getGitHubRepoData(): array
@@ -35,14 +37,36 @@ class TestDataProvider
         $results = [];
 
         foreach ($this->repos as $repo) {
-            $results[] = [json_decode($this->loadContent($repo), true)];
+            $results[] = [json_decode($this->loadRepoContent($repo), true)];
         }
 
         return $results;
     }
 
-    private function loadContent(string $repo): string
+    public function getGitHubBranchesData(): array
+    {
+        $results = [];
+
+        foreach ($this->repos as $repo) {
+            $finder = new Finder();
+            $finder->files()->in(__DIR__.'/'.$repo.'/branches/');
+
+            foreach ($finder as $item) {
+                $branchName = str_replace('.json', '', $item->getRelativePathname());
+                $results[]  = [json_decode($this->loadBranchContent($repo, $branchName), true)];
+            }
+        }
+
+        return $results;
+    }
+
+    private function loadRepoContent(string $repo): string
     {
         return file_get_contents(__DIR__.'/'.$repo.'/repo.json');
+    }
+
+    private function loadBranchContent(string $repo, string $branchName): string
+    {
+        return file_get_contents(__DIR__.'/'.$repo.'/branches/'.$branchName.'.json');
     }
 }
