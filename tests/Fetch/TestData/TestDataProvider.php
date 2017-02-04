@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace tests\Devboard\Github\Fetch\TestData;
 
+use Devboard\Github\Repo\GithubRepoFullName;
 use Symfony\Component\Finder\Finder;
 
 class TestDataProvider
@@ -53,7 +54,10 @@ class TestDataProvider
 
             foreach ($finder as $item) {
                 $branchName = str_replace('.json', '', $item->getRelativePathname());
-                $results[]  = [json_decode($this->loadBranchContent($repo, $branchName), true)];
+                $results[]  = [
+                    json_decode($this->loadBranchContent($repo, $branchName), true),
+                    GithubRepoFullName::createFromString($repo),
+                ];
             }
         }
 
