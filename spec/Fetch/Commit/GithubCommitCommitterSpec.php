@@ -31,4 +31,16 @@ class GithubCommitCommitterSpec extends ObjectBehavior
     {
         $this->shouldHaveType(GithubCommitCommitter::class);
     }
+
+    public function it_exposes_contructor_arguments(
+        CommitterName $committerName,
+        CommitterEmail $committerEmail,
+        CommitDate $commitDate,
+        GithubCommitCommitterDetails $committerDetails
+    ) {
+        $this->getName()->shouldReturn($committerName);
+        $this->getEmail()->shouldReturn($committerEmail);
+        $this->getCommitDate()->shouldReturn($commitDate);
+        $this->getCommitterDetails()->shouldReturn($committerDetails);
+    }
 }

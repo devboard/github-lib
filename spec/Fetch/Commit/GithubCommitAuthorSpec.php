@@ -31,4 +31,15 @@ class GithubCommitAuthorSpec extends ObjectBehavior
     {
         $this->shouldHaveType(GithubCommitAuthor::class);
     }
+
+    public function it_exposes_contructor_arguments(AuthorName $authorName,
+        AuthorEmail $authorEmail,
+        CommitDate $commitDate,
+        GithubCommitAuthorDetails $authorDetails
+    ) {
+        $this->getName()->shouldReturn($authorName);
+        $this->getEmail()->shouldReturn($authorEmail);
+        $this->getCommitDate()->shouldReturn($commitDate);
+        $this->getAuthorDetails()->shouldReturn($authorDetails);
+    }
 }
