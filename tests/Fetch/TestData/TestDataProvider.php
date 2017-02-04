@@ -13,6 +13,9 @@ class TestDataProvider
         'octocat/octocat.github.io',
         'octocat/git-consortium',
         'octocat/test-repo1',
+        'symfony/symfony',
+        'symfony/symfony-standard',
+        'symfony/symfony-docs',
     ];
 
     public function getRepos(): array
