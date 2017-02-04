@@ -78,13 +78,18 @@
   "has_downloads": true,
   "has_wiki": true,
   "has_pages": false,
-  "forks_count": 88812,
+  "forks_count": 88808,
   "mirror_url": null,
-  "open_issues_count": 9498,
-  "forks": 88812,
-  "open_issues": 9498,
+  "open_issues_count": 9499,
+  "forks": 88808,
+  "open_issues": 9499,
   "watchers": 9965,
   "default_branch": "master",
-  "network_count": 88812,
+  "permissions": {
+    "admin": false,
+    "push": false,
+    "pull": true
+  },
+  "network_count": 88808,
   "subscribers_count": 325
 }

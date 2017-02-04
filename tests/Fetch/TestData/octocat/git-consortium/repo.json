@@ -85,6 +85,11 @@
   "open_issues": 4,
   "watchers": 7,
   "default_branch": "master",
+  "permissions": {
+    "admin": false,
+    "push": false,
+    "pull": true
+  },
   "network_count": 20,
   "subscribers_count": 7
 }
