@@ -16,7 +16,7 @@ use Devboard\Github\User\Type\Organization;
 use Devboard\Github\User\Type\User;
 
 /**
- * @covers \Devboard\Github\Fetch\Repo\GithubCommitAuthorDetails
+ * @covers \Devboard\Github\Fetch\Commit\GithubCommitAuthorDetails
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
