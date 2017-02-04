@@ -85,6 +85,11 @@
   "open_issues": 3,
   "watchers": 3,
   "default_branch": "master",
+  "permissions": {
+    "admin": false,
+    "push": false,
+    "pull": true
+  },
   "parent": {
     "id": 1725199,
     "name": "linguist",
