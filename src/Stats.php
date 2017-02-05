@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\Github;
+namespace Devboard\GitHub;
 
 /**
  * @see StatsSpec

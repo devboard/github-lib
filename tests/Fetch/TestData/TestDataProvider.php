@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\Github\Fetch\TestData;
+namespace tests\Devboard\GitHub\Fetch\TestData;
 
-use Devboard\Github\Repo\GithubRepoFullName;
+use Devboard\GitHub\Repo\GitHubRepoFullName;
 use Symfony\Component\Finder\Finder;
 
 class TestDataProvider
@@ -56,7 +56,7 @@ class TestDataProvider
                 $branchName = str_replace('.json', '', $item->getRelativePathname());
                 $results[]  = [
                     json_decode($this->loadBranchContent($repo, $branchName), true),
-                    GithubRepoFullName::createFromString($repo),
+                    GitHubRepoFullName::createFromString($repo),
                 ];
             }
         }
