@@ -30,4 +30,20 @@ class GitHubRepoEndpoints
     {
         return $this->htmlUrl;
     }
+
+    public function serialize(): array
+    {
+        return [
+            'apiUrl'  => (string) $this->apiUrl,
+            'htmlUrl' => (string) $this->htmlUrl,
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubRepoEndpoints
+    {
+        return new self(
+            new GitHubRepoApiUrl($data['apiUrl']),
+            new GitHubRepoHtmlUrl($data['htmlUrl'])
+        );
+    }
 }

@@ -23,6 +23,16 @@ class GitHubRepoEndpointsTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($htmlUrl, $sut->getHtmlUrl());
     }
 
+    /** @dataProvider provideEndpoints */
+    public function testSerializationAndDeserialization(GitHubRepoApiUrl $apiUrl, GitHubRepoHtmlUrl $htmlUrl)
+    {
+        $sut = new GitHubRepoEndpoints($apiUrl, $htmlUrl);
+
+        $serialized = $sut->serialize();
+
+        $this->assertEquals($sut, GitHubRepoEndpoints::deserialize($serialized));
+    }
+
     public function provideEndpoints()
     {
         return [
