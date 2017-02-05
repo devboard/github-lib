@@ -38,4 +38,22 @@ class GitHubRepoTimestamps
     {
         return $this->pushedAt;
     }
+
+    public function serialize(): array
+    {
+        return [
+            'createdAt' => (string) $this->createdAt,
+            'updatedAt' => (string) $this->updatedAt,
+            'pushedAt'  => (string) $this->pushedAt,
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubRepoTimestamps
+    {
+        return new self(
+            new GitHubRepoCreatedAt($data['createdAt']),
+            new GitHubRepoUpdatedAt($data['updatedAt']),
+            new GitHubRepoPushedAt($data['pushedAt'])
+        );
+    }
 }
