@@ -21,8 +21,13 @@ class GitHubRepoStats
     /** @var GitHubRepoSize */
     private $repoSize;
 
-    public function __construct(int $networkCount, int $watchersCount, int $stargazersCount, int $openIssueCount, GitHubRepoSize $repoSize)
-    {
+    public function __construct(
+        int $networkCount,
+        int $watchersCount,
+        int $stargazersCount,
+        int $openIssueCount,
+        GitHubRepoSize $repoSize
+    ) {
         $this->networkCount    = $networkCount;
         $this->watchersCount   = $watchersCount;
         $this->stargazersCount = $stargazersCount;
@@ -53,5 +58,27 @@ class GitHubRepoStats
     public function getRepoSize(): GitHubRepoSize
     {
         return $this->repoSize;
+    }
+
+    public function serialize(): array
+    {
+        return [
+            'networkCount'    => $this->networkCount,
+            'watchersCount'   => $this->watchersCount,
+            'stargazersCount' => $this->stargazersCount,
+            'openIssueCount'  => $this->openIssueCount,
+            'repoSize'        => $this->repoSize->getValue(),
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubRepoStats
+    {
+        return new self(
+            $data['networkCount'],
+            $data['watchersCount'],
+            $data['stargazersCount'],
+            $data['openIssueCount'],
+            new GitHubRepoSize($data['repoSize'])
+        );
     }
 }
