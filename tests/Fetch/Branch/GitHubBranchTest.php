@@ -47,6 +47,19 @@ class GitHubBranchTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($commit, $sut->getCommit());
     }
 
+    /** @dataProvider provideData */
+    public function testSerializationAndDeserialization(
+        RepoFullName $repoFullName,
+        BranchName $branchName,
+        Commit $commit
+    ) {
+        $sut = new GitHubBranch($repoFullName, $branchName, $commit);
+
+        $serialized = $sut->serialize();
+
+        $this->assertEquals($sut, GitHubBranch::deserialize($serialized));
+    }
+
     public function provideData()
     {
         return [

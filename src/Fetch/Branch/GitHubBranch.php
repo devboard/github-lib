@@ -42,4 +42,22 @@ class GitHubBranch
     {
         return $this->commit;
     }
+
+    public function serialize(): array
+    {
+        return [
+            'repoFullName' => (string) $this->repoFullName,
+            'branchName'   => (string) $this->branchName,
+            'commit'       => $this->commit->serialize(),
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubBranch
+    {
+        return new self(
+            GitHubRepoFullName::createFromString($data['repoFullName']),
+            new GitHubBranchName($data['branchName']),
+            GitHubCommit::deserialize($data['commit'])
+        );
+    }
 }
