@@ -3,5 +3,5 @@ extensions:
   Cjm\PhpSpec\Extension\TypeHintedMethodsExtension: ~
 suites:
     acme_suite:
-        namespace: Devboard\Github
-        psr4_prefix: Devboard\Github
+        namespace: Devboard\GitHub
+        psr4_prefix: Devboard\GitHub
