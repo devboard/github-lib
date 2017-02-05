@@ -89,4 +89,30 @@ class GitHubRepo
     {
         return $this->stats;
     }
+
+    public function serialize(): array
+    {
+        return [
+            'id'         => $this->id->getValue(),
+            'fullName'   => (string) $this->fullName,
+            'owner'      => $this->owner->serialize(),
+            'private'    => $this->private,
+            'endpoints'  => $this->endpoints->serialize(),
+            'timestamps' => $this->timestamps->serialize(),
+            'stats'      => $this->stats->serialize(),
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubRepo
+    {
+        return new self(
+            new GitHubRepoId($data['id']),
+            GitHubRepoFullName::createFromString($data['fullName']),
+            GitHubRepoOwner::deserialize($data['owner']),
+            $data['private'],
+            GitHubRepoEndpoints::deserialize($data['endpoints']),
+            GitHubRepoTimestamps::deserialize($data['timestamps']),
+            GitHubRepoStats::deserialize($data['stats'])
+        );
+    }
 }
