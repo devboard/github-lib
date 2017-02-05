@@ -56,6 +56,23 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($stats, $sut->getStats());
     }
 
+    /** @dataProvider provideData */
+    public function testSerializationAndDeserialization(
+        GitHubRepoId $id,
+        GitHubRepoFullName $fullName,
+        GitHubRepoOwner $owner,
+        bool $private,
+        GitHubRepoEndpoints $endpoints,
+        GitHubRepoTimestamps $timestamps,
+        GitHubRepoStats $stats
+    ) {
+        $sut = new GitHubRepo($id, $fullName, $owner, $private, $endpoints, $timestamps, $stats);
+
+        $serialized = $sut->serialize();
+
+        $this->assertEquals($sut, GitHubRepo::deserialize($serialized));
+    }
+
     public function provideData()
     {
         return [
@@ -80,9 +97,9 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
                     new GitHubRepoHtmlUrl('..')
                 ),
                 new GitHubRepoTimestamps(
-                    new GitHubRepoCreatedAt(),
-                    new GitHubRepoUpdatedAt(),
-                    new GitHubRepoPushedAt()
+                    new GitHubRepoCreatedAt('2017-01-02 11:22:33'),
+                    new GitHubRepoUpdatedAt('2017-02-03 15:16:17'),
+                    new GitHubRepoPushedAt('2017-03-04 22:23:24')
                 ),
                 new GitHubRepoStats(1, 2, 3, 4, new GitHubRepoSize(77)),
             ],
