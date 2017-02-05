@@ -55,11 +55,11 @@ class GitHubCommitTest extends \PHPUnit_Framework_TestCase
             [
                 new GitHubCommitSha('abc123'),
                 new GitHubCommitMessage('Message'),
-                new GitHubCommitDate(),
+                new GitHubCommitDate('2017-02-03 11:22:33'),
                 new GitHubCommitAuthor(
                     new GitHubCommitAuthorName('name'),
                     new GitHubCommitAuthorEmail('nobody@example.com'),
-                    new GitHubCommitDate(),
+                    new GitHubCommitDate('2017-02-03 11:22:33'),
                     new GitHubCommitAuthorDetails(
                         new GitHubUserId(13507412),
                         new GitHubUserLogin('devboard-test'),
@@ -74,7 +74,7 @@ class GitHubCommitTest extends \PHPUnit_Framework_TestCase
                 new GitHubCommitCommitter(
                     new GitHubCommitCommitterName('name'),
                     new GitHubCommitCommitterEmail('nobody@example.com'),
-                    new GitHubCommitDate(),
+                    new GitHubCommitDate('2017-02-03 11:22:33'),
                     new GitHubCommitCommitterDetails(
                         new GitHubUserId(13507412),
                         new GitHubUserLogin('devboard-test'),

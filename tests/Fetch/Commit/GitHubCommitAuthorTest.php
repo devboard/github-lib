@@ -46,7 +46,7 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
             [
                 new GitHubCommitAuthorName('name'),
                 new GitHubCommitAuthorEmail('nobody@example.com'),
-                new GitHubCommitDate(),
+                new GitHubCommitDate('2017-02-03 11:22:33'),
                 new GitHubCommitAuthorDetails(
                     new GitHubUserId(13507412),
                     new GitHubUserLogin('devboard-test'),
