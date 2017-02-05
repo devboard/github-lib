@@ -63,4 +63,26 @@ class GitHubCommit
     {
         return $this->committer;
     }
+
+    public function serialize(): array
+    {
+        return [
+            'sha'        => (string) $this->sha,
+            'message'    => (string) $this->message,
+            'commitDate' => (string) $this->commitDate,
+            'author'     => $this->author->serialize(),
+            'committer'  => $this->committer->serialize(),
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubCommit
+    {
+        return new self(
+            new GitHubCommitSha($data['sha']),
+            new GitHubCommitMessage($data['message']),
+            new GitHubCommitDate($data['commitDate']),
+            GitHubCommitAuthor::deserialize($data['author']),
+            GitHubCommitCommitter::deserialize($data['committer'])
+        );
+    }
 }
