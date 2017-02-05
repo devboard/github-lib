@@ -49,6 +49,21 @@ class GitHubCommitTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($committer, $sut->getCommitter());
     }
 
+    /** @dataProvider provideArguments */
+    public function testSerializationAndDeserialization(
+        GitHubCommitSha $sha,
+        GitHubCommitMessage $message,
+        GitHubCommitDate $commitDate,
+        GitHubCommitAuthor $author,
+        GitHubCommitCommitter $committer
+    ) {
+        $sut = new GitHubCommit($sha, $message, $commitDate, $author, $committer);
+
+        $serialized = $sut->serialize();
+
+        $this->assertEquals($sut, GitHubCommit::deserialize($serialized));
+    }
+
     public function provideArguments(): array
     {
         return [
