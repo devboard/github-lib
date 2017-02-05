@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 use GuzzleHttp\Client;
-use tests\Devboard\Github\Fetch\TestData\TestDataProvider;
+use tests\Devboard\GitHub\Fetch\TestData\TestDataProvider;
 
 require __DIR__.'/../../../vendor/autoload.php';
 

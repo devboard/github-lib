@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\Github\User\Type;
+namespace spec\Devboard\GitHub\User\Type;
 
-use Devboard\Github\User\GithubUserType;
-use Devboard\Github\User\Type\User;
+use Devboard\GitHub\User\GitHubUserType;
+use Devboard\GitHub\User\Type\User;
 use PhpSpec\ObjectBehavior;
 
 class UserSpec extends ObjectBehavior
@@ -18,7 +18,7 @@ class UserSpec extends ObjectBehavior
     public function it_is_initializable()
     {
         $this->shouldHaveType(User::class);
-        $this->shouldImplement(GithubUserType::class);
+        $this->shouldImplement(GitHubUserType::class);
     }
 
     public function it_knows_it_is_user_and_not_organization()

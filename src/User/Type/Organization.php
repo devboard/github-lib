@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Devboard\Github\User\Type;
+namespace Devboard\GitHub\User\Type;
 
-use Devboard\Github\User\GithubUserType;
+use Devboard\GitHub\User\GitHubUserType;
 
 /**
  * @see OrganizationSpec
  * @see OrganizationTest
  */
-class Organization implements GithubUserType
+class Organization implements GitHubUserType
 {
     const NAME = 'Organization';
 
