@@ -48,6 +48,26 @@ class GitHubCommitCommitterDetailsTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($siteAdmin, $sut->isSiteAdmin());
     }
 
+    /** @dataProvider provideArguments */
+    public function testSerializationAndDeserialization(
+        GitHubUserId $userId,
+        GitHubUserLogin $login,
+        GitHubUserType $githubUserType,
+        GitHubUserAvatarUrl $avatarUrl,
+        GitHubUserGravatarId $gravatarId,
+        GitHubUserHtmlUrl $htmlUrl,
+        GitHubUserApiUrl $apiUrl,
+        bool $siteAdmin
+    ) {
+        $sut = new GitHubCommitCommitterDetails(
+            $userId, $login, $githubUserType, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin
+        );
+
+        $serialized = $sut->serialize();
+
+        $this->assertEquals($sut, GitHubCommitCommitterDetails::deserialize($serialized));
+    }
+
     public function provideArguments(): array
     {
         return [

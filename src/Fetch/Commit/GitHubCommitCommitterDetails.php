@@ -11,6 +11,7 @@ use Devboard\GitHub\User\GitHubUserHtmlUrl;
 use Devboard\GitHub\User\GitHubUserId;
 use Devboard\GitHub\User\GitHubUserLogin;
 use Devboard\GitHub\User\GitHubUserType;
+use Devboard\GitHub\User\GitHubUserTypeFactory;
 
 /**
  * @see GitHubCommitCommitterDetailsSpec
@@ -93,5 +94,33 @@ class GitHubCommitCommitterDetails
     public function isSiteAdmin(): bool
     {
         return $this->siteAdmin;
+    }
+
+    public function serialize(): array
+    {
+        return [
+            'userId'         => $this->userId->getValue(),
+            'login'          => (string) $this->login,
+            'githubUserType' => (string) $this->githubUserType,
+            'avatarUrl'      => (string) $this->avatarUrl,
+            'gravatarId'     => (string) $this->gravatarId,
+            'htmlUrl'        => (string) $this->htmlUrl,
+            'apiUrl'         => (string) $this->apiUrl,
+            'siteAdmin'      => $this->siteAdmin,
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubCommitCommitterDetails
+    {
+        return new self(
+            new GitHubUserId($data['userId']),
+            new GitHubUserLogin($data['login']),
+            GitHubUserTypeFactory::create($data['githubUserType']),
+            new GitHubUserAvatarUrl($data['avatarUrl']),
+            new GitHubUserGravatarId($data['gravatarId']),
+            new GitHubUserHtmlUrl($data['htmlUrl']),
+            new GitHubUserApiUrl($data['apiUrl']),
+            $data['siteAdmin']
+        );
     }
 }
