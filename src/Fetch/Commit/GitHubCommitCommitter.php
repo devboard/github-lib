@@ -54,4 +54,24 @@ class GitHubCommitCommitter
     {
         return $this->committerDetails;
     }
+
+    public function serialize(): array
+    {
+        return [
+            'name'             => (string) $this->name,
+            'email'            => (string) $this->email,
+            'commitDate'       => (string) $this->commitDate,
+            'committerDetails' => $this->committerDetails->serialize(),
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubCommitCommitter
+    {
+        return new self(
+            new GitHubCommitCommitterName($data['name']),
+            new GitHubCommitCommitterEmail($data['email']),
+            new GitHubCommitDate($data['commitDate']),
+            GitHubCommitCommitterDetails::deserialize($data['committerDetails'])
+        );
+    }
 }
