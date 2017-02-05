@@ -64,6 +64,30 @@ class TestDataProvider
         return $results;
     }
 
+    public function getGitHubBranchesDataWithRepo(): array
+    {
+        $results = [];
+
+        foreach ($this->repos as $repo) {
+            $finder = new Finder();
+            $finder->files()->in(__DIR__.'/'.$repo.'/branches/');
+
+            $item = [
+                'repo'     => json_decode($this->loadRepoContent($repo), true),
+                'branches' => [],
+            ];
+
+            foreach ($finder as $fileInfo) {
+                $branchName         = str_replace('.json', '', $fileInfo->getRelativePathname());
+                $item['branches'][] = json_decode($this->loadBranchContent($repo, $branchName), true);
+            }
+
+            $results[] = $item;
+        }
+
+        return $results;
+    }
+
     private function loadRepoContent(string $repo): string
     {
         return file_get_contents(__DIR__.'/'.$repo.'/repo.json');
