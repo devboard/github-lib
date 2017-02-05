@@ -4,12 +4,12 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Devboard\\GitHub\\": "src/"
+            "Devboard\\GitHub\\": "src/",
+            "tests\\Devboard\\GitHub\\": "tests/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "tests\\Devboard\\GitHub\\": "tests/",
             "spec\\Devboard\\GitHub\\": "spec/"
         }
     },
