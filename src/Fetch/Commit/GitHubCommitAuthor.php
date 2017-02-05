@@ -29,10 +29,10 @@ class GitHubCommitAuthor
         GitHubCommitDate $commitDate,
         GitHubCommitAuthorDetails $authorDetails
     ) {
-        $this->name             = $name;
-        $this->email            = $email;
-        $this->commitDate       = $commitDate;
-        $this->authorDetails    = $authorDetails;
+        $this->name          = $name;
+        $this->email         = $email;
+        $this->commitDate    = $commitDate;
+        $this->authorDetails = $authorDetails;
     }
 
     public function getName(): GitHubCommitAuthorName
@@ -53,5 +53,25 @@ class GitHubCommitAuthor
     public function getAuthorDetails(): GitHubCommitAuthorDetails
     {
         return $this->authorDetails;
+    }
+
+    public function serialize(): array
+    {
+        return [
+            'name'          => (string) $this->name,
+            'email'         => (string) $this->email,
+            'commitDate'    => (string) $this->commitDate,
+            'authorDetails' => $this->authorDetails->serialize(),
+        ];
+    }
+
+    public static function deserialize(array $data): GitHubCommitAuthor
+    {
+        return new self(
+            new GitHubCommitAuthorName($data['name']),
+            new GitHubCommitAuthorEmail($data['email']),
+            new GitHubCommitDate($data['commitDate']),
+            GitHubCommitAuthorDetails::deserialize($data['authorDetails'])
+        );
     }
 }

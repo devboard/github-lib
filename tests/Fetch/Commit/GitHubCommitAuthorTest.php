@@ -40,6 +40,20 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($authorDetails, $sut->getAuthorDetails());
     }
 
+    /** @dataProvider provideArguments */
+    public function testSerializationAndDeserialization(
+        GitHubCommitAuthorName $name,
+        GitHubCommitAuthorEmail $email,
+        GitHubCommitDate $commitDate,
+        GitHubCommitAuthorDetails $authorDetails
+    ) {
+        $sut = new GitHubCommitAuthor($name, $email, $commitDate, $authorDetails);
+
+        $serialized = $sut->serialize();
+
+        $this->assertEquals($sut, GitHubCommitAuthor::deserialize($serialized));
+    }
+
     public function provideArguments(): array
     {
         return [
