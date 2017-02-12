@@ -8,9 +8,11 @@ use Devboard\GitHub\Fetch\Repo\GitHubRepo;
 use Devboard\GitHub\Repo\GitHubRepoEndpoints;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 use Devboard\GitHub\Repo\GitHubRepoId;
+use Devboard\GitHub\Repo\GitHubRepoName;
 use Devboard\GitHub\Repo\GitHubRepoOwner;
 use Devboard\GitHub\Repo\GitHubRepoStats;
 use Devboard\GitHub\Repo\GitHubRepoTimestamps;
+use Devboard\GitHub\User\GitHubUserLogin;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoSpec extends ObjectBehavior
@@ -55,5 +57,17 @@ class GitHubRepoSpec extends ObjectBehavior
         $this->getEndpoints()->shouldReturn($endpoints);
         $this->getTimestamps()->shouldReturn($timestamps);
         $this->getStats()->shouldReturn($stats);
+    }
+
+    public function it_exposes_parts_of_full_name(
+        GitHubRepoFullName $fullName,
+        GitHubUserLogin $userLogin,
+        GitHubRepoName $repoName
+    ) {
+        $fullName->getOwner()->shouldBeCalled()->willReturn($userLogin);
+        $fullName->getRepoName()->shouldBeCalled()->willReturn($repoName);
+
+        $this->getRepoName()->shouldReturn($repoName);
+        $this->getOwnerLogin()->shouldReturn($userLogin);
     }
 }

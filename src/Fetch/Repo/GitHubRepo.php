@@ -7,9 +7,11 @@ namespace Devboard\GitHub\Fetch\Repo;
 use Devboard\GitHub\Repo\GitHubRepoEndpoints;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 use Devboard\GitHub\Repo\GitHubRepoId;
+use Devboard\GitHub\Repo\GitHubRepoName;
 use Devboard\GitHub\Repo\GitHubRepoOwner;
 use Devboard\GitHub\Repo\GitHubRepoStats;
 use Devboard\GitHub\Repo\GitHubRepoTimestamps;
+use Devboard\GitHub\User\GitHubUserLogin;
 
 /**
  * @see GitHubRepoSpec
@@ -58,6 +60,16 @@ class GitHubRepo
     public function getFullName(): GitHubRepoFullName
     {
         return $this->fullName;
+    }
+
+    public function getOwnerLogin(): GitHubUserLogin
+    {
+        return $this->fullName->getOwner();
+    }
+
+    public function getRepoName(): GitHubRepoName
+    {
+        return $this->fullName->getRepoName();
     }
 
     public function getOwner(): GitHubRepoOwner
