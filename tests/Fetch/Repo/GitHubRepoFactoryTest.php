@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub\Fetch\Repo;
 
-use Devboard\GitHub\Fetch\Repo\GitHubRepo;
 use Devboard\GitHub\Fetch\Repo\GitHubRepoFactory;
+use Devboard\GitHub\GitHubRepo;
 use tests\Devboard\GitHub\Fetch\TestData\TestDataProvider;
 
 /**

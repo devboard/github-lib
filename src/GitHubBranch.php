@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Fetch\Branch;
+namespace Devboard\GitHub;
 
 use Devboard\GitHub\Branch\GitHubBranchName;
-use Devboard\GitHub\Fetch\Commit\GitHubCommit;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 
 /**

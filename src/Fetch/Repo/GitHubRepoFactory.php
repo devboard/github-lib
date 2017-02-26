@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Devboard\GitHub\Fetch\Repo;
 
+use Devboard\GitHub\GitHubRepo;
 use Devboard\GitHub\Repo\GitHubRepoApiUrl;
 use Devboard\GitHub\Repo\GitHubRepoCreatedAt;
 use Devboard\GitHub\Repo\GitHubRepoEndpoints;

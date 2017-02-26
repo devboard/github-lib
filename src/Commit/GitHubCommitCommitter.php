@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Fetch\Commit;
+namespace Devboard\GitHub\Commit;
 
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
-use Devboard\GitHub\Commit\GitHubCommitDate;
 
 /**
  * @see GitHubCommitCommitterSpec

@@ -6,9 +6,9 @@ namespace tests\Devboard\GitHub\Fetch\Commit;
 
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
+use Devboard\GitHub\Commit\GitHubCommitAuthor;
+use Devboard\GitHub\Commit\GitHubCommitAuthorDetails;
 use Devboard\GitHub\Commit\GitHubCommitDate;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthor;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthorDetails;
 use Devboard\GitHub\User\GitHubUserApiUrl;
 use Devboard\GitHub\User\GitHubUserAvatarUrl;
 use Devboard\GitHub\User\GitHubUserGravatarId;
@@ -18,7 +18,7 @@ use Devboard\GitHub\User\GitHubUserLogin;
 use Devboard\GitHub\User\Type\User;
 
 /**
- * @covers \Devboard\GitHub\Fetch\Commit\GitHubCommitAuthor
+ * @covers \Devboard\GitHub\Commit\GitHubCommitAuthor
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

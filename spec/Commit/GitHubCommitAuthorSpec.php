@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Fetch\Commit;
+namespace spec\Devboard\GitHub\Commit;
 
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail as AuthorEmail;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName as AuthorName;
+use Devboard\GitHub\Commit\GitHubCommitAuthor;
+use Devboard\GitHub\Commit\GitHubCommitAuthorDetails;
 use Devboard\GitHub\Commit\GitHubCommitDate as CommitDate;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthor;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthorDetails;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitAuthorSpec extends ObjectBehavior

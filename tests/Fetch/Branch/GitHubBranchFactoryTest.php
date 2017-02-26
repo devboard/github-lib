@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub\Fetch\Branch;
 
-use Devboard\GitHub\Fetch\Branch\GitHubBranch;
 use Devboard\GitHub\Fetch\Branch\GitHubBranchFactory;
+use Devboard\GitHub\GitHubBranch;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 use tests\Devboard\GitHub\Fetch\TestData\TestDataProvider;
 

@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Fetch\Commit;
+namespace Devboard\GitHub\Commit;
 
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
-use Devboard\GitHub\Commit\GitHubCommitDate;
 
 /**
  * @see GitHubCommitAuthorSpec

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\Devboard\GitHub\Fetch\Commit;
 
-use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitter;
+use Devboard\GitHub\Commit\GitHubCommitCommitter;
 use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitterFactory;
 use PhpSpec\ObjectBehavior;
 

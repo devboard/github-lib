@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub\Fetch\Commit;
 
-use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitterDetails;
+use Devboard\GitHub\Commit\GitHubCommitCommitterDetails;
 use Devboard\GitHub\User\GitHubUserApiUrl;
 use Devboard\GitHub\User\GitHubUserAvatarUrl;
 use Devboard\GitHub\User\GitHubUserGravatarId;
@@ -16,7 +16,7 @@ use Devboard\GitHub\User\Type\Organization;
 use Devboard\GitHub\User\Type\User;
 
 /**
- * @covers \Devboard\GitHub\Fetch\Commit\GitHubCommitCommitterDetails
+ * @covers \Devboard\GitHub\Commit\GitHubCommitCommitterDetails
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

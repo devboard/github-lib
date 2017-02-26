@@ -7,6 +7,7 @@ namespace Devboard\GitHub\Fetch\Commit;
 use Devboard\GitHub\Commit\GitHubCommitDate;
 use Devboard\GitHub\Commit\GitHubCommitMessage;
 use Devboard\GitHub\Commit\GitHubCommitSha;
+use Devboard\GitHub\GitHubCommit;
 
 /**
  * @see GitHubCommitFactorySpec

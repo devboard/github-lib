@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Fetch\Repo;
+namespace spec\Devboard\GitHub;
 
-use Devboard\GitHub\Fetch\Repo\GitHubRepo;
+use Devboard\GitHub\GitHubRepo;
 use Devboard\GitHub\Repo\GitHubRepoEndpoints;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 use Devboard\GitHub\Repo\GitHubRepoId;
