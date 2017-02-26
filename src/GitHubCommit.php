@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Fetch\Commit;
+namespace Devboard\GitHub;
 
+use Devboard\GitHub\Commit\GitHubCommitAuthor;
+use Devboard\GitHub\Commit\GitHubCommitCommitter;
 use Devboard\GitHub\Commit\GitHubCommitDate;
 use Devboard\GitHub\Commit\GitHubCommitMessage;
 use Devboard\GitHub\Commit\GitHubCommitSha;
@@ -20,9 +22,9 @@ class GitHubCommit
     private $message;
     /** @var GitHubCommitDate */
     private $commitDate;
-    /** @var \Devboard\GitHub\Fetch\Commit\GitHubCommitAuthor */
+    /** @var \Devboard\GitHub\Commit\GitHubCommitAuthor */
     private $author;
-    /** @var \Devboard\GitHub\Fetch\Commit\GitHubCommitCommitter */
+    /** @var \Devboard\GitHub\Commit\GitHubCommitCommitter */
     private $committer;
 
     public function __construct(

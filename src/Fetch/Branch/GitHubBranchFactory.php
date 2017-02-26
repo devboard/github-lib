@@ -6,6 +6,7 @@ namespace Devboard\GitHub\Fetch\Branch;
 
 use Devboard\GitHub\Branch\GitHubBranchName;
 use Devboard\GitHub\Fetch\Commit\GitHubCommitFactory;
+use Devboard\GitHub\GitHubBranch;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 
 /**

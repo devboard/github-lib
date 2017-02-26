@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Fetch\Commit;
+namespace spec\Devboard\GitHub\Commit;
 
-use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitterDetails;
+use Devboard\GitHub\Commit\GitHubCommitAuthorDetails;
 use Devboard\GitHub\User\GitHubUserApiUrl;
 use Devboard\GitHub\User\GitHubUserAvatarUrl;
 use Devboard\GitHub\User\GitHubUserGravatarId;
@@ -14,7 +14,7 @@ use Devboard\GitHub\User\GitHubUserLogin;
 use Devboard\GitHub\User\GitHubUserType;
 use PhpSpec\ObjectBehavior;
 
-class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
+class GitHubCommitAuthorDetailsSpec extends ObjectBehavior
 {
     public function let(
         GitHubUserId $userId,
@@ -30,7 +30,7 @@ class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubCommitCommitterDetails::class);
+        $this->shouldHaveType(GitHubCommitAuthorDetails::class);
     }
 
     public function it_should_expose_all_values_via_getters(

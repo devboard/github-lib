@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Fetch\Commit;
+namespace Devboard\GitHub\Commit;
 
 use Devboard\GitHub\User\GitHubUserApiUrl;
 use Devboard\GitHub\User\GitHubUserAvatarUrl;
@@ -14,10 +14,10 @@ use Devboard\GitHub\User\GitHubUserType;
 use Devboard\GitHub\User\GitHubUserTypeFactory;
 
 /**
- * @see GitHubCommitAuthorDetailsSpec
- * @see GitHubCommitAuthorDetailsTest
+ * @see GitHubCommitCommitterDetailsSpec
+ * @see GitHubCommitCommitterDetailsTest
  */
-class GitHubCommitAuthorDetails
+class GitHubCommitCommitterDetails
 {
     /** @var GitHubUserId */
     private $userId;
@@ -110,7 +110,7 @@ class GitHubCommitAuthorDetails
         ];
     }
 
-    public static function deserialize(array $data): GitHubCommitAuthorDetails
+    public static function deserialize(array $data): GitHubCommitCommitterDetails
     {
         return new self(
             new GitHubUserId($data['userId']),

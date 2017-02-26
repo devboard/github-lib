@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub\Fetch\Repo;
 
-use Devboard\GitHub\Fetch\Repo\GitHubRepo;
+use Devboard\GitHub\GitHubRepo;
 use Devboard\GitHub\Repo\GitHubRepoApiUrl;
 use Devboard\GitHub\Repo\GitHubRepoCreatedAt;
 use Devboard\GitHub\Repo\GitHubRepoEndpoints;
@@ -27,7 +27,7 @@ use Devboard\GitHub\User\GitHubUserLogin;
 use Devboard\GitHub\User\Type\User;
 
 /**
- * @covers \Devboard\GitHub\Fetch\Repo\GitHubRepo
+ * @covers \Devboard\GitHub\GitHubRepo
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

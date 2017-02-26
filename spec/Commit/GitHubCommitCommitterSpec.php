@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Fetch\Commit;
+namespace spec\Devboard\GitHub\Commit;
 
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail as CommitterEmail;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName as CommitterName;
+use Devboard\GitHub\Commit\GitHubCommitCommitter;
+use Devboard\GitHub\Commit\GitHubCommitCommitterDetails;
 use Devboard\GitHub\Commit\GitHubCommitDate as CommitDate;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitter;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitterDetails;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitCommitterSpec extends ObjectBehavior

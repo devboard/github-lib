@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Fetch\Branch;
+namespace spec\Devboard\GitHub;
 
 use Devboard\GitHub\Branch\GitHubBranchName as BranchName;
-use Devboard\GitHub\Fetch\Branch\GitHubBranch;
-use Devboard\GitHub\Fetch\Commit\GitHubCommit as Commit;
+use Devboard\GitHub\GitHubBranch;
+use Devboard\GitHub\GitHubCommit as Commit;
 use Devboard\GitHub\Repo\GitHubRepoFullName as RepoFullName;
 use PhpSpec\ObjectBehavior;
 

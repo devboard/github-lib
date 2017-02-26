@@ -8,14 +8,14 @@ use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
+use Devboard\GitHub\Commit\GitHubCommitAuthor;
+use Devboard\GitHub\Commit\GitHubCommitAuthorDetails;
+use Devboard\GitHub\Commit\GitHubCommitCommitter;
+use Devboard\GitHub\Commit\GitHubCommitCommitterDetails;
 use Devboard\GitHub\Commit\GitHubCommitDate;
 use Devboard\GitHub\Commit\GitHubCommitMessage;
 use Devboard\GitHub\Commit\GitHubCommitSha;
-use Devboard\GitHub\Fetch\Commit\GitHubCommit;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthor;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthorDetails;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitter;
-use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitterDetails;
+use Devboard\GitHub\GitHubCommit;
 use Devboard\GitHub\User\GitHubUserApiUrl;
 use Devboard\GitHub\User\GitHubUserAvatarUrl;
 use Devboard\GitHub\User\GitHubUserGravatarId;
@@ -25,7 +25,7 @@ use Devboard\GitHub\User\GitHubUserLogin;
 use Devboard\GitHub\User\Type\User;
 
 /**
- * @covers \Devboard\GitHub\Fetch\Commit\GitHubCommit
+ * @covers \Devboard\GitHub\GitHubCommit
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

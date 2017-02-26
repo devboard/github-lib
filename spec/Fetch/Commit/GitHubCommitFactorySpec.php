@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace spec\Devboard\GitHub\Fetch\Commit;
 
-use Devboard\GitHub\Fetch\Commit\GitHubCommit;
 use Devboard\GitHub\Fetch\Commit\GitHubCommitFactory;
+use Devboard\GitHub\GitHubCommit;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitFactorySpec extends ObjectBehavior

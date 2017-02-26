@@ -6,6 +6,8 @@ namespace Devboard\GitHub\Fetch\Commit;
 
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
+use Devboard\GitHub\Commit\GitHubCommitCommitter;
+use Devboard\GitHub\Commit\GitHubCommitCommitterDetails;
 use Devboard\GitHub\Commit\GitHubCommitDate;
 use Devboard\GitHub\User\GitHubUserApiUrl;
 use Devboard\GitHub\User\GitHubUserAvatarUrl;

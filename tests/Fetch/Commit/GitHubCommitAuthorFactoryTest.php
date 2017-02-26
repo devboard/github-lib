@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub\Fetch\Commit;
 
-use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthor;
+use Devboard\GitHub\Commit\GitHubCommitAuthor;
 use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthorFactory;
 use tests\Devboard\GitHub\Fetch\TestData\TestDataProvider;
 
