@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Fetch\Commit;
+namespace tests\Devboard\GitHub\Commit;
 
-use Devboard\GitHub\Commit\GitHubCommitAuthorDetails;
+use Devboard\GitHub\Commit\GitHubCommitCommitterDetails;
 use Devboard\GitHub\User\GitHubUserApiUrl;
 use Devboard\GitHub\User\GitHubUserAvatarUrl;
 use Devboard\GitHub\User\GitHubUserGravatarId;
@@ -16,12 +16,12 @@ use Devboard\GitHub\User\Type\Organization;
 use Devboard\GitHub\User\Type\User;
 
 /**
- * @covers \Devboard\GitHub\Commit\GitHubCommitAuthorDetails
+ * @covers \Devboard\GitHub\Commit\GitHubCommitCommitterDetails
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class GitHubCommitAuthorDetailsTest extends \PHPUnit_Framework_TestCase
+class GitHubCommitCommitterDetailsTest extends \PHPUnit_Framework_TestCase
 {
     /** @dataProvider provideArguments */
     public function testCreating(
@@ -34,7 +34,7 @@ class GitHubCommitAuthorDetailsTest extends \PHPUnit_Framework_TestCase
         GitHubUserApiUrl $apiUrl,
         bool $siteAdmin
     ) {
-        $sut = new GitHubCommitAuthorDetails(
+        $sut = new GitHubCommitCommitterDetails(
             $userId, $login, $githubUserType, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin
         );
 
@@ -59,13 +59,13 @@ class GitHubCommitAuthorDetailsTest extends \PHPUnit_Framework_TestCase
         GitHubUserApiUrl $apiUrl,
         bool $siteAdmin
     ) {
-        $sut = new GitHubCommitAuthorDetails(
+        $sut = new GitHubCommitCommitterDetails(
             $userId, $login, $githubUserType, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin
         );
 
         $serialized = $sut->serialize();
 
-        $this->assertEquals($sut, GitHubCommitAuthorDetails::deserialize($serialized));
+        $this->assertEquals($sut, GitHubCommitCommitterDetails::deserialize($serialized));
     }
 
     public function provideArguments(): array

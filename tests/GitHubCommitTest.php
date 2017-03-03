@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Fetch\Commit;
+namespace tests\Devboard\GitHub;
 
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
