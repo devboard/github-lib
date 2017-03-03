@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Fetch\Branch;
+namespace tests\Devboard\GitHub;
 
 use Devboard\GitHub\Branch\GitHubBranchName as BranchName;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
