@@ -5,15 +5,17 @@ declare(strict_types=1);
 namespace spec\Devboard\GitHub\Fetch\Branch;
 
 use Devboard\GitHub\Fetch\Branch\GitHubBranchFactory;
+use Devboard\GitHub\Fetch\Commit\GitHubCommitFactory;
 use Devboard\GitHub\GitHubBranch;
+use Devboard\GitHub\GitHubCommit;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubBranchFactorySpec extends ObjectBehavior
 {
-    public function let()
+    public function let(GitHubCommitFactory $commitFactory)
     {
-        $this->beConstructedWith();
+        $this->beConstructedWith($commitFactory);
     }
 
     public function it_is_initializable()
@@ -21,47 +23,19 @@ class GitHubBranchFactorySpec extends ObjectBehavior
         $this->shouldHaveType(GitHubBranchFactory::class);
     }
 
-    public function it_will_create_branch_from_given_branch_data(GitHubRepoFullName $fullName)
-    {
+    public function it_will_create_branch_from_given_branch_data(
+        GitHubRepoFullName $fullName,
+        GitHubCommitFactory $commitFactory,
+    GitHubCommit $commit
+    ) {
         $data = [
             'name'   => 'master',
-            'commit' => [
-                'sha'       => 'abc123',
-                'commit'    => [
-                    'message'   => 'Commit message',
-                    'author'    => [
-                        'name'  => 'John Smith',
-                        'email' => 'nobody@example.com',
-                        'date'  => '2012-03-06T23:06:50Z',
-                    ],
-                    'committer' => [
-                        'name'  => 'John Smith',
-                        'email' => 'nobody@example.com',
-                        'date'  => '2012-03-06T23:06:50Z',
-                    ],
-                ],
-                'author'    => [
-                    'login'       => 'devboard-test',
-                    'id'          => 1,
-                    'avatar_url'  => 'avatar-url',
-                    'gravatar_id' => '',
-                    'url'         => 'github-url',
-                    'html_url'    => 'github-html-url',
-                    'type'        => 'User',
-                    'site_admin'  => false,
-                ],
-                'committer' => [
-                    'login'       => 'devboard-test',
-                    'id'          => 1,
-                    'avatar_url'  => 'avatar-url',
-                    'gravatar_id' => '',
-                    'url'         => 'github-url',
-                    'html_url'    => 'github-html-url',
-                    'type'        => 'User',
-                    'site_admin'  => false,
-                ],
-            ],
+            'commit' => ['..'],
         ];
+
+        $commitFactory->createFromBranchData($data)
+            ->shouldBeCalled()
+            ->willReturn($commit);
 
         $this->createFromBranchData($fullName, $data)->shouldReturnAnInstanceOf(GitHubBranch::class);
     }

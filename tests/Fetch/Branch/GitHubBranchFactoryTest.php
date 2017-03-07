@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace tests\Devboard\GitHub\Fetch\Branch;
 
 use Devboard\GitHub\Fetch\Branch\GitHubBranchFactory;
+use Devboard\GitHub\Fetch\Commit\GitHubCommitAuthorFactory;
+use Devboard\GitHub\Fetch\Commit\GitHubCommitCommitterFactory;
+use Devboard\GitHub\Fetch\Commit\GitHubCommitFactory;
 use Devboard\GitHub\GitHubBranch;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 use tests\Devboard\GitHub\Fetch\TestData\TestDataProvider;
@@ -20,7 +23,12 @@ class GitHubBranchFactoryTest extends \PHPUnit_Framework_TestCase
     /** @dataProvider provideArguments */
     public function testCreating(array $data, GitHubRepoFullName $repoFullName)
     {
-        $sut = new GitHubBranchFactory();
+        $sut = new GitHubBranchFactory(
+            new GitHubCommitFactory(
+                new GitHubCommitCommitterFactory(),
+                new GitHubCommitAuthorFactory()
+            )
+        );
 
         $this->assertInstanceOf(GitHubBranch::class, $sut->createFromBranchData($repoFullName, $data));
     }
