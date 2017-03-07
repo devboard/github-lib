@@ -20,10 +20,10 @@ class GitHubCommitFactory
     /** @var GitHubCommitAuthorFactory */
     private $authorFactory;
 
-    public function __construct()
+    public function __construct(GitHubCommitCommitterFactory $commitCommitterFactory, GitHubCommitAuthorFactory $authorFactory)
     {
-        $this->committerFactory = new GitHubCommitCommitterFactory();
-        $this->authorFactory    = new GitHubCommitAuthorFactory();
+        $this->committerFactory = $commitCommitterFactory;
+        $this->authorFactory    = $authorFactory;
     }
 
     public function createFromBranchData(array $data): GitHubCommit
