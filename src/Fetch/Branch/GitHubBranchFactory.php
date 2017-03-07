@@ -18,9 +18,9 @@ class GitHubBranchFactory
     /** @var GitHubCommitFactory */
     private $commitFactory;
 
-    public function __construct()
+    public function __construct(GitHubCommitFactory $commitFactory)
     {
-        $this->commitFactory = new GitHubCommitFactory();
+        $this->commitFactory = $commitFactory;
     }
 
     public function createFromBranchData(GitHubRepoFullName $repoFullName, array $data): GitHubBranch
