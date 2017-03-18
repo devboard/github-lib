@@ -26,7 +26,7 @@ class GitHubCommitCommitter
         GitHubCommitCommitterName $name,
         GitHubCommitCommitterEmail $email,
         GitHubCommitDate $commitDate,
-        GitHubCommitCommitterDetails $committerDetails
+        ?GitHubCommitCommitterDetails $committerDetails
     ) {
         $this->name             = $name;
         $this->email            = $email;
@@ -49,28 +49,49 @@ class GitHubCommitCommitter
         return $this->commitDate;
     }
 
-    public function getCommitterDetails(): GitHubCommitCommitterDetails
+    public function hasCommitterDetails(): bool
+    {
+        if (null === $this->committerDetails) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function getCommitterDetails(): ?GitHubCommitCommitterDetails
     {
         return $this->committerDetails;
     }
 
     public function serialize(): array
     {
+        if (true === $this->hasCommitterDetails()) {
+            $committerDetails = $this->committerDetails->serialize();
+        } else {
+            $committerDetails = null;
+        }
+
         return [
             'name'             => (string) $this->name,
             'email'            => (string) $this->email,
             'commitDate'       => (string) $this->commitDate,
-            'committerDetails' => $this->committerDetails->serialize(),
+            'committerDetails' => $committerDetails,
         ];
     }
 
     public static function deserialize(array $data): GitHubCommitCommitter
     {
+        if (null === $data['committerDetails']) {
+            $committerDetails = null;
+        } else {
+            $committerDetails = GitHubCommitCommitterDetails::deserialize($data['committerDetails']);
+        }
+
         return new self(
             new GitHubCommitCommitterName($data['name']),
             new GitHubCommitCommitterEmail($data['email']),
             new GitHubCommitDate($data['commitDate']),
-            GitHubCommitCommitterDetails::deserialize($data['committerDetails'])
+            $committerDetails
         );
     }
 }
