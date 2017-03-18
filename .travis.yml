@@ -9,7 +9,7 @@ matrix:
     - env: CodeQuality
       sudo: false
       language: php
-      php: 7.0
+      php: 7.1
       cache:
         directories:
           - vendor
@@ -28,7 +28,7 @@ matrix:
     - env: phpspec
       sudo: false
       language: php
-      php: 7.0
+      php: 7.1
       cache:
         directories:
           - vendor
@@ -53,7 +53,7 @@ matrix:
     - env: phpunit
       sudo: false
       language: php
-      php: 7.0
+      php: 7.1
       cache:
         directories:
           - vendor
