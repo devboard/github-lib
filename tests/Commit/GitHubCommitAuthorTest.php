@@ -30,7 +30,7 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
         GitHubCommitAuthorName $name,
         GitHubCommitAuthorEmail $email,
         GitHubCommitDate $commitDate,
-        GitHubCommitAuthorDetails $authorDetails
+        ?GitHubCommitAuthorDetails $authorDetails
     ) {
         $sut = new GitHubCommitAuthor($name, $email, $commitDate, $authorDetails);
 
@@ -45,7 +45,7 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
         GitHubCommitAuthorName $name,
         GitHubCommitAuthorEmail $email,
         GitHubCommitDate $commitDate,
-        GitHubCommitAuthorDetails $authorDetails
+        ?GitHubCommitAuthorDetails $authorDetails
     ) {
         $sut = new GitHubCommitAuthor($name, $email, $commitDate, $authorDetails);
 
@@ -71,6 +71,12 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
                     new GitHubUserApiUrl('https://api.github.com/users/devboard-test'),
                     false
                 ),
+            ],
+            [
+                new GitHubCommitAuthorName('name'),
+                new GitHubCommitAuthorEmail('nobody@example.com'),
+                new GitHubCommitDate('2017-02-03 11:22:33'),
+                null,
             ],
         ];
     }

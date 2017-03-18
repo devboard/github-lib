@@ -26,7 +26,7 @@ class GitHubCommitAuthor
         GitHubCommitAuthorName $name,
         GitHubCommitAuthorEmail $email,
         GitHubCommitDate $commitDate,
-        GitHubCommitAuthorDetails $authorDetails
+        ?GitHubCommitAuthorDetails $authorDetails
     ) {
         $this->name          = $name;
         $this->email         = $email;
@@ -49,28 +49,49 @@ class GitHubCommitAuthor
         return $this->commitDate;
     }
 
-    public function getAuthorDetails(): GitHubCommitAuthorDetails
+    public function hasAuthorDetails(): bool
+    {
+        if (null === $this->authorDetails) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function getAuthorDetails(): ?GitHubCommitAuthorDetails
     {
         return $this->authorDetails;
     }
 
     public function serialize(): array
     {
+        if (true === $this->hasAuthorDetails()) {
+            $authorDetails = $this->authorDetails->serialize();
+        } else {
+            $authorDetails = null;
+        }
+
         return [
             'name'          => (string) $this->name,
             'email'         => (string) $this->email,
             'commitDate'    => (string) $this->commitDate,
-            'authorDetails' => $this->authorDetails->serialize(),
+            'authorDetails' => $authorDetails,
         ];
     }
 
     public static function deserialize(array $data): GitHubCommitAuthor
     {
+        if (null === $data['authorDetails']) {
+            $authorDetails = null;
+        } else {
+            $authorDetails = GitHubCommitAuthorDetails::deserialize($data['authorDetails']);
+        }
+
         return new self(
             new GitHubCommitAuthorName($data['name']),
             new GitHubCommitAuthorEmail($data['email']),
             new GitHubCommitDate($data['commitDate']),
-            GitHubCommitAuthorDetails::deserialize($data['authorDetails'])
+            $authorDetails
         );
     }
 }
