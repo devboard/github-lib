@@ -30,7 +30,7 @@ class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
         GitHubCommitCommitterName $name,
         GitHubCommitCommitterEmail $email,
         GitHubCommitDate $commitDate,
-        GitHubCommitCommitterDetails $committerDetails
+        ?GitHubCommitCommitterDetails $committerDetails
     ) {
         $sut = new GitHubCommitCommitter($name, $email, $commitDate, $committerDetails);
 
@@ -45,7 +45,7 @@ class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
         GitHubCommitCommitterName $name,
         GitHubCommitCommitterEmail $email,
         GitHubCommitDate $commitDate,
-        GitHubCommitCommitterDetails $committerDetails
+        ?GitHubCommitCommitterDetails $committerDetails
     ) {
         $sut = new GitHubCommitCommitter($name, $email, $commitDate, $committerDetails);
 
@@ -71,6 +71,12 @@ class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
                     new GitHubUserApiUrl('https://api.github.com/users/devboard-test'),
                     false
                 ),
+            ],
+            [
+                new GitHubCommitCommitterName('name'),
+                new GitHubCommitCommitterEmail('nobody@example.com'),
+                new GitHubCommitDate('2017-02-03 11:22:33'),
+                null,
             ],
         ];
     }
