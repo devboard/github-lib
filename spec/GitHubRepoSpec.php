@@ -20,7 +20,7 @@ class GitHubRepoSpec extends ObjectBehavior
     public function let(
         GitHubRepoId $id,
         GitHubRepoFullName $fullName,
-        GitHubRepoOwner $owner,
+        GitHubRepoOwner $ownerDetails,
         GitHubRepoEndpoints $endpoints,
         GitHubRepoTimestamps $timestamps,
         GitHubRepoStats $stats
@@ -28,7 +28,7 @@ class GitHubRepoSpec extends ObjectBehavior
         $this->beConstructedWith(
             $id,
             $fullName,
-            $owner,
+            $ownerDetails,
             $private = false,
             $endpoints,
             $timestamps,
@@ -44,14 +44,14 @@ class GitHubRepoSpec extends ObjectBehavior
     public function it_exposes_constructor_arguments(
         GitHubRepoId $id,
         GitHubRepoFullName $fullName,
-        GitHubRepoOwner $owner,
+        GitHubRepoOwner $ownerDetails,
         GitHubRepoEndpoints $endpoints,
         GitHubRepoTimestamps $timestamps,
         GitHubRepoStats $stats
     ) {
         $this->getId()->shouldReturn($id);
         $this->getFullName()->shouldReturn($fullName);
-        $this->getOwner()->shouldReturn($owner);
+        $this->getOwnerDetails()->shouldReturn($ownerDetails);
         $this->isPrivate()->shouldReturn(false);
         $this->isPublic()->shouldReturn(true);
         $this->getEndpoints()->shouldReturn($endpoints);

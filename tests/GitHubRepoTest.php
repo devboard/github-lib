@@ -38,17 +38,17 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
     public function testGetters(
         GitHubRepoId $id,
         GitHubRepoFullName $fullName,
-        GitHubRepoOwner $owner,
+        GitHubRepoOwner $ownerDetails,
         bool $private,
         GitHubRepoEndpoints $endpoints,
         GitHubRepoTimestamps $timestamps,
         GitHubRepoStats $stats
     ) {
-        $sut = new GitHubRepo($id, $fullName, $owner, $private, $endpoints, $timestamps, $stats);
+        $sut = new GitHubRepo($id, $fullName, $ownerDetails, $private, $endpoints, $timestamps, $stats);
 
         $this->assertEquals($id, $sut->getId());
         $this->assertEquals($fullName, $sut->getFullName());
-        $this->assertEquals($owner, $sut->getOwner());
+        $this->assertEquals($ownerDetails, $sut->getOwnerDetails());
         $this->assertEquals($private, $sut->isPrivate());
         $this->assertEquals(!$private, $sut->isPublic());
         $this->assertEquals($endpoints, $sut->getEndpoints());
@@ -60,13 +60,13 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
     public function testSerializationAndDeserialization(
         GitHubRepoId $id,
         GitHubRepoFullName $fullName,
-        GitHubRepoOwner $owner,
+        GitHubRepoOwner $ownerDetails,
         bool $private,
         GitHubRepoEndpoints $endpoints,
         GitHubRepoTimestamps $timestamps,
         GitHubRepoStats $stats
     ) {
-        $sut = new GitHubRepo($id, $fullName, $owner, $private, $endpoints, $timestamps, $stats);
+        $sut = new GitHubRepo($id, $fullName, $ownerDetails, $private, $endpoints, $timestamps, $stats);
 
         $serialized = $sut->serialize();
 
