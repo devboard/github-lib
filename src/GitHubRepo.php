@@ -24,7 +24,7 @@ class GitHubRepo
     /** @var GitHubRepoFullName */
     private $fullName;
     /** @var GitHubRepoOwner */
-    private $owner;
+    private $ownerDetails;
     /** @var bool */
     private $private;
     /** @var GitHubRepoEndpoints */
@@ -37,19 +37,19 @@ class GitHubRepo
     public function __construct(
         GitHubRepoId $id,
         GitHubRepoFullName $fullName,
-        GitHubRepoOwner $owner,
+        GitHubRepoOwner $ownerDetails,
         bool $private,
         GitHubRepoEndpoints $endpoints,
         GitHubRepoTimestamps $timestamps,
         GitHubRepoStats $stats
     ) {
-        $this->id         = $id;
-        $this->fullName   = $fullName;
-        $this->owner      = $owner;
-        $this->private    = $private;
-        $this->endpoints  = $endpoints;
-        $this->timestamps = $timestamps;
-        $this->stats      = $stats;
+        $this->id           = $id;
+        $this->fullName     = $fullName;
+        $this->ownerDetails = $ownerDetails;
+        $this->private      = $private;
+        $this->endpoints    = $endpoints;
+        $this->timestamps   = $timestamps;
+        $this->stats        = $stats;
     }
 
     public function getId(): GitHubRepoId
@@ -72,9 +72,9 @@ class GitHubRepo
         return $this->fullName->getRepoName();
     }
 
-    public function getOwner(): GitHubRepoOwner
+    public function getOwnerDetails(): GitHubRepoOwner
     {
-        return $this->owner;
+        return $this->ownerDetails;
     }
 
     public function isPrivate(): bool
@@ -105,13 +105,13 @@ class GitHubRepo
     public function serialize(): array
     {
         return [
-            'id'         => $this->id->getValue(),
-            'fullName'   => (string) $this->fullName,
-            'owner'      => $this->owner->serialize(),
-            'private'    => $this->private,
-            'endpoints'  => $this->endpoints->serialize(),
-            'timestamps' => $this->timestamps->serialize(),
-            'stats'      => $this->stats->serialize(),
+            'id'                => $this->id->getValue(),
+            'fullName'          => (string) $this->fullName,
+            'ownerDetails'      => $this->ownerDetails->serialize(),
+            'private'           => $this->private,
+            'endpoints'         => $this->endpoints->serialize(),
+            'timestamps'        => $this->timestamps->serialize(),
+            'stats'             => $this->stats->serialize(),
         ];
     }
 
@@ -120,7 +120,7 @@ class GitHubRepo
         return new self(
             new GitHubRepoId($data['id']),
             GitHubRepoFullName::createFromString($data['fullName']),
-            GitHubRepoOwner::deserialize($data['owner']),
+            GitHubRepoOwner::deserialize($data['ownerDetails']),
             $data['private'],
             GitHubRepoEndpoints::deserialize($data['endpoints']),
             GitHubRepoTimestamps::deserialize($data['timestamps']),
