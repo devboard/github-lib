@@ -37,7 +37,7 @@ class GitHubRepo
     public function __construct(
         GitHubRepoId $id,
         GitHubRepoFullName $fullName,
-        GitHubRepoOwner $ownerDetails,
+        ?GitHubRepoOwner $ownerDetails,
         bool $private,
         GitHubRepoEndpoints $endpoints,
         GitHubRepoTimestamps $timestamps,
@@ -72,7 +72,16 @@ class GitHubRepo
         return $this->fullName->getRepoName();
     }
 
-    public function getOwnerDetails(): GitHubRepoOwner
+    public function hasOwnerDetails(): bool
+    {
+        if (null === $this->ownerDetails) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function getOwnerDetails(): ?GitHubRepoOwner
     {
         return $this->ownerDetails;
     }
@@ -104,23 +113,35 @@ class GitHubRepo
 
     public function serialize(): array
     {
+        if (true === $this->hasOwnerDetails()) {
+            $ownerDetails = $this->ownerDetails->serialize();
+        } else {
+            $ownerDetails = null;
+        }
+
         return [
-            'id'                => $this->id->getValue(),
-            'fullName'          => (string) $this->fullName,
-            'ownerDetails'      => $this->ownerDetails->serialize(),
-            'private'           => $this->private,
-            'endpoints'         => $this->endpoints->serialize(),
-            'timestamps'        => $this->timestamps->serialize(),
-            'stats'             => $this->stats->serialize(),
+            'id'           => $this->id->getValue(),
+            'fullName'     => (string) $this->fullName,
+            'ownerDetails' => $ownerDetails,
+            'private'      => $this->private,
+            'endpoints'    => $this->endpoints->serialize(),
+            'timestamps'   => $this->timestamps->serialize(),
+            'stats'        => $this->stats->serialize(),
         ];
     }
 
     public static function deserialize(array $data): GitHubRepo
     {
+        if (null === $data['ownerDetails']) {
+            $ownerDetails = null;
+        } else {
+            $ownerDetails = GitHubRepoOwner::deserialize($data['ownerDetails']);
+        }
+
         return new self(
             new GitHubRepoId($data['id']),
             GitHubRepoFullName::createFromString($data['fullName']),
-            GitHubRepoOwner::deserialize($data['ownerDetails']),
+            $ownerDetails,
             $data['private'],
             GitHubRepoEndpoints::deserialize($data['endpoints']),
             GitHubRepoTimestamps::deserialize($data['timestamps']),

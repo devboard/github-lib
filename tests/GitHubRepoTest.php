@@ -38,7 +38,7 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
     public function testGetters(
         GitHubRepoId $id,
         GitHubRepoFullName $fullName,
-        GitHubRepoOwner $ownerDetails,
+        ?GitHubRepoOwner $ownerDetails,
         bool $private,
         GitHubRepoEndpoints $endpoints,
         GitHubRepoTimestamps $timestamps,
@@ -60,7 +60,7 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
     public function testSerializationAndDeserialization(
         GitHubRepoId $id,
         GitHubRepoFullName $fullName,
-        GitHubRepoOwner $ownerDetails,
+        ?GitHubRepoOwner $ownerDetails,
         bool $private,
         GitHubRepoEndpoints $endpoints,
         GitHubRepoTimestamps $timestamps,
@@ -91,6 +91,24 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
                     new GitHubUserApiUrl('..'),
                     false
                 ),
+                false,
+                new GitHubRepoEndpoints(
+                    new GitHubRepoApiUrl('..'),
+                    new GitHubRepoHtmlUrl('..')
+                ),
+                new GitHubRepoTimestamps(
+                    new GitHubRepoCreatedAt('2017-01-02 11:22:33'),
+                    new GitHubRepoUpdatedAt('2017-02-03 15:16:17'),
+                    new GitHubRepoPushedAt('2017-03-04 22:23:24')
+                ),
+                new GitHubRepoStats(1, 2, 3, 4, new GitHubRepoSize(77)),
+            ],
+            [
+                new GitHubRepoId(1234),
+                new GitHubRepoFullName(
+                    new GitHubUserLogin('devboard-test'), new GitHubRepoName('super-library')
+                ),
+                null,
                 false,
                 new GitHubRepoEndpoints(
                     new GitHubRepoApiUrl('..'),
