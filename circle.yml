@@ -51,3 +51,6 @@ stages:
           - /var/www/vendor
           - /var/www/bin
 
+      - store_artifacts:
+          path: build
+          destination: build
