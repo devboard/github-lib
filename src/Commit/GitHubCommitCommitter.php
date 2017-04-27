@@ -6,6 +6,13 @@ namespace Devboard\GitHub\Commit;
 
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
+use Devboard\GitHub\User\GitHubUserApiUrl;
+use Devboard\GitHub\User\GitHubUserAvatarUrl;
+use Devboard\GitHub\User\GitHubUserGravatarId;
+use Devboard\GitHub\User\GitHubUserHtmlUrl;
+use Devboard\GitHub\User\GitHubUserId;
+use Devboard\GitHub\User\GitHubUserLogin;
+use Devboard\GitHub\User\GitHubUserType;
 
 /**
  * @see GitHubCommitCommitterSpec
@@ -61,6 +68,78 @@ class GitHubCommitCommitter
     public function getCommitterDetails(): ?GitHubCommitCommitterDetails
     {
         return $this->committerDetails;
+    }
+
+    public function getUserId(): ?GitHubUserId
+    {
+        if (null === $this->committerDetails) {
+            return null;
+        }
+
+        return $this->committerDetails->getUserId();
+    }
+
+    public function getLogin(): ?GitHubUserLogin
+    {
+        if (null === $this->committerDetails) {
+            return null;
+        }
+
+        return $this->committerDetails->getLogin();
+    }
+
+    public function getGitHubUserType(): ?GitHubUserType
+    {
+        if (null === $this->committerDetails) {
+            return null;
+        }
+
+        return $this->committerDetails->getGitHubUserType();
+    }
+
+    public function getAvatarUrl(): ?GitHubUserAvatarUrl
+    {
+        if (null === $this->committerDetails) {
+            return null;
+        }
+
+        return $this->committerDetails->getAvatarUrl();
+    }
+
+    public function getGravatarId(): ?GitHubUserGravatarId
+    {
+        if (null === $this->committerDetails) {
+            return null;
+        }
+
+        return $this->committerDetails->getGravatarId();
+    }
+
+    public function getHtmlUrl(): ?GitHubUserHtmlUrl
+    {
+        if (null === $this->committerDetails) {
+            return null;
+        }
+
+        return $this->committerDetails->getHtmlUrl();
+    }
+
+    public function getApiUrl(): ?GitHubUserApiUrl
+    {
+        if (null === $this->committerDetails) {
+            return null;
+        }
+
+        return $this->committerDetails->getApiUrl();
+    }
+
+    public function isSiteAdmin(): ?bool
+    {
+        if (null === $this->committerDetails) {
+            return null;
+        }
+
+        return $this->committerDetails->isSiteAdmin();
     }
 
     public function serialize(): array

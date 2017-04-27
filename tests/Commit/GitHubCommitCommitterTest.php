@@ -25,7 +25,10 @@ use Devboard\GitHub\User\Type\User;
  */
 class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
 {
-    /** @dataProvider provideArguments */
+    /**
+     * @dataProvider provideCommittersWithDetails
+     * @dataProvider provideCommittersWithoutDetails
+     */
     public function testCreating(
         GitHubCommitCommitterName $name,
         GitHubCommitCommitterEmail $email,
@@ -40,7 +43,10 @@ class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($committerDetails, $sut->getCommitterDetails());
     }
 
-    /** @dataProvider provideArguments */
+    /**
+     * @dataProvider provideCommittersWithDetails
+     * @dataProvider provideCommittersWithoutDetails
+     */
     public function testSerializationAndDeserialization(
         GitHubCommitCommitterName $name,
         GitHubCommitCommitterEmail $email,
@@ -54,7 +60,58 @@ class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($sut, GitHubCommitCommitter::deserialize($serialized));
     }
 
-    public function provideArguments(): array
+    /**
+     * @dataProvider provideCommittersWithDetails
+     */
+    public function testCommitterDetailsGettersWhenDetailsExist(
+        GitHubCommitCommitterName $name,
+        GitHubCommitCommitterEmail $email,
+        GitHubCommitDate $commitDate,
+        ?GitHubCommitCommitterDetails $committerDetails
+    ) {
+        $sut = new GitHubCommitCommitter($name, $email, $commitDate, $committerDetails);
+
+        $this->assertSame($name, $sut->getName());
+        $this->assertSame($email, $sut->getEmail());
+        $this->assertSame($commitDate, $sut->getCommitDate());
+        $this->assertSame($committerDetails, $sut->getCommitterDetails());
+
+        $this->assertSame($committerDetails->getUserId(), $sut->getUserId());
+        $this->assertSame($committerDetails->getLogin(), $sut->getLogin());
+        $this->assertSame($committerDetails->getGitHubUserType(), $sut->getGitHubUserType());
+        $this->assertSame($committerDetails->getAvatarUrl(), $sut->getAvatarUrl());
+        $this->assertSame($committerDetails->getGravatarId(), $sut->getGravatarId());
+        $this->assertSame($committerDetails->getHtmlUrl(), $sut->getHtmlUrl());
+        $this->assertSame($committerDetails->getApiUrl(), $sut->getApiUrl());
+        $this->assertSame($committerDetails->isSiteAdmin(), $sut->isSiteAdmin());
+    }
+
+    /**
+     * @dataProvider provideCommittersWithoutDetails
+     */
+    public function testCommitterDetailsGettersWhenNoDetails(
+        GitHubCommitCommitterName $name,
+        GitHubCommitCommitterEmail $email,
+        GitHubCommitDate $commitDate,
+        ?GitHubCommitCommitterDetails $committerDetails
+    ) {
+        $sut = new GitHubCommitCommitter($name, $email, $commitDate, $committerDetails);
+
+        $this->assertSame($name, $sut->getName());
+        $this->assertSame($email, $sut->getEmail());
+        $this->assertSame($commitDate, $sut->getCommitDate());
+        $this->assertNull($sut->getCommitterDetails());
+        $this->assertNull($sut->getUserId());
+        $this->assertNull($sut->getLogin());
+        $this->assertNull($sut->getGitHubUserType());
+        $this->assertNull($sut->getAvatarUrl());
+        $this->assertNull($sut->getGravatarId());
+        $this->assertNull($sut->getHtmlUrl());
+        $this->assertNull($sut->getApiUrl());
+        $this->assertNull($sut->isSiteAdmin());
+    }
+
+    public function provideCommittersWithDetails(): array
     {
         return [
             [
@@ -72,6 +129,12 @@ class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
                     false
                 ),
             ],
+        ];
+    }
+
+    public function provideCommittersWithoutDetails(): array
+    {
+        return [
             [
                 new GitHubCommitCommitterName('name'),
                 new GitHubCommitCommitterEmail('nobody@example.com'),
