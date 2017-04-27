@@ -25,7 +25,10 @@ use Devboard\GitHub\User\Type\User;
  */
 class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
 {
-    /** @dataProvider provideArguments */
+    /**
+     * @dataProvider provideAuthorsWithDetails
+     * @dataProvider provideAuthorsWithoutDetails
+     */
     public function testCreating(
         GitHubCommitAuthorName $name,
         GitHubCommitAuthorEmail $email,
@@ -40,7 +43,10 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($authorDetails, $sut->getAuthorDetails());
     }
 
-    /** @dataProvider provideArguments */
+    /**
+     * @dataProvider provideAuthorsWithDetails
+     * @dataProvider provideAuthorsWithoutDetails
+     */
     public function testSerializationAndDeserialization(
         GitHubCommitAuthorName $name,
         GitHubCommitAuthorEmail $email,
@@ -54,7 +60,58 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($sut, GitHubCommitAuthor::deserialize($serialized));
     }
 
-    public function provideArguments(): array
+    /**
+     * @dataProvider provideAuthorsWithDetails
+     */
+    public function testAuthorDetailsGettersWhenDetailsExist(
+        GitHubCommitAuthorName $name,
+        GitHubCommitAuthorEmail $email,
+        GitHubCommitDate $commitDate,
+        ?GitHubCommitAuthorDetails $authorDetails
+    ) {
+        $sut = new GitHubCommitAuthor($name, $email, $commitDate, $authorDetails);
+
+        $this->assertSame($name, $sut->getName());
+        $this->assertSame($email, $sut->getEmail());
+        $this->assertSame($commitDate, $sut->getCommitDate());
+        $this->assertSame($authorDetails, $sut->getAuthorDetails());
+
+        $this->assertSame($authorDetails->getUserId(), $sut->getUserId());
+        $this->assertSame($authorDetails->getLogin(), $sut->getLogin());
+        $this->assertSame($authorDetails->getGitHubUserType(), $sut->getGitHubUserType());
+        $this->assertSame($authorDetails->getAvatarUrl(), $sut->getAvatarUrl());
+        $this->assertSame($authorDetails->getGravatarId(), $sut->getGravatarId());
+        $this->assertSame($authorDetails->getHtmlUrl(), $sut->getHtmlUrl());
+        $this->assertSame($authorDetails->getApiUrl(), $sut->getApiUrl());
+        $this->assertSame($authorDetails->isSiteAdmin(), $sut->isSiteAdmin());
+    }
+
+    /**
+     * @dataProvider provideAuthorsWithoutDetails
+     */
+    public function testAuthorDetailsGettersWhenNoDetails(
+        GitHubCommitAuthorName $name,
+        GitHubCommitAuthorEmail $email,
+        GitHubCommitDate $commitDate,
+        ?GitHubCommitAuthorDetails $authorDetails
+    ) {
+        $sut = new GitHubCommitAuthor($name, $email, $commitDate, $authorDetails);
+
+        $this->assertSame($name, $sut->getName());
+        $this->assertSame($email, $sut->getEmail());
+        $this->assertSame($commitDate, $sut->getCommitDate());
+        $this->assertNull($sut->getAuthorDetails());
+        $this->assertNull($sut->getUserId());
+        $this->assertNull($sut->getLogin());
+        $this->assertNull($sut->getGitHubUserType());
+        $this->assertNull($sut->getAvatarUrl());
+        $this->assertNull($sut->getGravatarId());
+        $this->assertNull($sut->getHtmlUrl());
+        $this->assertNull($sut->getApiUrl());
+        $this->assertNull($sut->isSiteAdmin());
+    }
+
+    public function provideAuthorsWithDetails(): array
     {
         return [
             [
@@ -72,6 +129,12 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
                     false
                 ),
             ],
+        ];
+    }
+
+    public function provideAuthorsWithoutDetails(): array
+    {
+        return [
             [
                 new GitHubCommitAuthorName('name'),
                 new GitHubCommitAuthorEmail('nobody@example.com'),

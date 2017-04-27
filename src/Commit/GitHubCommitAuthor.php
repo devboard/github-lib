@@ -6,6 +6,13 @@ namespace Devboard\GitHub\Commit;
 
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
+use Devboard\GitHub\User\GitHubUserApiUrl;
+use Devboard\GitHub\User\GitHubUserAvatarUrl;
+use Devboard\GitHub\User\GitHubUserGravatarId;
+use Devboard\GitHub\User\GitHubUserHtmlUrl;
+use Devboard\GitHub\User\GitHubUserId;
+use Devboard\GitHub\User\GitHubUserLogin;
+use Devboard\GitHub\User\GitHubUserType;
 
 /**
  * @see GitHubCommitAuthorSpec
@@ -61,6 +68,78 @@ class GitHubCommitAuthor
     public function getAuthorDetails(): ?GitHubCommitAuthorDetails
     {
         return $this->authorDetails;
+    }
+
+    public function getUserId(): ?GitHubUserId
+    {
+        if (null === $this->authorDetails) {
+            return null;
+        }
+
+        return $this->authorDetails->getUserId();
+    }
+
+    public function getLogin(): ?GitHubUserLogin
+    {
+        if (null === $this->authorDetails) {
+            return null;
+        }
+
+        return $this->authorDetails->getLogin();
+    }
+
+    public function getGitHubUserType(): ?GitHubUserType
+    {
+        if (null === $this->authorDetails) {
+            return null;
+        }
+
+        return $this->authorDetails->getGitHubUserType();
+    }
+
+    public function getAvatarUrl(): ?GitHubUserAvatarUrl
+    {
+        if (null === $this->authorDetails) {
+            return null;
+        }
+
+        return $this->authorDetails->getAvatarUrl();
+    }
+
+    public function getGravatarId(): ?GitHubUserGravatarId
+    {
+        if (null === $this->authorDetails) {
+            return null;
+        }
+
+        return $this->authorDetails->getGravatarId();
+    }
+
+    public function getHtmlUrl(): ?GitHubUserHtmlUrl
+    {
+        if (null === $this->authorDetails) {
+            return null;
+        }
+
+        return $this->authorDetails->getHtmlUrl();
+    }
+
+    public function getApiUrl(): ?GitHubUserApiUrl
+    {
+        if (null === $this->authorDetails) {
+            return null;
+        }
+
+        return $this->authorDetails->getApiUrl();
+    }
+
+    public function isSiteAdmin(): ?bool
+    {
+        if (null === $this->authorDetails) {
+            return null;
+        }
+
+        return $this->authorDetails->isSiteAdmin();
     }
 
     public function serialize(): array
