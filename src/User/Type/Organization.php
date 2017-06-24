@@ -7,6 +7,7 @@ namespace Devboard\GitHub\User\Type;
 use Devboard\GitHub\User\GitHubUserType;
 
 /**
+ * @deprecated
  * @see OrganizationSpec
  * @see OrganizationTest
  */
