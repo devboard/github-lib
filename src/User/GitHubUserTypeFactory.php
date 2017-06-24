@@ -8,6 +8,7 @@ use Devboard\GitHub\User\Type\Organization;
 use Devboard\GitHub\User\Type\User;
 
 /**
+ * @deprecated
  * @see GitHubUserTypeFactorySpec
  * @see GitHubUserTypeFactoryTest
  */

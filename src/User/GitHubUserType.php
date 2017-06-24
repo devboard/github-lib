@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Devboard\GitHub\User;
 
 /**
+ * @deprecated
  * @see \Devboard\GitHub\User\Type\Organization
  * @see \Devboard\GitHub\User\Type\User
  */

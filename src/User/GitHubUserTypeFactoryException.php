@@ -7,6 +7,7 @@ namespace Devboard\GitHub\User;
 use Exception;
 
 /**
+ * @deprecated
  * @see GitHubUserTypeFactoryExceptionSpec
  * @see GitHubUserTypeFactoryExceptionTest
  */
