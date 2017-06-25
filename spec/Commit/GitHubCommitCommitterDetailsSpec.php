@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace spec\Devboard\GitHub\Commit;
 
+use Devboard\GitHub\Account\GitHubAccountType;
 use Devboard\GitHub\Commit\GitHubCommitCommitterDetails;
 use Devboard\GitHub\User\GitHubUserApiUrl;
 use Devboard\GitHub\User\GitHubUserAvatarUrl;
@@ -11,7 +12,6 @@ use Devboard\GitHub\User\GitHubUserGravatarId;
 use Devboard\GitHub\User\GitHubUserHtmlUrl;
 use Devboard\GitHub\User\GitHubUserId;
 use Devboard\GitHub\User\GitHubUserLogin;
-use Devboard\GitHub\User\GitHubUserType;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
@@ -19,13 +19,13 @@ class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
     public function let(
         GitHubUserId $userId,
         GitHubUserLogin $login,
-        GitHubUserType $githubUserType,
+        GitHubAccountType $gitHubAccountType,
         GitHubUserAvatarUrl $avatarUrl,
         GitHubUserGravatarId $gravatarId,
         GitHubUserHtmlUrl $htmlUrl,
         GitHubUserApiUrl $apiUrl
     ) {
-        $this->beConstructedWith($userId, $login, $githubUserType, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, false);
+        $this->beConstructedWith($userId, $login, $gitHubAccountType, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, false);
     }
 
     public function it_is_initializable()
@@ -36,7 +36,7 @@ class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
     public function it_should_expose_all_values_via_getters(
         GitHubUserId $userId,
         GitHubUserLogin $login,
-        GitHubUserType $githubUserType,
+        GitHubAccountType $gitHubAccountType,
         GitHubUserAvatarUrl $avatarUrl,
         GitHubUserGravatarId $gravatarId,
         GitHubUserHtmlUrl $htmlUrl,
@@ -44,7 +44,7 @@ class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
     ) {
         $this->getUserId()->shouldReturn($userId);
         $this->getLogin()->shouldReturn($login);
-        $this->getGitHubUserType()->shouldReturn($githubUserType);
+        $this->getGitHubAccountType()->shouldReturn($gitHubAccountType);
         $this->getAvatarUrl()->shouldReturn($avatarUrl);
         $this->getGravatarId()->shouldReturn($gravatarId);
         $this->getHtmlUrl()->shouldReturn($htmlUrl);

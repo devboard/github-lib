@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub\Commit;
 
+use Devboard\GitHub\Account\Type\User;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
 use Devboard\GitHub\Commit\GitHubCommitCommitter;
@@ -15,7 +16,6 @@ use Devboard\GitHub\User\GitHubUserGravatarId;
 use Devboard\GitHub\User\GitHubUserHtmlUrl;
 use Devboard\GitHub\User\GitHubUserId;
 use Devboard\GitHub\User\GitHubUserLogin;
-use Devboard\GitHub\User\Type\User;
 
 /**
  * @covers \Devboard\GitHub\Commit\GitHubCommitCommitter
@@ -78,7 +78,7 @@ class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame($committerDetails->getUserId(), $sut->getUserId());
         $this->assertSame($committerDetails->getLogin(), $sut->getLogin());
-        $this->assertSame($committerDetails->getGitHubUserType(), $sut->getGitHubUserType());
+        $this->assertSame($committerDetails->getGitHubAccountType(), $sut->getGitHubAccountType());
         $this->assertSame($committerDetails->getAvatarUrl(), $sut->getAvatarUrl());
         $this->assertSame($committerDetails->getGravatarId(), $sut->getGravatarId());
         $this->assertSame($committerDetails->getHtmlUrl(), $sut->getHtmlUrl());
@@ -103,7 +103,7 @@ class GitHubCommitCommitterTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($sut->getCommitterDetails());
         $this->assertNull($sut->getUserId());
         $this->assertNull($sut->getLogin());
-        $this->assertNull($sut->getGitHubUserType());
+        $this->assertNull($sut->getGitHubAccountType());
         $this->assertNull($sut->getAvatarUrl());
         $this->assertNull($sut->getGravatarId());
         $this->assertNull($sut->getHtmlUrl());
