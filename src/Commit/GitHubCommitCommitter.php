@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Devboard\GitHub\Commit;
 
+use Devboard\GitHub\Account\GitHubAccountType;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
 use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
 use Devboard\GitHub\User\GitHubUserApiUrl;
@@ -12,7 +13,6 @@ use Devboard\GitHub\User\GitHubUserGravatarId;
 use Devboard\GitHub\User\GitHubUserHtmlUrl;
 use Devboard\GitHub\User\GitHubUserId;
 use Devboard\GitHub\User\GitHubUserLogin;
-use Devboard\GitHub\User\GitHubUserType;
 
 /**
  * @see GitHubCommitCommitterSpec
@@ -88,13 +88,13 @@ class GitHubCommitCommitter
         return $this->committerDetails->getLogin();
     }
 
-    public function getGitHubUserType(): ?GitHubUserType
+    public function getGitHubAccountType(): ?GitHubAccountType
     {
         if (null === $this->committerDetails) {
             return null;
         }
 
-        return $this->committerDetails->getGitHubUserType();
+        return $this->committerDetails->getGitHubAccountType();
     }
 
     public function getAvatarUrl(): ?GitHubUserAvatarUrl

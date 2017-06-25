@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Devboard\GitHub\Commit;
 
+use Devboard\GitHub\Account\GitHubAccountType;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
 use Devboard\GitHub\User\GitHubUserApiUrl;
@@ -12,7 +13,6 @@ use Devboard\GitHub\User\GitHubUserGravatarId;
 use Devboard\GitHub\User\GitHubUserHtmlUrl;
 use Devboard\GitHub\User\GitHubUserId;
 use Devboard\GitHub\User\GitHubUserLogin;
-use Devboard\GitHub\User\GitHubUserType;
 
 /**
  * @see GitHubCommitAuthorSpec
@@ -88,13 +88,13 @@ class GitHubCommitAuthor
         return $this->authorDetails->getLogin();
     }
 
-    public function getGitHubUserType(): ?GitHubUserType
+    public function getGitHubAccountType(): ?GitHubAccountType
     {
         if (null === $this->authorDetails) {
             return null;
         }
 
-        return $this->authorDetails->getGitHubUserType();
+        return $this->authorDetails->getGitHubAccountType();
     }
 
     public function getAvatarUrl(): ?GitHubUserAvatarUrl

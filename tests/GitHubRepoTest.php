@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub;
 
+use Devboard\GitHub\Account\Type\User;
 use Devboard\GitHub\GitHubRepo;
 use Devboard\GitHub\Repo\GitHubRepoApiUrl;
 use Devboard\GitHub\Repo\GitHubRepoCreatedAt;
@@ -24,7 +25,6 @@ use Devboard\GitHub\User\GitHubUserGravatarId;
 use Devboard\GitHub\User\GitHubUserHtmlUrl;
 use Devboard\GitHub\User\GitHubUserId;
 use Devboard\GitHub\User\GitHubUserLogin;
-use Devboard\GitHub\User\Type\User;
 
 /**
  * @covers \Devboard\GitHub\GitHubRepo
