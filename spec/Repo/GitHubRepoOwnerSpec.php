@@ -4,26 +4,26 @@ declare(strict_types=1);
 
 namespace spec\Devboard\GitHub\Repo;
 
+use Devboard\GitHub\Account\GitHubAccountApiUrl;
+use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
+use Devboard\GitHub\Account\GitHubAccountGravatarId;
+use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
+use Devboard\GitHub\Account\GitHubAccountId;
+use Devboard\GitHub\Account\GitHubAccountLogin;
 use Devboard\GitHub\Account\GitHubAccountType;
 use Devboard\GitHub\Repo\GitHubRepoOwner;
-use Devboard\GitHub\User\GitHubUserApiUrl;
-use Devboard\GitHub\User\GitHubUserAvatarUrl;
-use Devboard\GitHub\User\GitHubUserGravatarId;
-use Devboard\GitHub\User\GitHubUserHtmlUrl;
-use Devboard\GitHub\User\GitHubUserId;
-use Devboard\GitHub\User\GitHubUserLogin;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoOwnerSpec extends ObjectBehavior
 {
     public function let(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        GitHubAccountId $userId,
+        GitHubAccountLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl
+        GitHubAccountAvatarUrl $avatarUrl,
+        GitHubAccountGravatarId $gravatarId,
+        GitHubAccountHtmlUrl $htmlUrl,
+        GitHubAccountApiUrl $apiUrl
     ) {
         $this->beConstructedWith(
             $userId,
@@ -43,13 +43,13 @@ class GitHubRepoOwnerSpec extends ObjectBehavior
     }
 
     public function it_should_expose_all_values_via_getters(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        GitHubAccountId $userId,
+        GitHubAccountLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl
+        GitHubAccountAvatarUrl $avatarUrl,
+        GitHubAccountGravatarId $gravatarId,
+        GitHubAccountHtmlUrl $htmlUrl,
+        GitHubAccountApiUrl $apiUrl
     ) {
         $this->getUserId()->shouldReturn($userId);
         $this->getLogin()->shouldReturn($login);

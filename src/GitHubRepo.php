@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Devboard\GitHub;
 
+use Devboard\GitHub\Account\GitHubAccountLogin;
 use Devboard\GitHub\Repo\GitHubRepoEndpoints;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 use Devboard\GitHub\Repo\GitHubRepoId;
@@ -11,7 +12,6 @@ use Devboard\GitHub\Repo\GitHubRepoName;
 use Devboard\GitHub\Repo\GitHubRepoOwner;
 use Devboard\GitHub\Repo\GitHubRepoStats;
 use Devboard\GitHub\Repo\GitHubRepoTimestamps;
-use Devboard\GitHub\User\GitHubUserLogin;
 
 /**
  * @see GitHubRepoSpec
@@ -62,7 +62,7 @@ class GitHubRepo
         return $this->fullName;
     }
 
-    public function getOwnerLogin(): GitHubUserLogin
+    public function getOwnerLogin(): GitHubAccountLogin
     {
         return $this->fullName->getOwner();
     }

@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace spec\Devboard\GitHub\Repo;
 
+use Devboard\GitHub\Account\GitHubAccountLogin;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
 use Devboard\GitHub\Repo\GitHubRepoName;
-use Devboard\GitHub\User\GitHubUserLogin;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoFullNameSpec extends ObjectBehavior
 {
-    public function let(GitHubUserLogin $owner, GitHubRepoName $repoName)
+    public function let(GitHubAccountLogin $owner, GitHubRepoName $repoName)
     {
         $owner->getValue()->willReturn('devboard-test');
         $repoName->getValue()->willReturn('super-library');
@@ -29,7 +29,7 @@ class GitHubRepoFullNameSpec extends ObjectBehavior
         $this->createFromString('devboard-test/super-library')->shouldReturnAnInstanceOf(GitHubRepoFullName::class);
     }
 
-    public function it_should_expose_owner_as_object(GitHubUserLogin $owner)
+    public function it_should_expose_owner_as_object(GitHubAccountLogin $owner)
     {
         $this->getOwner()->shouldReturn($owner);
     }

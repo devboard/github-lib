@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub\Repo;
 
+use Devboard\GitHub\Account\GitHubAccountApiUrl;
+use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
+use Devboard\GitHub\Account\GitHubAccountGravatarId;
+use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
+use Devboard\GitHub\Account\GitHubAccountId;
+use Devboard\GitHub\Account\GitHubAccountLogin;
 use Devboard\GitHub\Account\GitHubAccountType;
 use Devboard\GitHub\Account\Type\Organization;
 use Devboard\GitHub\Account\Type\User;
 use Devboard\GitHub\Repo\GitHubRepoOwner;
-use Devboard\GitHub\User\GitHubUserApiUrl;
-use Devboard\GitHub\User\GitHubUserAvatarUrl;
-use Devboard\GitHub\User\GitHubUserGravatarId;
-use Devboard\GitHub\User\GitHubUserHtmlUrl;
-use Devboard\GitHub\User\GitHubUserId;
-use Devboard\GitHub\User\GitHubUserLogin;
 
 /**
  * @covers \Devboard\GitHub\Repo\GitHubRepoOwner
@@ -23,13 +23,13 @@ class GitHubRepoOwnerTest extends \PHPUnit_Framework_TestCase
 {
     /** @dataProvider provideArguments */
     public function testCreating(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        GitHubAccountId $userId,
+        GitHubAccountLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl,
+        GitHubAccountAvatarUrl $avatarUrl,
+        GitHubAccountGravatarId $gravatarId,
+        GitHubAccountHtmlUrl $htmlUrl,
+        GitHubAccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
         $sut = new GitHubRepoOwner(
@@ -48,13 +48,13 @@ class GitHubRepoOwnerTest extends \PHPUnit_Framework_TestCase
 
     /** @dataProvider provideArguments */
     public function testSerializationAndDeserialization(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        GitHubAccountId $userId,
+        GitHubAccountLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl,
+        GitHubAccountAvatarUrl $avatarUrl,
+        GitHubAccountGravatarId $gravatarId,
+        GitHubAccountHtmlUrl $htmlUrl,
+        GitHubAccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
         $sut = new GitHubRepoOwner(
@@ -70,33 +70,33 @@ class GitHubRepoOwnerTest extends \PHPUnit_Framework_TestCase
     {
         return [
             [
-                new GitHubUserId(13507412),
-                new GitHubUserLogin('devboard-test'),
+                new GitHubAccountId(13507412),
+                new GitHubAccountLogin('devboard-test'),
                 new User(),
-                new GitHubUserAvatarUrl('https://avatars.githubusercontent.com/u/13507412?v=3'),
-                new GitHubUserGravatarId(''),
-                new GitHubUserHtmlUrl('https://github.com/devboard-test'),
-                new GitHubUserApiUrl('https://api.github.com/users/devboard-test'),
+                new GitHubAccountAvatarUrl('https://avatars.githubusercontent.com/u/13507412?v=3'),
+                new GitHubAccountGravatarId(''),
+                new GitHubAccountHtmlUrl('https://github.com/devboard-test'),
+                new GitHubAccountApiUrl('https://api.github.com/users/devboard-test'),
                 false,
             ],
             [
-                new GitHubUserId(13396338),
-                new GitHubUserLogin('devboard'),
+                new GitHubAccountId(13396338),
+                new GitHubAccountLogin('devboard'),
                 new Organization(),
-                new GitHubUserAvatarUrl('https://avatars.githubusercontent.com/u/13396338?v=3'),
-                new GitHubUserGravatarId(''),
-                new GitHubUserHtmlUrl('https://github.com/devboard'),
-                new GitHubUserApiUrl('https://api.github.com/users/devboard'),
+                new GitHubAccountAvatarUrl('https://avatars.githubusercontent.com/u/13396338?v=3'),
+                new GitHubAccountGravatarId(''),
+                new GitHubAccountHtmlUrl('https://github.com/devboard'),
+                new GitHubAccountApiUrl('https://api.github.com/users/devboard'),
                 false,
             ],
             [
-                new GitHubUserId(1),
-                new GitHubUserLogin('octocat'),
+                new GitHubAccountId(1),
+                new GitHubAccountLogin('octocat'),
                 new User(),
-                new GitHubUserAvatarUrl('https://avatars.githubusercontent.com/u/1?v=3'),
-                new GitHubUserGravatarId(''),
-                new GitHubUserHtmlUrl('https://github.com/octocat'),
-                new GitHubUserApiUrl('https://api.github.com/users/octocat'),
+                new GitHubAccountAvatarUrl('https://avatars.githubusercontent.com/u/1?v=3'),
+                new GitHubAccountGravatarId(''),
+                new GitHubAccountHtmlUrl('https://github.com/octocat'),
+                new GitHubAccountApiUrl('https://api.github.com/users/octocat'),
                 true,
             ],
         ];
