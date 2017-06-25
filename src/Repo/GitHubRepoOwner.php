@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Devboard\GitHub\Repo;
 
+use Devboard\GitHub\Account\GitHubAccountApiUrl;
+use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
+use Devboard\GitHub\Account\GitHubAccountGravatarId;
+use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
+use Devboard\GitHub\Account\GitHubAccountId;
+use Devboard\GitHub\Account\GitHubAccountLogin;
 use Devboard\GitHub\Account\GitHubAccountType;
 use Devboard\GitHub\Account\GitHubAccountTypeFactory;
-use Devboard\GitHub\User\GitHubUserApiUrl;
-use Devboard\GitHub\User\GitHubUserAvatarUrl;
-use Devboard\GitHub\User\GitHubUserGravatarId;
-use Devboard\GitHub\User\GitHubUserHtmlUrl;
-use Devboard\GitHub\User\GitHubUserId;
-use Devboard\GitHub\User\GitHubUserLogin;
 
 /**
  * @see GitHubRepoOwnerSpec
@@ -19,31 +19,31 @@ use Devboard\GitHub\User\GitHubUserLogin;
  */
 class GitHubRepoOwner
 {
-    /** @var GitHubUserId */
+    /** @var GitHubAccountId */
     private $userId;
-    /** @var GitHubUserLogin */
+    /** @var GitHubAccountLogin */
     private $login;
     /** @var GitHubAccountType */
     private $gitHubAccountType;
-    /** @var GitHubUserAvatarUrl */
+    /** @var GitHubAccountAvatarUrl */
     private $avatarUrl;
-    /** @var GitHubUserGravatarId */
+    /** @var GitHubAccountGravatarId */
     private $gravatarId;
-    /** @var GitHubUserHtmlUrl */
+    /** @var GitHubAccountHtmlUrl */
     private $htmlUrl;
-    /** @var GitHubUserApiUrl */
+    /** @var GitHubAccountApiUrl */
     private $apiUrl;
     /** @var bool */
     private $siteAdmin;
 
     public function __construct(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        GitHubAccountId $userId,
+        GitHubAccountLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl,
+        GitHubAccountAvatarUrl $avatarUrl,
+        GitHubAccountGravatarId $gravatarId,
+        GitHubAccountHtmlUrl $htmlUrl,
+        GitHubAccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
         $this->userId            = $userId;
@@ -56,12 +56,12 @@ class GitHubRepoOwner
         $this->siteAdmin         = $siteAdmin;
     }
 
-    public function getUserId(): GitHubUserId
+    public function getUserId(): GitHubAccountId
     {
         return $this->userId;
     }
 
-    public function getLogin(): GitHubUserLogin
+    public function getLogin(): GitHubAccountLogin
     {
         return $this->login;
     }
@@ -71,22 +71,22 @@ class GitHubRepoOwner
         return $this->gitHubAccountType;
     }
 
-    public function getAvatarUrl(): GitHubUserAvatarUrl
+    public function getAvatarUrl(): GitHubAccountAvatarUrl
     {
         return $this->avatarUrl;
     }
 
-    public function getGravatarId(): GitHubUserGravatarId
+    public function getGravatarId(): GitHubAccountGravatarId
     {
         return $this->gravatarId;
     }
 
-    public function getHtmlUrl(): GitHubUserHtmlUrl
+    public function getHtmlUrl(): GitHubAccountHtmlUrl
     {
         return $this->htmlUrl;
     }
 
-    public function getApiUrl(): GitHubUserApiUrl
+    public function getApiUrl(): GitHubAccountApiUrl
     {
         return $this->apiUrl;
     }
@@ -113,13 +113,13 @@ class GitHubRepoOwner
     public static function deserialize(array $data): GitHubRepoOwner
     {
         return new self(
-            new GitHubUserId($data['userId']),
-            new GitHubUserLogin($data['login']),
+            new GitHubAccountId($data['userId']),
+            new GitHubAccountLogin($data['login']),
             GitHubAccountTypeFactory::create($data['GitHubAccountType']),
-            new GitHubUserAvatarUrl($data['avatarUrl']),
-            new GitHubUserGravatarId($data['gravatarId']),
-            new GitHubUserHtmlUrl($data['htmlUrl']),
-            new GitHubUserApiUrl($data['apiUrl']),
+            new GitHubAccountAvatarUrl($data['avatarUrl']),
+            new GitHubAccountGravatarId($data['gravatarId']),
+            new GitHubAccountHtmlUrl($data['htmlUrl']),
+            new GitHubAccountApiUrl($data['apiUrl']),
             $data['siteAdmin']
         );
     }

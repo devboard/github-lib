@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace spec\Devboard\GitHub;
 
+use Devboard\GitHub\Account\GitHubAccountLogin;
 use Devboard\GitHub\GitHubRepo;
 use Devboard\GitHub\Repo\GitHubRepoEndpoints;
 use Devboard\GitHub\Repo\GitHubRepoFullName;
@@ -12,7 +13,6 @@ use Devboard\GitHub\Repo\GitHubRepoName;
 use Devboard\GitHub\Repo\GitHubRepoOwner;
 use Devboard\GitHub\Repo\GitHubRepoStats;
 use Devboard\GitHub\Repo\GitHubRepoTimestamps;
-use Devboard\GitHub\User\GitHubUserLogin;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoSpec extends ObjectBehavior
@@ -61,7 +61,7 @@ class GitHubRepoSpec extends ObjectBehavior
 
     public function it_exposes_parts_of_full_name(
         GitHubRepoFullName $fullName,
-        GitHubUserLogin $userLogin,
+        GitHubAccountLogin $userLogin,
         GitHubRepoName $repoName
     ) {
         $fullName->getOwner()->shouldBeCalled()->willReturn($userLogin);

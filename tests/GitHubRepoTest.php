@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub;
 
+use Devboard\GitHub\Account\GitHubAccountApiUrl;
+use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
+use Devboard\GitHub\Account\GitHubAccountGravatarId;
+use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
+use Devboard\GitHub\Account\GitHubAccountId;
+use Devboard\GitHub\Account\GitHubAccountLogin;
 use Devboard\GitHub\Account\Type\User;
 use Devboard\GitHub\GitHubRepo;
 use Devboard\GitHub\Repo\GitHubRepoApiUrl;
@@ -19,12 +25,6 @@ use Devboard\GitHub\Repo\GitHubRepoSize;
 use Devboard\GitHub\Repo\GitHubRepoStats;
 use Devboard\GitHub\Repo\GitHubRepoTimestamps;
 use Devboard\GitHub\Repo\GitHubRepoUpdatedAt;
-use Devboard\GitHub\User\GitHubUserApiUrl;
-use Devboard\GitHub\User\GitHubUserAvatarUrl;
-use Devboard\GitHub\User\GitHubUserGravatarId;
-use Devboard\GitHub\User\GitHubUserHtmlUrl;
-use Devboard\GitHub\User\GitHubUserId;
-use Devboard\GitHub\User\GitHubUserLogin;
 
 /**
  * @covers \Devboard\GitHub\GitHubRepo
@@ -79,16 +79,16 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
             [
                 new GitHubRepoId(1234),
                 new GitHubRepoFullName(
-                    new GitHubUserLogin('devboard-test'), new GitHubRepoName('super-library')
+                    new GitHubAccountLogin('devboard-test'), new GitHubRepoName('super-library')
                 ),
                 new GitHubRepoOwner(
-                    new GitHubUserId(789),
-                    new GitHubUserLogin('devboard-test'),
+                    new GitHubAccountId(789),
+                    new GitHubAccountLogin('devboard-test'),
                     new User(),
-                    new GitHubUserAvatarUrl('..'),
-                    new GitHubUserGravatarId('..'),
-                    new GitHubUserHtmlUrl('..'),
-                    new GitHubUserApiUrl('..'),
+                    new GitHubAccountAvatarUrl('..'),
+                    new GitHubAccountGravatarId('..'),
+                    new GitHubAccountHtmlUrl('..'),
+                    new GitHubAccountApiUrl('..'),
                     false
                 ),
                 false,
@@ -106,7 +106,7 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
             [
                 new GitHubRepoId(1234),
                 new GitHubRepoFullName(
-                    new GitHubUserLogin('devboard-test'), new GitHubRepoName('super-library')
+                    new GitHubAccountLogin('devboard-test'), new GitHubRepoName('super-library')
                 ),
                 null,
                 false,

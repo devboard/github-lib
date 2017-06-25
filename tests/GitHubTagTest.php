@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace tests\Devboard\GitHub;
 
+use Devboard\GitHub\Account\GitHubAccountLogin;
 use Devboard\GitHub\Account\Type\User;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
@@ -65,7 +66,7 @@ class GitHubTagTest extends \PHPUnit_Framework_TestCase
         return [
             [
                 new RepoFullName(
-                    new GitHubUserLogin('devboard-test'), new GitHubRepoName('super-library')
+                    new GitHubAccountLogin('devboard-test'), new GitHubRepoName('super-library')
                 ),
                 new TagName('master'),
                 new GitHubCommit(
