@@ -47,6 +47,38 @@ jobs:
           path: build
           destination: build
 
+  lowest:
+    docker:
+      - image: msvrtan/square:0.2.0
+    workDir: /var/www
+    steps:
+      - checkout
+      - restore_cache:
+          key: cache-lowest-{{ checksum "composer.lock" }}
+      - run:
+          name: Disable xdebug
+          command: ./etc/circleci2/disable-xdebug.sh
+      - run:
+          name: Composer install
+          command: composer update --prefer-lowest
+      - save_cache:
+          key: cache-lowest-{{ checksum "composer.lock" }}
+          paths:
+            - /var/www/vendor
+            - /var/www/bin
+      - run:
+          name: PHPUnit
+          command: ./bin/phpunit
+      - run:
+          name: PHPSpec
+          command: ./bin/phpspec run --no-interaction
+      - run:
+          name: Check codestandards
+          command: ./bin/phing check-codestandards
+      - run:
+          name: Static analysis
+          command: ./bin/phing phpstan
+
   highest:
     docker:
       - image: msvrtan/square:0.2.0
@@ -86,5 +118,8 @@ workflows:
          requires:
            - build
       - highest:
+         requires:
+           - build
+      - lowest:
          requires:
            - build
