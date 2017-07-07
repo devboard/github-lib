@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation;
+namespace spec\DevboardLib\GitHub\Installation;
 
 use DateTime;
-use Devboard\GitHub\Installation\CreatedAt;
+use DevboardLib\GitHub\Installation\CreatedAt;
 use PhpSpec\ObjectBehavior;
 
 class CreatedAtSpec extends ObjectBehavior

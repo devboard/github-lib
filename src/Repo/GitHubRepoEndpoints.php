@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Repo;
+namespace DevboardLib\GitHub\Repo;
 
 /**
  * @see GitHubRepoEndpointsSpec
@@ -10,9 +10,9 @@ namespace Devboard\GitHub\Repo;
  */
 class GitHubRepoEndpoints
 {
-    /** @var \Devboard\GitHub\Repo\GitHubRepoApiUrl */
+    /** @var \DevboardLib\GitHub\Repo\GitHubRepoApiUrl */
     private $apiUrl;
-    /** @var \Devboard\GitHub\Repo\GitHubRepoHtmlUrl */
+    /** @var \DevboardLib\GitHub\Repo\GitHubRepoHtmlUrl */
     private $htmlUrl;
 
     public function __construct(GitHubRepoApiUrl $apiUrl, GitHubRepoHtmlUrl $htmlUrl)

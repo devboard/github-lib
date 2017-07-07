@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Account;
+namespace spec\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
+use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
 use PhpSpec\ObjectBehavior;
 
 class GitHubAccountHtmlUrlSpec extends ObjectBehavior

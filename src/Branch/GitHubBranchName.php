@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Branch;
+namespace DevboardLib\GitHub\Branch;
 
 /**
  * @see GitHubBranchNameSpec

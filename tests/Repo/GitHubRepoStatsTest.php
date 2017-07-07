@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Repo;
+namespace tests\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoSize;
-use Devboard\GitHub\Repo\GitHubRepoStats;
+use DevboardLib\GitHub\Repo\GitHubRepoSize;
+use DevboardLib\GitHub\Repo\GitHubRepoStats;
 
 /**
- * @covers \Devboard\GitHub\Repo\GitHubRepoStats
+ * @covers \DevboardLib\GitHub\Repo\GitHubRepoStats
  * @group  unit
  */
 class GitHubRepoStatsTest extends \PHPUnit_Framework_TestCase

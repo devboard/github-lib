@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub;
+namespace tests\DevboardLib\GitHub;
 
 abstract class StatsTest extends \PHPUnit_Framework_TestCase
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub;
+namespace spec\DevboardLib\GitHub;
 
-use Devboard\GitHub\Branch\GitHubBranchName as BranchName;
-use Devboard\GitHub\GitHubBranch;
-use Devboard\GitHub\GitHubCommit as Commit;
-use Devboard\GitHub\Repo\GitHubRepoFullName as RepoFullName;
+use DevboardLib\GitHub\Branch\GitHubBranchName as BranchName;
+use DevboardLib\GitHub\GitHubBranch;
+use DevboardLib\GitHub\GitHubCommit as Commit;
+use DevboardLib\GitHub\Repo\GitHubRepoFullName as RepoFullName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubBranchSpec extends ObjectBehavior

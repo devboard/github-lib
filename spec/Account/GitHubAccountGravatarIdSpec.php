@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Account;
+namespace spec\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountGravatarId;
+use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
 use PhpSpec\ObjectBehavior;
 
 class GitHubAccountGravatarIdSpec extends ObjectBehavior

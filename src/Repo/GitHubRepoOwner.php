@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Repo;
+namespace DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Account\GitHubAccountApiUrl;
-use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
-use Devboard\GitHub\Account\GitHubAccountGravatarId;
-use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
-use Devboard\GitHub\Account\GitHubAccountId;
-use Devboard\GitHub\Account\GitHubAccountLogin;
-use Devboard\GitHub\Account\GitHubAccountType;
-use Devboard\GitHub\Account\GitHubAccountTypeFactory;
+use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
+use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
+use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
+use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
+use DevboardLib\GitHub\Account\GitHubAccountId;
+use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
 
 /**
  * @see GitHubRepoOwnerSpec

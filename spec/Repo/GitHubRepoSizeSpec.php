@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Repo;
+namespace spec\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoSize;
-use spec\Devboard\GitHub\StatsSpec;
+use DevboardLib\GitHub\Repo\GitHubRepoSize;
+use spec\DevboardLib\GitHub\StatsSpec;
 
 class GitHubRepoSizeSpec extends StatsSpec
 {

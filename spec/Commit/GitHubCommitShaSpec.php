@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Commit;
+namespace spec\DevboardLib\GitHub\Commit;
 
-use Devboard\GitHub\Commit\GitHubCommitSha;
+use DevboardLib\GitHub\Commit\GitHubCommitSha;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitShaSpec extends ObjectBehavior

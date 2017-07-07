@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Commit\Committer;
+namespace tests\DevboardLib\GitHub\Commit\Committer;
 
-use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
+use DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
 
 /**
- * @covers \Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail
+ * @covers \DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterEmail
  * @group  unit
  */
 class GitHubCommitCommitterEmailTest extends \PHPUnit_Framework_TestCase

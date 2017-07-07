@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub;
+namespace spec\DevboardLib\GitHub;
 
-use Devboard\GitHub\GitHubCommit as Commit;
-use Devboard\GitHub\GitHubTag;
-use Devboard\GitHub\Repo\GitHubRepoFullName as RepoFullName;
-use Devboard\GitHub\Tag\GitHubTagName as TagName;
+use DevboardLib\GitHub\GitHubCommit as Commit;
+use DevboardLib\GitHub\GitHubTag;
+use DevboardLib\GitHub\Repo\GitHubRepoFullName as RepoFullName;
+use DevboardLib\GitHub\Tag\GitHubTagName as TagName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubTagSpec extends ObjectBehavior

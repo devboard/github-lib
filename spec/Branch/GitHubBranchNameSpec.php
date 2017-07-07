@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Branch;
+namespace spec\DevboardLib\GitHub\Branch;
 
-use Devboard\GitHub\Branch\GitHubBranchName;
+use DevboardLib\GitHub\Branch\GitHubBranchName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubBranchNameSpec extends ObjectBehavior

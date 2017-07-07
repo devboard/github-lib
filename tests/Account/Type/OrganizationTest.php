@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Account\Type;
+namespace tests\DevboardLib\GitHub\Account\Type;
 
-use Devboard\GitHub\Account\Type\Organization;
+use DevboardLib\GitHub\Account\Type\Organization;
 
 /**
- * @covers \Devboard\GitHub\Account\Type\Organization
+ * @covers \DevboardLib\GitHub\Account\Type\Organization
  * @group  unit
  */
 class OrganizationTest extends \PHPUnit_Framework_TestCase

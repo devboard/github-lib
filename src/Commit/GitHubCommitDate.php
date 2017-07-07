@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Commit;
+namespace DevboardLib\GitHub\Commit;
 
 use DateTime;
 

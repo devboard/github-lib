@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Tag;
+namespace spec\DevboardLib\GitHub\Tag;
 
-use Devboard\GitHub\Tag\GitHubTagName;
+use DevboardLib\GitHub\Tag\GitHubTagName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubTagNameSpec extends ObjectBehavior

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation;
+namespace spec\DevboardLib\GitHub\Installation;
 
-use Devboard\GitHub\Installation\Events;
+use DevboardLib\GitHub\Installation\Events;
 use PhpSpec\ObjectBehavior;
 
 class EventsSpec extends ObjectBehavior

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Account;
+namespace tests\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountGravatarId;
+use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
 
 /**
- * @covers \Devboard\GitHub\Account\GitHubAccountGravatarId
+ * @covers \DevboardLib\GitHub\Account\GitHubAccountGravatarId
  * @group  unit
  */
 class GitHubAccountGravatarIdTest extends \PHPUnit_Framework_TestCase

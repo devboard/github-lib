@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Repo;
+namespace tests\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoSize;
-use tests\Devboard\GitHub\StatsTest;
+use DevboardLib\GitHub\Repo\GitHubRepoSize;
+use tests\DevboardLib\GitHub\StatsTest;
 
 /**
- * @covers \Devboard\GitHub\Repo\GitHubRepoSize
- * @covers \Devboard\GitHub\Stats
+ * @covers \DevboardLib\GitHub\Repo\GitHubRepoSize
+ * @covers \DevboardLib\GitHub\Stats
  * @group  unit
  */
 class GitHubRepoSizeTest extends StatsTest

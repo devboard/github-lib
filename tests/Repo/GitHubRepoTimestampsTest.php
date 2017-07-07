@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Repo;
+namespace tests\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoCreatedAt as CreatedAt;
-use Devboard\GitHub\Repo\GitHubRepoPushedAt as PushedAt;
-use Devboard\GitHub\Repo\GitHubRepoTimestamps;
-use Devboard\GitHub\Repo\GitHubRepoUpdatedAt as UpdatedAt;
+use DevboardLib\GitHub\Repo\GitHubRepoCreatedAt as CreatedAt;
+use DevboardLib\GitHub\Repo\GitHubRepoPushedAt as PushedAt;
+use DevboardLib\GitHub\Repo\GitHubRepoTimestamps;
+use DevboardLib\GitHub\Repo\GitHubRepoUpdatedAt as UpdatedAt;
 
 /**
- * @covers \Devboard\GitHub\Repo\GitHubRepoTimestamps
+ * @covers \DevboardLib\GitHub\Repo\GitHubRepoTimestamps
  * @group  unit
  */
 class GitHubRepoTimestampsTest extends \PHPUnit_Framework_TestCase

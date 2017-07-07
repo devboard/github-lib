@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Installation;
+namespace DevboardLib\GitHub\Installation;
 
-use Devboard\GitHub\Installation\RepositorySelection\GitHubInstallationRepositoryAll;
-use Devboard\GitHub\Installation\RepositorySelection\GitHubInstallationRepositorySelected;
+use DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositoryAll;
+use DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositorySelected;
 
 /**
  * @see RepositorySelectionFactorySpec

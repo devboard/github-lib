@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Repo;
+namespace DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Stats;
+use DevboardLib\GitHub\Stats;
 
 /**
  * @see GitHubRepoSizeSpec

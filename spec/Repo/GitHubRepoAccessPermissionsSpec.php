@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Repo;
+namespace spec\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoAccessPermissions;
+use DevboardLib\GitHub\Repo\GitHubRepoAccessPermissions;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoAccessPermissionsSpec extends ObjectBehavior

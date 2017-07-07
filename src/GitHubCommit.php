@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub;
+namespace DevboardLib\GitHub;
 
-use Devboard\GitHub\Commit\GitHubCommitAuthor;
-use Devboard\GitHub\Commit\GitHubCommitCommitter;
-use Devboard\GitHub\Commit\GitHubCommitDate;
-use Devboard\GitHub\Commit\GitHubCommitMessage;
-use Devboard\GitHub\Commit\GitHubCommitSha;
+use DevboardLib\GitHub\Commit\GitHubCommitAuthor;
+use DevboardLib\GitHub\Commit\GitHubCommitCommitter;
+use DevboardLib\GitHub\Commit\GitHubCommitDate;
+use DevboardLib\GitHub\Commit\GitHubCommitMessage;
+use DevboardLib\GitHub\Commit\GitHubCommitSha;
 
 /**
  * @see GitHubCommitSpec
@@ -22,9 +22,9 @@ class GitHubCommit
     private $message;
     /** @var GitHubCommitDate */
     private $commitDate;
-    /** @var \Devboard\GitHub\Commit\GitHubCommitAuthor */
+    /** @var \DevboardLib\GitHub\Commit\GitHubCommitAuthor */
     private $author;
-    /** @var \Devboard\GitHub\Commit\GitHubCommitCommitter */
+    /** @var \DevboardLib\GitHub\Commit\GitHubCommitCommitter */
     private $committer;
 
     public function __construct(

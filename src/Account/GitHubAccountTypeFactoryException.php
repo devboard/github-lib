@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Account;
+namespace DevboardLib\GitHub\Account;
 
 use Exception;
 

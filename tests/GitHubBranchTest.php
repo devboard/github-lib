@@ -2,36 +2,36 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub;
+namespace tests\DevboardLib\GitHub;
 
-use Devboard\GitHub\Account\GitHubAccountLogin;
-use Devboard\GitHub\Account\Type\User;
-use Devboard\GitHub\Branch\GitHubBranchName as BranchName;
-use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
-use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
-use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
-use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
-use Devboard\GitHub\Commit\GitHubCommitAuthor;
-use Devboard\GitHub\Commit\GitHubCommitAuthorDetails;
-use Devboard\GitHub\Commit\GitHubCommitCommitter;
-use Devboard\GitHub\Commit\GitHubCommitCommitterDetails;
-use Devboard\GitHub\Commit\GitHubCommitDate;
-use Devboard\GitHub\Commit\GitHubCommitMessage;
-use Devboard\GitHub\Commit\GitHubCommitSha;
-use Devboard\GitHub\GitHubBranch;
-use Devboard\GitHub\GitHubCommit;
-use Devboard\GitHub\GitHubCommit as Commit;
-use Devboard\GitHub\Repo\GitHubRepoFullName as RepoFullName;
-use Devboard\GitHub\Repo\GitHubRepoName;
-use Devboard\GitHub\User\GitHubUserApiUrl;
-use Devboard\GitHub\User\GitHubUserAvatarUrl;
-use Devboard\GitHub\User\GitHubUserGravatarId;
-use Devboard\GitHub\User\GitHubUserHtmlUrl;
-use Devboard\GitHub\User\GitHubUserId;
-use Devboard\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\Type\User;
+use DevboardLib\GitHub\Branch\GitHubBranchName as BranchName;
+use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorEmail;
+use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorName;
+use DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
+use DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterName;
+use DevboardLib\GitHub\Commit\GitHubCommitAuthor;
+use DevboardLib\GitHub\Commit\GitHubCommitAuthorDetails;
+use DevboardLib\GitHub\Commit\GitHubCommitCommitter;
+use DevboardLib\GitHub\Commit\GitHubCommitCommitterDetails;
+use DevboardLib\GitHub\Commit\GitHubCommitDate;
+use DevboardLib\GitHub\Commit\GitHubCommitMessage;
+use DevboardLib\GitHub\Commit\GitHubCommitSha;
+use DevboardLib\GitHub\GitHubBranch;
+use DevboardLib\GitHub\GitHubCommit;
+use DevboardLib\GitHub\GitHubCommit as Commit;
+use DevboardLib\GitHub\Repo\GitHubRepoFullName as RepoFullName;
+use DevboardLib\GitHub\Repo\GitHubRepoName;
+use DevboardLib\GitHub\User\GitHubUserApiUrl;
+use DevboardLib\GitHub\User\GitHubUserAvatarUrl;
+use DevboardLib\GitHub\User\GitHubUserGravatarId;
+use DevboardLib\GitHub\User\GitHubUserHtmlUrl;
+use DevboardLib\GitHub\User\GitHubUserId;
+use DevboardLib\GitHub\User\GitHubUserLogin;
 
 /**
- * @covers \Devboard\GitHub\GitHubBranch
+ * @covers \DevboardLib\GitHub\GitHubBranch
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

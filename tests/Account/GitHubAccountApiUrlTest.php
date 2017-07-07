@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Account;
+namespace tests\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountApiUrl;
+use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
 
 /**
- * @covers \Devboard\GitHub\Account\GitHubAccountApiUrl
+ * @covers \DevboardLib\GitHub\Account\GitHubAccountApiUrl
  * @group  unit
  */
 class GitHubAccountApiUrlTest extends \PHPUnit_Framework_TestCase

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Account;
+namespace tests\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountTypeFactoryException;
+use DevboardLib\GitHub\Account\GitHubAccountTypeFactoryException;
 
 /**
- * @covers \Devboard\GitHub\Account\GitHubAccountTypeFactoryException
+ * @covers \DevboardLib\GitHub\Account\GitHubAccountTypeFactoryException
  * @group  unit
  */
 class GitHubAccountTypeFactoryExceptionTest extends \PHPUnit_Framework_TestCase

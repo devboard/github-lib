@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Repo;
+namespace spec\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoSize;
-use Devboard\GitHub\Repo\GitHubRepoStats;
+use DevboardLib\GitHub\Repo\GitHubRepoSize;
+use DevboardLib\GitHub\Repo\GitHubRepoStats;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoStatsSpec extends ObjectBehavior

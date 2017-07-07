@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Account\Type;
+namespace DevboardLib\GitHub\Account\Type;
 
-use Devboard\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\GitHubAccountType;
 
 /**
  * @see OrganizationSpec

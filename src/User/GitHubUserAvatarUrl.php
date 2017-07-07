@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\User;
+namespace DevboardLib\GitHub\User;
 
-use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
+use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
 
 /**
  * @see GitHubUserAvatarUrlSpec

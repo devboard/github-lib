@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\User;
+namespace spec\DevboardLib\GitHub\User;
 
-use Devboard\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\User\GitHubUserLogin;
 use PhpSpec\ObjectBehavior;
 
 class GitHubUserLoginSpec extends ObjectBehavior

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Repo;
+namespace tests\DevboardLib\GitHub\Repo;
 
 use DateTime;
-use Devboard\GitHub\Repo\GitHubRepoPushedAt;
+use DevboardLib\GitHub\Repo\GitHubRepoPushedAt;
 
 /**
- * @covers \Devboard\GitHub\Repo\GitHubRepoPushedAt
+ * @covers \DevboardLib\GitHub\Repo\GitHubRepoPushedAt
  * @group  unit
  */
 class GitHubRepoPushedAtTest extends \PHPUnit_Framework_TestCase

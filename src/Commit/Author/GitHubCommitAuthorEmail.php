@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Commit\Author;
+namespace DevboardLib\GitHub\Commit\Author;
 
 /**
  * @see GitHubCommitAuthorEmailSpec

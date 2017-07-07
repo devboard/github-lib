@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\User;
+namespace DevboardLib\GitHub\User;
 
 /**
  * @see GitHubUserEmailAddressSpec

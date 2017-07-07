@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Commit;
+namespace spec\DevboardLib\GitHub\Commit;
 
-use Devboard\GitHub\Commit\GitHubCommitMessage;
+use DevboardLib\GitHub\Commit\GitHubCommitMessage;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitMessageSpec extends ObjectBehavior

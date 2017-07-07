@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Account;
+namespace tests\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountTypeFactory;
-use Devboard\GitHub\Account\Type\Organization;
-use Devboard\GitHub\Account\Type\User;
+use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
+use DevboardLib\GitHub\Account\Type\Organization;
+use DevboardLib\GitHub\Account\Type\User;
 
 /**
- * @covers \Devboard\GitHub\Account\GitHubAccountTypeFactory
+ * @covers \DevboardLib\GitHub\Account\GitHubAccountTypeFactory
  * @group  unit
  */
 class GitHubAccountTypeFactoryTest extends \PHPUnit_Framework_TestCase
@@ -24,7 +24,7 @@ class GitHubAccountTypeFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(User::class, GitHubAccountTypeFactory::create(User::NAME));
     }
 
-    /** @expectedException \Devboard\GitHub\Account\GitHubAccountTypeFactoryException */
+    /** @expectedException \DevboardLib\GitHub\Account\GitHubAccountTypeFactoryException */
     public function testItThrowsExceptionForUnexpectedStrings()
     {
         GitHubAccountTypeFactory::create('zz');

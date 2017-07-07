@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub;
+namespace spec\DevboardLib\GitHub;
 
-use Devboard\GitHub\Commit\GitHubCommitAuthor;
-use Devboard\GitHub\Commit\GitHubCommitCommitter;
-use Devboard\GitHub\Commit\GitHubCommitDate;
-use Devboard\GitHub\Commit\GitHubCommitMessage;
-use Devboard\GitHub\Commit\GitHubCommitSha;
-use Devboard\GitHub\GitHubCommit;
+use DevboardLib\GitHub\Commit\GitHubCommitAuthor;
+use DevboardLib\GitHub\Commit\GitHubCommitCommitter;
+use DevboardLib\GitHub\Commit\GitHubCommitDate;
+use DevboardLib\GitHub\Commit\GitHubCommitMessage;
+use DevboardLib\GitHub\Commit\GitHubCommitSha;
+use DevboardLib\GitHub\GitHubCommit;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitSpec extends ObjectBehavior

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Commit\Committer;
+namespace tests\DevboardLib\GitHub\Commit\Committer;
 
-use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
+use DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterName;
 
 /**
- * @covers \Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName
+ * @covers \DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterName
  * @group  unit
  */
 class GitHubCommitCommitterNameTest extends \PHPUnit_Framework_TestCase

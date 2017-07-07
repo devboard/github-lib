@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Tag;
+namespace tests\DevboardLib\GitHub\Tag;
 
-use Devboard\GitHub\Tag\GitHubTagName;
+use DevboardLib\GitHub\Tag\GitHubTagName;
 
 /**
- * @covers \Devboard\GitHub\Tag\GitHubTagName
+ * @covers \DevboardLib\GitHub\Tag\GitHubTagName
  * @group  unit
  */
 class GitHubTagNameTest extends \PHPUnit_Framework_TestCase

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Commit;
+namespace spec\DevboardLib\GitHub\Commit;
 
 use DateTime;
-use Devboard\GitHub\Commit\GitHubCommitDate;
+use DevboardLib\GitHub\Commit\GitHubCommitDate;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitDateSpec extends ObjectBehavior

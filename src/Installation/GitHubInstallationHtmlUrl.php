@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Installation;
+namespace DevboardLib\GitHub\Installation;
 
 /**
  * @see GitHubInstallationHtmlUrlSpec

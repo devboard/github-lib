@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Account;
+namespace DevboardLib\GitHub\Account;
 
 /**
- * @see \Devboard\GitHub\Account\Type\Organization
- * @see \Devboard\GitHub\Account\Type\Account
+ * @see \DevboardLib\GitHub\Account\Type\Organization
+ * @see \DevboardLib\GitHub\Account\Type\Account
  */
 interface GitHubAccountType
 {

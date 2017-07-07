@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Commit;
+namespace DevboardLib\GitHub\Commit;
 
-use Devboard\GitHub\Account\GitHubAccountType;
-use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
-use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
-use Devboard\GitHub\User\GitHubUserApiUrl;
-use Devboard\GitHub\User\GitHubUserAvatarUrl;
-use Devboard\GitHub\User\GitHubUserGravatarId;
-use Devboard\GitHub\User\GitHubUserHtmlUrl;
-use Devboard\GitHub\User\GitHubUserId;
-use Devboard\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorEmail;
+use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorName;
+use DevboardLib\GitHub\User\GitHubUserApiUrl;
+use DevboardLib\GitHub\User\GitHubUserAvatarUrl;
+use DevboardLib\GitHub\User\GitHubUserGravatarId;
+use DevboardLib\GitHub\User\GitHubUserHtmlUrl;
+use DevboardLib\GitHub\User\GitHubUserId;
+use DevboardLib\GitHub\User\GitHubUserLogin;
 
 /**
  * @see GitHubCommitAuthorSpec

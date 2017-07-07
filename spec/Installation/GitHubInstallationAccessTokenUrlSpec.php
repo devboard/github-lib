@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation;
+namespace spec\DevboardLib\GitHub\Installation;
 
-use Devboard\GitHub\Installation\GitHubInstallationAccessTokenUrl;
+use DevboardLib\GitHub\Installation\GitHubInstallationAccessTokenUrl;
 use PhpSpec\ObjectBehavior;
 
 class GitHubInstallationAccessTokenUrlSpec extends ObjectBehavior

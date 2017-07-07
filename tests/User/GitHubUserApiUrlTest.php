@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\User;
+namespace tests\DevboardLib\GitHub\User;
 
-use Devboard\GitHub\User\GitHubUserApiUrl;
+use DevboardLib\GitHub\User\GitHubUserApiUrl;
 
 /**
- * @covers \Devboard\GitHub\User\GitHubUserApiUrl
+ * @covers \DevboardLib\GitHub\User\GitHubUserApiUrl
  * @group  unit
  */
 class GitHubUserApiUrlTest extends \PHPUnit_Framework_TestCase

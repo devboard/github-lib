@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Commit\Committer;
+namespace DevboardLib\GitHub\Commit\Committer;
 
 /**
  * @see GitHubCommitCommitterEmailSpec

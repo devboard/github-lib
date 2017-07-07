@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Branch;
+namespace tests\DevboardLib\GitHub\Branch;
 
-use Devboard\GitHub\Branch\GitHubBranchName;
+use DevboardLib\GitHub\Branch\GitHubBranchName;
 
 /**
- * @covers \Devboard\GitHub\Branch\GitHubBranchName
+ * @covers \DevboardLib\GitHub\Branch\GitHubBranchName
  * @group  unit
  */
 class GitHubBranchNameTest extends \PHPUnit_Framework_TestCase
