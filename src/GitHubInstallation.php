@@ -17,8 +17,8 @@ use DevboardLib\GitHub\Installation\InstallationRepositorySelection;
 use DevboardLib\GitHub\Installation\InstallationUpdatedAt;
 
 /**
- * @see InstallationSpec
- * @see InstallationTest
+ * @see GitHubInstallationSpec
+ * @see GitHubInstallationTest
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  */
 class GitHubInstallation

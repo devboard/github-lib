@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Repo\GitHubRepoFullName;
-use DevboardLib\GitHub\Tag\GitHubTagName;
+use DevboardLib\GitHub\Repo\RepoFullName;
+use DevboardLib\GitHub\Tag\TagName;
 
 /**
  * @see GitHubTagSpec
@@ -13,26 +13,26 @@ use DevboardLib\GitHub\Tag\GitHubTagName;
  */
 class GitHubTag
 {
-    /** @var GitHubRepoFullName */
+    /** @var RepoFullName */
     private $repoFullName;
-    /** @var GitHubTagName */
+    /** @var TagName */
     private $tagName;
     /** @var GitHubCommit */
     private $commit;
 
-    public function __construct(GitHubRepoFullName $repoFullName, GitHubTagName $tagName, GitHubCommit $commit)
+    public function __construct(RepoFullName $repoFullName, TagName $tagName, GitHubCommit $commit)
     {
         $this->repoFullName = $repoFullName;
         $this->tagName      = $tagName;
         $this->commit       = $commit;
     }
 
-    public function getRepoFullName(): GitHubRepoFullName
+    public function getRepoFullName(): RepoFullName
     {
         return $this->repoFullName;
     }
 
-    public function getTagName(): GitHubTagName
+    public function getTagName(): TagName
     {
         return $this->tagName;
     }
@@ -54,8 +54,8 @@ class GitHubTag
     public static function deserialize(array $data): GitHubTag
     {
         return new self(
-            GitHubRepoFullName::createFromString($data['repoFullName']),
-            new GitHubTagName($data['tagName']),
+            RepoFullName::createFromString($data['repoFullName']),
+            new TagName($data['tagName']),
             GitHubCommit::deserialize($data['commit'])
         );
     }

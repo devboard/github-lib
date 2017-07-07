@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Commit\GitHubCommitAuthor;
-use DevboardLib\GitHub\Commit\GitHubCommitCommitter;
-use DevboardLib\GitHub\Commit\GitHubCommitDate;
-use DevboardLib\GitHub\Commit\GitHubCommitMessage;
-use DevboardLib\GitHub\Commit\GitHubCommitSha;
+use DevboardLib\GitHub\Commit\CommitAuthor;
+use DevboardLib\GitHub\Commit\CommitCommitter;
+use DevboardLib\GitHub\Commit\CommitDate;
+use DevboardLib\GitHub\Commit\CommitMessage;
+use DevboardLib\GitHub\Commit\CommitSha;
 
 /**
  * @see GitHubCommitSpec
@@ -16,23 +16,23 @@ use DevboardLib\GitHub\Commit\GitHubCommitSha;
  */
 class GitHubCommit
 {
-    /** @var GitHubCommitSha */
+    /** @var CommitSha */
     private $sha;
-    /** @var GitHubCommitMessage */
+    /** @var CommitMessage */
     private $message;
-    /** @var GitHubCommitDate */
+    /** @var CommitDate */
     private $commitDate;
-    /** @var \DevboardLib\GitHub\Commit\GitHubCommitAuthor */
+    /** @var \DevboardLib\GitHub\Commit\CommitAuthor */
     private $author;
-    /** @var \DevboardLib\GitHub\Commit\GitHubCommitCommitter */
+    /** @var \DevboardLib\GitHub\Commit\CommitCommitter */
     private $committer;
 
     public function __construct(
-        GitHubCommitSha $sha,
-        GitHubCommitMessage $message,
-        GitHubCommitDate $commitDate,
-        GitHubCommitAuthor $author,
-        GitHubCommitCommitter $committer
+        CommitSha $sha,
+        CommitMessage $message,
+        CommitDate $commitDate,
+        CommitAuthor $author,
+        CommitCommitter $committer
     ) {
         $this->sha        = $sha;
         $this->message    = $message;
@@ -41,27 +41,27 @@ class GitHubCommit
         $this->committer  = $committer;
     }
 
-    public function getSha(): GitHubCommitSha
+    public function getSha(): CommitSha
     {
         return $this->sha;
     }
 
-    public function getMessage(): GitHubCommitMessage
+    public function getMessage(): CommitMessage
     {
         return $this->message;
     }
 
-    public function getCommitDate(): GitHubCommitDate
+    public function getCommitDate(): CommitDate
     {
         return $this->commitDate;
     }
 
-    public function getAuthor(): GitHubCommitAuthor
+    public function getAuthor(): CommitAuthor
     {
         return $this->author;
     }
 
-    public function getCommitter(): GitHubCommitCommitter
+    public function getCommitter(): CommitCommitter
     {
         return $this->committer;
     }
@@ -80,11 +80,11 @@ class GitHubCommit
     public static function deserialize(array $data): GitHubCommit
     {
         return new self(
-            new GitHubCommitSha($data['sha']),
-            new GitHubCommitMessage($data['message']),
-            new GitHubCommitDate($data['commitDate']),
-            GitHubCommitAuthor::deserialize($data['author']),
-            GitHubCommitCommitter::deserialize($data['committer'])
+            new CommitSha($data['sha']),
+            new CommitMessage($data['message']),
+            new CommitDate($data['commitDate']),
+            CommitAuthor::deserialize($data['author']),
+            CommitCommitter::deserialize($data['committer'])
         );
     }
 }
