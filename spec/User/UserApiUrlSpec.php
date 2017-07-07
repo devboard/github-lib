@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\User;
 
-use DevboardLib\GitHub\User\GitHubUserApiUrl;
+use DevboardLib\GitHub\User\UserApiUrl;
 use PhpSpec\ObjectBehavior;
 
-class GitHubUserApiUrlSpec extends ObjectBehavior
+class UserApiUrlSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class GitHubUserApiUrlSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubUserApiUrl::class);
+        $this->shouldHaveType(UserApiUrl::class);
     }
 
     public function it_should_expose_value()

@@ -29,7 +29,7 @@ class GitHubAccountAvatarUrlTest extends \PHPUnit_Framework_TestCase
     public function provideAccountIds()
     {
         return [
-            ['https://avatars.githubusercontent.com/u/13507412?v=3'],
+            ['https://avatars.Usercontent.com/u/13507412?v=3'],
         ];
     }
 }

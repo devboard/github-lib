@@ -7,9 +7,9 @@ namespace DevboardLib\GitHub\User;
 use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
 
 /**
- * @see GitHubUserHtmlUrlSpec
- * @see GitHubUserHtmlUrlTest
+ * @see UserHtmlUrlSpec
+ * @see UserHtmlUrlTest
  */
-class GitHubUserHtmlUrl extends GitHubAccountHtmlUrl
+class UserHtmlUrl extends GitHubAccountHtmlUrl
 {
 }

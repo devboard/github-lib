@@ -6,12 +6,12 @@ namespace DevboardLib\GitHub\Commit;
 
 use DevboardLib\GitHub\Account\GitHubAccountType;
 use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
-use DevboardLib\GitHub\User\GitHubUserApiUrl;
-use DevboardLib\GitHub\User\GitHubUserAvatarUrl;
-use DevboardLib\GitHub\User\GitHubUserGravatarId;
-use DevboardLib\GitHub\User\GitHubUserHtmlUrl;
-use DevboardLib\GitHub\User\GitHubUserId;
-use DevboardLib\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\User\UserApiUrl;
+use DevboardLib\GitHub\User\UserAvatarUrl;
+use DevboardLib\GitHub\User\UserGravatarId;
+use DevboardLib\GitHub\User\UserHtmlUrl;
+use DevboardLib\GitHub\User\UserId;
+use DevboardLib\GitHub\User\UserLogin;
 
 /**
  * @see GitHubCommitAuthorDetailsSpec
@@ -19,31 +19,31 @@ use DevboardLib\GitHub\User\GitHubUserLogin;
  */
 class GitHubCommitAuthorDetails
 {
-    /** @var GitHubUserId */
+    /** @var UserId */
     private $userId;
-    /** @var GitHubUserLogin */
+    /** @var UserLogin */
     private $login;
     /** @var GitHubAccountType */
     private $gitHubAccountType;
-    /** @var GitHubUserAvatarUrl */
+    /** @var UserAvatarUrl */
     private $avatarUrl;
-    /** @var GitHubUserGravatarId */
+    /** @var UserGravatarId */
     private $gravatarId;
-    /** @var GitHubUserHtmlUrl */
+    /** @var UserHtmlUrl */
     private $htmlUrl;
-    /** @var GitHubUserApiUrl */
+    /** @var UserApiUrl */
     private $apiUrl;
     /** @var bool */
     private $siteAdmin;
 
     public function __construct(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        UserId $userId,
+        UserLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl,
+        UserAvatarUrl $avatarUrl,
+        UserGravatarId $gravatarId,
+        UserHtmlUrl $htmlUrl,
+        UserApiUrl $apiUrl,
         bool $siteAdmin
     ) {
         $this->userId            = $userId;
@@ -56,12 +56,12 @@ class GitHubCommitAuthorDetails
         $this->siteAdmin         = $siteAdmin;
     }
 
-    public function getUserId(): GitHubUserId
+    public function getUserId(): UserId
     {
         return $this->userId;
     }
 
-    public function getLogin(): GitHubUserLogin
+    public function getLogin(): UserLogin
     {
         return $this->login;
     }
@@ -71,22 +71,22 @@ class GitHubCommitAuthorDetails
         return $this->gitHubAccountType;
     }
 
-    public function getAvatarUrl(): GitHubUserAvatarUrl
+    public function getAvatarUrl(): UserAvatarUrl
     {
         return $this->avatarUrl;
     }
 
-    public function getGravatarId(): GitHubUserGravatarId
+    public function getGravatarId(): UserGravatarId
     {
         return $this->gravatarId;
     }
 
-    public function getHtmlUrl(): GitHubUserHtmlUrl
+    public function getHtmlUrl(): UserHtmlUrl
     {
         return $this->htmlUrl;
     }
 
-    public function getApiUrl(): GitHubUserApiUrl
+    public function getApiUrl(): UserApiUrl
     {
         return $this->apiUrl;
     }
@@ -113,13 +113,13 @@ class GitHubCommitAuthorDetails
     public static function deserialize(array $data): GitHubCommitAuthorDetails
     {
         return new self(
-            new GitHubUserId($data['userId']),
-            new GitHubUserLogin($data['login']),
+            new UserId($data['userId']),
+            new UserLogin($data['login']),
             GitHubAccountTypeFactory::create($data['GitHubAccountType']),
-            new GitHubUserAvatarUrl($data['avatarUrl']),
-            new GitHubUserGravatarId($data['gravatarId']),
-            new GitHubUserHtmlUrl($data['htmlUrl']),
-            new GitHubUserApiUrl($data['apiUrl']),
+            new UserAvatarUrl($data['avatarUrl']),
+            new UserGravatarId($data['gravatarId']),
+            new UserHtmlUrl($data['htmlUrl']),
+            new UserApiUrl($data['apiUrl']),
             $data['siteAdmin']
         );
     }

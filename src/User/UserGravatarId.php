@@ -7,9 +7,9 @@ namespace DevboardLib\GitHub\User;
 use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
 
 /**
- * @see GitHubUserGravatarIdSpec
- * @see GitHubUserGravatarIdTest
+ * @see UserGravatarIdSpec
+ * @see UserGravatarIdTest
  */
-class GitHubUserGravatarId extends GitHubAccountGravatarId
+class UserGravatarId extends GitHubAccountGravatarId
 {
 }

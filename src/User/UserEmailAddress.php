@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\User;
 
 /**
- * @see GitHubUserEmailAddressSpec
- * @see GitHubUserEmailAddressTest
+ * @see UserEmailAddressSpec
+ * @see UserEmailAddressTest
  */
-class GitHubUserEmailAddress
+class UserEmailAddress
 {
     /** @var string */
     private $value;

@@ -7,9 +7,9 @@ namespace DevboardLib\GitHub\User;
 use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
 
 /**
- * @see GitHubUserApiUrlSpec
- * @see GitHubUserApiUrlTest
+ * @see UserApiUrlSpec
+ * @see UserApiUrlTest
  */
-class GitHubUserApiUrl extends GitHubAccountApiUrl
+class UserApiUrl extends GitHubAccountApiUrl
 {
 }

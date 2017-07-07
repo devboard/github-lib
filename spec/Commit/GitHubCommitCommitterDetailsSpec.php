@@ -6,24 +6,24 @@ namespace spec\DevboardLib\GitHub\Commit;
 
 use DevboardLib\GitHub\Account\GitHubAccountType;
 use DevboardLib\GitHub\Commit\GitHubCommitCommitterDetails;
-use DevboardLib\GitHub\User\GitHubUserApiUrl;
-use DevboardLib\GitHub\User\GitHubUserAvatarUrl;
-use DevboardLib\GitHub\User\GitHubUserGravatarId;
-use DevboardLib\GitHub\User\GitHubUserHtmlUrl;
-use DevboardLib\GitHub\User\GitHubUserId;
-use DevboardLib\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\User\UserApiUrl;
+use DevboardLib\GitHub\User\UserAvatarUrl;
+use DevboardLib\GitHub\User\UserGravatarId;
+use DevboardLib\GitHub\User\UserHtmlUrl;
+use DevboardLib\GitHub\User\UserId;
+use DevboardLib\GitHub\User\UserLogin;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
 {
     public function let(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        UserId $userId,
+        UserLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl
+        UserAvatarUrl $avatarUrl,
+        UserGravatarId $gravatarId,
+        UserHtmlUrl $htmlUrl,
+        UserApiUrl $apiUrl
     ) {
         $this->beConstructedWith($userId, $login, $gitHubAccountType, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, false);
     }
@@ -34,13 +34,13 @@ class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
     }
 
     public function it_should_expose_all_values_via_getters(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        UserId $userId,
+        UserLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl
+        UserAvatarUrl $avatarUrl,
+        UserGravatarId $gravatarId,
+        UserHtmlUrl $htmlUrl,
+        UserApiUrl $apiUrl
     ) {
         $this->getUserId()->shouldReturn($userId);
         $this->getLogin()->shouldReturn($login);
