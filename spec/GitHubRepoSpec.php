@@ -6,24 +6,24 @@ namespace spec\DevboardLib\GitHub;
 
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\GitHubRepo;
-use DevboardLib\GitHub\Repo\GitHubRepoEndpoints;
-use DevboardLib\GitHub\Repo\GitHubRepoFullName;
-use DevboardLib\GitHub\Repo\GitHubRepoId;
-use DevboardLib\GitHub\Repo\GitHubRepoName;
-use DevboardLib\GitHub\Repo\GitHubRepoOwner;
-use DevboardLib\GitHub\Repo\GitHubRepoStats;
-use DevboardLib\GitHub\Repo\GitHubRepoTimestamps;
+use DevboardLib\GitHub\Repo\RepoEndpoints;
+use DevboardLib\GitHub\Repo\RepoFullName;
+use DevboardLib\GitHub\Repo\RepoId;
+use DevboardLib\GitHub\Repo\RepoName;
+use DevboardLib\GitHub\Repo\RepoOwner;
+use DevboardLib\GitHub\Repo\RepoStats;
+use DevboardLib\GitHub\Repo\RepoTimestamps;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoSpec extends ObjectBehavior
 {
     public function let(
-        GitHubRepoId $id,
-        GitHubRepoFullName $fullName,
-        GitHubRepoOwner $ownerDetails,
-        GitHubRepoEndpoints $endpoints,
-        GitHubRepoTimestamps $timestamps,
-        GitHubRepoStats $stats
+        RepoId $id,
+        RepoFullName $fullName,
+        RepoOwner $ownerDetails,
+        RepoEndpoints $endpoints,
+        RepoTimestamps $timestamps,
+        RepoStats $stats
     ) {
         $this->beConstructedWith(
             $id,
@@ -42,12 +42,12 @@ class GitHubRepoSpec extends ObjectBehavior
     }
 
     public function it_exposes_constructor_arguments(
-        GitHubRepoId $id,
-        GitHubRepoFullName $fullName,
-        GitHubRepoOwner $ownerDetails,
-        GitHubRepoEndpoints $endpoints,
-        GitHubRepoTimestamps $timestamps,
-        GitHubRepoStats $stats
+        RepoId $id,
+        RepoFullName $fullName,
+        RepoOwner $ownerDetails,
+        RepoEndpoints $endpoints,
+        RepoTimestamps $timestamps,
+        RepoStats $stats
     ) {
         $this->getId()->shouldReturn($id);
         $this->getFullName()->shouldReturn($fullName);
@@ -60,9 +60,9 @@ class GitHubRepoSpec extends ObjectBehavior
     }
 
     public function it_exposes_parts_of_full_name(
-        GitHubRepoFullName $fullName,
+        RepoFullName $fullName,
         AccountLogin $userLogin,
-        GitHubRepoName $repoName
+        RepoName $repoName
     ) {
         $fullName->getOwner()->shouldBeCalled()->willReturn($userLogin);
         $fullName->getRepoName()->shouldBeCalled()->willReturn($repoName);

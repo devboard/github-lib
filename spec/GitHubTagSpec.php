@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub;
 
-use DevboardLib\GitHub\GitHubCommit as Commit;
+use DevboardLib\GitHub\GitHubCommit;
 use DevboardLib\GitHub\GitHubTag;
-use DevboardLib\GitHub\Repo\GitHubRepoFullName as RepoFullName;
-use DevboardLib\GitHub\Tag\GitHubTagName as TagName;
+use DevboardLib\GitHub\Repo\RepoFullName as RepoFullName;
+use DevboardLib\GitHub\Tag\TagName as TagName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubTagSpec extends ObjectBehavior
 {
-    public function let(RepoFullName $repoFullName, TagName $tagName, Commit $commit)
+    public function let(RepoFullName $repoFullName, TagName $tagName, GitHubCommit $commit)
     {
         $this->beConstructedWith($repoFullName, $tagName, $commit);
     }
@@ -22,7 +22,7 @@ class GitHubTagSpec extends ObjectBehavior
         $this->shouldHaveType(GitHubTag::class);
     }
 
-    public function it_exposes_constructor_arguments(RepoFullName $repoFullName, TagName $tagName, Commit $commit)
+    public function it_exposes_constructor_arguments(RepoFullName $repoFullName, TagName $tagName, GitHubCommit $commit)
     {
         $this->getRepoFullName()->shouldReturn($repoFullName);
         $this->getTagName()->shouldReturn($tagName);

@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub;
 
 use DevboardLib\GitHub\Account\AccountLogin;
-use DevboardLib\GitHub\Repo\GitHubRepoEndpoints;
-use DevboardLib\GitHub\Repo\GitHubRepoFullName;
-use DevboardLib\GitHub\Repo\GitHubRepoId;
-use DevboardLib\GitHub\Repo\GitHubRepoName;
-use DevboardLib\GitHub\Repo\GitHubRepoOwner;
-use DevboardLib\GitHub\Repo\GitHubRepoStats;
-use DevboardLib\GitHub\Repo\GitHubRepoTimestamps;
+use DevboardLib\GitHub\Repo\RepoEndpoints;
+use DevboardLib\GitHub\Repo\RepoFullName;
+use DevboardLib\GitHub\Repo\RepoId;
+use DevboardLib\GitHub\Repo\RepoName;
+use DevboardLib\GitHub\Repo\RepoOwner;
+use DevboardLib\GitHub\Repo\RepoStats;
+use DevboardLib\GitHub\Repo\RepoTimestamps;
 
 /**
  * @see GitHubRepoSpec
@@ -19,29 +19,29 @@ use DevboardLib\GitHub\Repo\GitHubRepoTimestamps;
  */
 class GitHubRepo
 {
-    /** @var GitHubRepoId */
+    /** @var RepoId */
     private $id;
-    /** @var GitHubRepoFullName */
+    /** @var RepoFullName */
     private $fullName;
-    /** @var GitHubRepoOwner */
+    /** @var RepoOwner */
     private $ownerDetails;
     /** @var bool */
     private $private;
-    /** @var GitHubRepoEndpoints */
+    /** @var RepoEndpoints */
     private $endpoints;
-    /** @var GitHubRepoTimestamps */
+    /** @var RepoTimestamps */
     private $timestamps;
-    /** @var GitHubRepoStats */
+    /** @var RepoStats */
     private $stats;
 
     public function __construct(
-        GitHubRepoId $id,
-        GitHubRepoFullName $fullName,
-        ?GitHubRepoOwner $ownerDetails,
+        RepoId $id,
+        RepoFullName $fullName,
+        ?RepoOwner $ownerDetails,
         bool $private,
-        GitHubRepoEndpoints $endpoints,
-        GitHubRepoTimestamps $timestamps,
-        GitHubRepoStats $stats
+        RepoEndpoints $endpoints,
+        RepoTimestamps $timestamps,
+        RepoStats $stats
     ) {
         $this->id           = $id;
         $this->fullName     = $fullName;
@@ -52,12 +52,12 @@ class GitHubRepo
         $this->stats        = $stats;
     }
 
-    public function getId(): GitHubRepoId
+    public function getId(): RepoId
     {
         return $this->id;
     }
 
-    public function getFullName(): GitHubRepoFullName
+    public function getFullName(): RepoFullName
     {
         return $this->fullName;
     }
@@ -67,7 +67,7 @@ class GitHubRepo
         return $this->fullName->getOwner();
     }
 
-    public function getRepoName(): GitHubRepoName
+    public function getRepoName(): RepoName
     {
         return $this->fullName->getRepoName();
     }
@@ -81,7 +81,7 @@ class GitHubRepo
         return true;
     }
 
-    public function getOwnerDetails(): ?GitHubRepoOwner
+    public function getOwnerDetails(): ?RepoOwner
     {
         return $this->ownerDetails;
     }
@@ -96,17 +96,17 @@ class GitHubRepo
         return !$this->private;
     }
 
-    public function getEndpoints(): GitHubRepoEndpoints
+    public function getEndpoints(): RepoEndpoints
     {
         return $this->endpoints;
     }
 
-    public function getTimestamps(): GitHubRepoTimestamps
+    public function getTimestamps(): RepoTimestamps
     {
         return $this->timestamps;
     }
 
-    public function getStats(): GitHubRepoStats
+    public function getStats(): RepoStats
     {
         return $this->stats;
     }
@@ -135,17 +135,17 @@ class GitHubRepo
         if (null === $data['ownerDetails']) {
             $ownerDetails = null;
         } else {
-            $ownerDetails = GitHubRepoOwner::deserialize($data['ownerDetails']);
+            $ownerDetails = RepoOwner::deserialize($data['ownerDetails']);
         }
 
         return new self(
-            new GitHubRepoId($data['id']),
-            GitHubRepoFullName::createFromString($data['fullName']),
+            new RepoId($data['id']),
+            RepoFullName::createFromString($data['fullName']),
             $ownerDetails,
             $data['private'],
-            GitHubRepoEndpoints::deserialize($data['endpoints']),
-            GitHubRepoTimestamps::deserialize($data['timestamps']),
-            GitHubRepoStats::deserialize($data['stats'])
+            RepoEndpoints::deserialize($data['endpoints']),
+            RepoTimestamps::deserialize($data['timestamps']),
+            RepoStats::deserialize($data['stats'])
         );
     }
 }

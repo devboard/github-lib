@@ -12,19 +12,19 @@ use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\Type\User;
 use DevboardLib\GitHub\GitHubRepo;
-use DevboardLib\GitHub\Repo\GitHubRepoApiUrl;
-use DevboardLib\GitHub\Repo\GitHubRepoCreatedAt;
-use DevboardLib\GitHub\Repo\GitHubRepoEndpoints;
-use DevboardLib\GitHub\Repo\GitHubRepoFullName;
-use DevboardLib\GitHub\Repo\GitHubRepoHtmlUrl;
-use DevboardLib\GitHub\Repo\GitHubRepoId;
-use DevboardLib\GitHub\Repo\GitHubRepoName;
-use DevboardLib\GitHub\Repo\GitHubRepoOwner;
-use DevboardLib\GitHub\Repo\GitHubRepoPushedAt;
-use DevboardLib\GitHub\Repo\GitHubRepoSize;
-use DevboardLib\GitHub\Repo\GitHubRepoStats;
-use DevboardLib\GitHub\Repo\GitHubRepoTimestamps;
-use DevboardLib\GitHub\Repo\GitHubRepoUpdatedAt;
+use DevboardLib\GitHub\Repo\RepoApiUrl;
+use DevboardLib\GitHub\Repo\RepoCreatedAt;
+use DevboardLib\GitHub\Repo\RepoEndpoints;
+use DevboardLib\GitHub\Repo\RepoFullName;
+use DevboardLib\GitHub\Repo\RepoHtmlUrl;
+use DevboardLib\GitHub\Repo\RepoId;
+use DevboardLib\GitHub\Repo\RepoName;
+use DevboardLib\GitHub\Repo\RepoOwner;
+use DevboardLib\GitHub\Repo\RepoPushedAt;
+use DevboardLib\GitHub\Repo\RepoSize;
+use DevboardLib\GitHub\Repo\RepoStats;
+use DevboardLib\GitHub\Repo\RepoTimestamps;
+use DevboardLib\GitHub\Repo\RepoUpdatedAt;
 
 /**
  * @covers \DevboardLib\GitHub\GitHubRepo
@@ -36,13 +36,13 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
 {
     /** @dataProvider provideData */
     public function testGetters(
-        GitHubRepoId $id,
-        GitHubRepoFullName $fullName,
-        ?GitHubRepoOwner $ownerDetails,
+        RepoId $id,
+        RepoFullName $fullName,
+        ?RepoOwner $ownerDetails,
         bool $private,
-        GitHubRepoEndpoints $endpoints,
-        GitHubRepoTimestamps $timestamps,
-        GitHubRepoStats $stats
+        RepoEndpoints $endpoints,
+        RepoTimestamps $timestamps,
+        RepoStats $stats
     ) {
         $sut = new GitHubRepo($id, $fullName, $ownerDetails, $private, $endpoints, $timestamps, $stats);
 
@@ -58,13 +58,13 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
 
     /** @dataProvider provideData */
     public function testSerializationAndDeserialization(
-        GitHubRepoId $id,
-        GitHubRepoFullName $fullName,
-        ?GitHubRepoOwner $ownerDetails,
+        RepoId $id,
+        RepoFullName $fullName,
+        ?RepoOwner $ownerDetails,
         bool $private,
-        GitHubRepoEndpoints $endpoints,
-        GitHubRepoTimestamps $timestamps,
-        GitHubRepoStats $stats
+        RepoEndpoints $endpoints,
+        RepoTimestamps $timestamps,
+        RepoStats $stats
     ) {
         $sut = new GitHubRepo($id, $fullName, $ownerDetails, $private, $endpoints, $timestamps, $stats);
 
@@ -77,11 +77,11 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
     {
         return [
             [
-                new GitHubRepoId(1234),
-                new GitHubRepoFullName(
-                    new AccountLogin('devboard-test'), new GitHubRepoName('super-library')
+                new RepoId(1234),
+                new RepoFullName(
+                    new AccountLogin('devboard-test'), new RepoName('super-library')
                 ),
-                new GitHubRepoOwner(
+                new RepoOwner(
                     new AccountId(789),
                     new AccountLogin('devboard-test'),
                     new User(),
@@ -92,34 +92,34 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
                     false
                 ),
                 false,
-                new GitHubRepoEndpoints(
-                    new GitHubRepoApiUrl('..'),
-                    new GitHubRepoHtmlUrl('..')
+                new RepoEndpoints(
+                    new RepoApiUrl('..'),
+                    new RepoHtmlUrl('..')
                 ),
-                new GitHubRepoTimestamps(
-                    new GitHubRepoCreatedAt('2017-01-02 11:22:33'),
-                    new GitHubRepoUpdatedAt('2017-02-03 15:16:17'),
-                    new GitHubRepoPushedAt('2017-03-04 22:23:24')
+                new RepoTimestamps(
+                    new RepoCreatedAt('2017-01-02 11:22:33'),
+                    new RepoUpdatedAt('2017-02-03 15:16:17'),
+                    new RepoPushedAt('2017-03-04 22:23:24')
                 ),
-                new GitHubRepoStats(1, 2, 3, 4, new GitHubRepoSize(77)),
+                new RepoStats(1, 2, 3, 4, new RepoSize(77)),
             ],
             [
-                new GitHubRepoId(1234),
-                new GitHubRepoFullName(
-                    new AccountLogin('devboard-test'), new GitHubRepoName('super-library')
+                new RepoId(1234),
+                new RepoFullName(
+                    new AccountLogin('devboard-test'), new RepoName('super-library')
                 ),
                 null,
                 false,
-                new GitHubRepoEndpoints(
-                    new GitHubRepoApiUrl('..'),
-                    new GitHubRepoHtmlUrl('..')
+                new RepoEndpoints(
+                    new RepoApiUrl('..'),
+                    new RepoHtmlUrl('..')
                 ),
-                new GitHubRepoTimestamps(
-                    new GitHubRepoCreatedAt('2017-01-02 11:22:33'),
-                    new GitHubRepoUpdatedAt('2017-02-03 15:16:17'),
-                    new GitHubRepoPushedAt('2017-03-04 22:23:24')
+                new RepoTimestamps(
+                    new RepoCreatedAt('2017-01-02 11:22:33'),
+                    new RepoUpdatedAt('2017-02-03 15:16:17'),
+                    new RepoPushedAt('2017-03-04 22:23:24')
                 ),
-                new GitHubRepoStats(1, 2, 3, 4, new GitHubRepoSize(77)),
+                new RepoStats(1, 2, 3, 4, new RepoSize(77)),
             ],
         ];
     }

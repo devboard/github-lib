@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace tests\DevboardLib\GitHub;
 
 use DevboardLib\GitHub\Account\Type\User;
-use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorEmail;
-use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorName;
-use DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterEmail;
-use DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterName;
-use DevboardLib\GitHub\Commit\GitHubCommitAuthor;
-use DevboardLib\GitHub\Commit\GitHubCommitAuthorDetails;
-use DevboardLib\GitHub\Commit\GitHubCommitCommitter;
-use DevboardLib\GitHub\Commit\GitHubCommitCommitterDetails;
-use DevboardLib\GitHub\Commit\GitHubCommitDate;
-use DevboardLib\GitHub\Commit\GitHubCommitMessage;
-use DevboardLib\GitHub\Commit\GitHubCommitSha;
+use DevboardLib\GitHub\Commit\Author\CommitAuthorEmail;
+use DevboardLib\GitHub\Commit\Author\CommitAuthorName;
+use DevboardLib\GitHub\Commit\CommitAuthor;
+use DevboardLib\GitHub\Commit\CommitAuthorDetails;
+use DevboardLib\GitHub\Commit\CommitCommitter;
+use DevboardLib\GitHub\Commit\CommitCommitterDetails;
+use DevboardLib\GitHub\Commit\CommitDate;
+use DevboardLib\GitHub\Commit\CommitMessage;
+use DevboardLib\GitHub\Commit\CommitSha;
+use DevboardLib\GitHub\Commit\Committer\CommitCommitterEmail;
+use DevboardLib\GitHub\Commit\Committer\CommitCommitterName;
 use DevboardLib\GitHub\GitHubCommit;
 use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
@@ -34,11 +34,11 @@ class GitHubCommitTest extends \PHPUnit_Framework_TestCase
 {
     /** @dataProvider provideArguments */
     public function testCreating(
-        GitHubCommitSha $sha,
-        GitHubCommitMessage $message,
-        GitHubCommitDate $commitDate,
-        GitHubCommitAuthor $author,
-        GitHubCommitCommitter $committer
+        CommitSha $sha,
+        CommitMessage $message,
+        CommitDate $commitDate,
+        CommitAuthor $author,
+        CommitCommitter $committer
     ) {
         $sut = new GitHubCommit($sha, $message, $commitDate, $author, $committer);
 
@@ -51,11 +51,11 @@ class GitHubCommitTest extends \PHPUnit_Framework_TestCase
 
     /** @dataProvider provideArguments */
     public function testSerializationAndDeserialization(
-        GitHubCommitSha $sha,
-        GitHubCommitMessage $message,
-        GitHubCommitDate $commitDate,
-        GitHubCommitAuthor $author,
-        GitHubCommitCommitter $committer
+        CommitSha $sha,
+        CommitMessage $message,
+        CommitDate $commitDate,
+        CommitAuthor $author,
+        CommitCommitter $committer
     ) {
         $sut = new GitHubCommit($sha, $message, $commitDate, $author, $committer);
 
@@ -68,14 +68,14 @@ class GitHubCommitTest extends \PHPUnit_Framework_TestCase
     {
         return [
             [
-                new GitHubCommitSha('abc123'),
-                new GitHubCommitMessage('Message'),
-                new GitHubCommitDate('2017-02-03 11:22:33'),
-                new GitHubCommitAuthor(
-                    new GitHubCommitAuthorName('name'),
-                    new GitHubCommitAuthorEmail('nobody@example.com'),
-                    new GitHubCommitDate('2017-02-03 11:22:33'),
-                    new GitHubCommitAuthorDetails(
+                new CommitSha('abc123'),
+                new CommitMessage('Message'),
+                new CommitDate('2017-02-03 11:22:33'),
+                new CommitAuthor(
+                    new CommitAuthorName('name'),
+                    new CommitAuthorEmail('nobody@example.com'),
+                    new CommitDate('2017-02-03 11:22:33'),
+                    new CommitAuthorDetails(
                         new UserId(13507412),
                         new UserLogin('devboard-test'),
                         new User(),
@@ -86,11 +86,11 @@ class GitHubCommitTest extends \PHPUnit_Framework_TestCase
                         false
                     )
                 ),
-                new GitHubCommitCommitter(
-                    new GitHubCommitCommitterName('name'),
-                    new GitHubCommitCommitterEmail('nobody@example.com'),
-                    new GitHubCommitDate('2017-02-03 11:22:33'),
-                    new GitHubCommitCommitterDetails(
+                new CommitCommitter(
+                    new CommitCommitterName('name'),
+                    new CommitCommitterEmail('nobody@example.com'),
+                    new CommitDate('2017-02-03 11:22:33'),
+                    new CommitCommitterDetails(
                         new UserId(13507412),
                         new UserLogin('devboard-test'),
                         new User(),

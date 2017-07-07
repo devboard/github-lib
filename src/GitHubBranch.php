@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Branch\GitHubBranchName;
-use DevboardLib\GitHub\Repo\GitHubRepoFullName;
+use DevboardLib\GitHub\Branch\BranchName;
+use DevboardLib\GitHub\Repo\RepoFullName;
 
 /**
  * @see GitHubBranchSpec
@@ -13,26 +13,26 @@ use DevboardLib\GitHub\Repo\GitHubRepoFullName;
  */
 class GitHubBranch
 {
-    /** @var GitHubRepoFullName */
+    /** @var RepoFullName */
     private $repoFullName;
-    /** @var GitHubBranchName */
+    /** @var BranchName */
     private $branchName;
     /** @var GitHubCommit */
     private $commit;
 
-    public function __construct(GitHubRepoFullName $repoFullName, GitHubBranchName $branchName, GitHubCommit $commit)
+    public function __construct(RepoFullName $repoFullName, BranchName $branchName, GitHubCommit $commit)
     {
         $this->repoFullName = $repoFullName;
         $this->branchName   = $branchName;
         $this->commit       = $commit;
     }
 
-    public function getRepoFullName(): GitHubRepoFullName
+    public function getRepoFullName(): RepoFullName
     {
         return $this->repoFullName;
     }
 
-    public function getBranchName(): GitHubBranchName
+    public function getBranchName(): BranchName
     {
         return $this->branchName;
     }
@@ -54,8 +54,8 @@ class GitHubBranch
     public static function deserialize(array $data): GitHubBranch
     {
         return new self(
-            GitHubRepoFullName::createFromString($data['repoFullName']),
-            new GitHubBranchName($data['branchName']),
+            RepoFullName::createFromString($data['repoFullName']),
+            new BranchName($data['branchName']),
             GitHubCommit::deserialize($data['commit'])
         );
     }
