@@ -14,10 +14,10 @@ use DevboardLib\GitHub\Account\GitHubAccountType;
 use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
 
 /**
- * @see GitHubInstallationAccountSpec
- * @see GitHubInstallationAccountTest
+ * @see InstallationAccountSpec
+ * @see InstallationAccountTest
  */
-class GitHubInstallationAccount
+class InstallationAccount
 {
     /** @var GitHubAccountId */
     private $userId;
@@ -110,7 +110,7 @@ class GitHubInstallationAccount
         ];
     }
 
-    public static function deserialize(array $data): GitHubInstallationAccount
+    public static function deserialize(array $data): InstallationAccount
     {
         return new self(
             new GitHubAccountId($data['userId']),

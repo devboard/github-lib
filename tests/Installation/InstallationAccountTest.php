@@ -13,13 +13,13 @@ use DevboardLib\GitHub\Account\GitHubAccountLogin;
 use DevboardLib\GitHub\Account\GitHubAccountType;
 use DevboardLib\GitHub\Account\Type\Organization;
 use DevboardLib\GitHub\Account\Type\User;
-use DevboardLib\GitHub\Installation\GitHubInstallationAccount;
+use DevboardLib\GitHub\Installation\InstallationAccount;
 
 /**
- * @covers \DevboardLib\GitHub\Installation\GitHubInstallationAccount
+ * @covers \DevboardLib\GitHub\Installation\InstallationAccount
  * @group  unit
  */
-class GitHubInstallationAccountTest extends \PHPUnit_Framework_TestCase
+class InstallationAccountTest extends \PHPUnit_Framework_TestCase
 {
     /** @dataProvider provideArguments */
     public function testCreating(
@@ -32,7 +32,7 @@ class GitHubInstallationAccountTest extends \PHPUnit_Framework_TestCase
         GitHubAccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
-        $sut = new GitHubInstallationAccount(
+        $sut = new InstallationAccount(
             $userId, $login, $gitHubAccountType, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin
         );
 
@@ -57,13 +57,13 @@ class GitHubInstallationAccountTest extends \PHPUnit_Framework_TestCase
         GitHubAccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
-        $sut = new GitHubInstallationAccount(
+        $sut = new InstallationAccount(
             $userId, $login, $gitHubAccountType, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin
         );
 
         $serialized = $sut->serialize();
 
-        $this->assertEquals($sut, GitHubInstallationAccount::deserialize($serialized));
+        $this->assertEquals($sut, InstallationAccount::deserialize($serialized));
     }
 
     public function provideArguments(): array

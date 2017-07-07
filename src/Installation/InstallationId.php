@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Installation;
 
 /**
- * @see GitHubInstallationIdSpec
- * @see GitHubInstallationIdTest
+ * @see InstallationIdSpec
+ * @see InstallationIdTest
  */
-class GitHubInstallationId
+class InstallationId
 {
     /** @var int */
     private $id;

@@ -11,10 +11,10 @@ use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
 use DevboardLib\GitHub\Account\GitHubAccountId;
 use DevboardLib\GitHub\Account\GitHubAccountLogin;
 use DevboardLib\GitHub\Account\GitHubAccountType;
-use DevboardLib\GitHub\Installation\GitHubInstallationAccount;
+use DevboardLib\GitHub\Installation\InstallationAccount;
 use PhpSpec\ObjectBehavior;
 
-class GitHubInstallationAccountSpec extends ObjectBehavior
+class InstallationAccountSpec extends ObjectBehavior
 {
     public function let(
         GitHubAccountId $userId,
@@ -39,7 +39,7 @@ class GitHubInstallationAccountSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubInstallationAccount::class);
+        $this->shouldHaveType(InstallationAccount::class);
     }
 
     public function it_should_expose_all_values_via_getters(

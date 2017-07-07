@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Installation;
 
-use DevboardLib\GitHub\Installation\Events;
+use DevboardLib\GitHub\Installation\InstallationEvents;
 use PhpSpec\ObjectBehavior;
 
-class EventsSpec extends ObjectBehavior
+class InstallationEventsSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -41,6 +41,6 @@ class EventsSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(Events::class);
+        $this->shouldHaveType(InstallationEvents::class);
     }
 }

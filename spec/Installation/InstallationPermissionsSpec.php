@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Installation;
 
-use DevboardLib\GitHub\Installation\Permissions;
+use DevboardLib\GitHub\Installation\InstallationPermissions;
 use PhpSpec\ObjectBehavior;
 
-class PermissionsSpec extends ObjectBehavior
+class InstallationPermissionsSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -25,6 +25,6 @@ class PermissionsSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(Permissions::class);
+        $this->shouldHaveType(InstallationPermissions::class);
     }
 }

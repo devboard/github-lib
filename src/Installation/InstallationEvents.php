@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Installation;
 
 /**
- * @see PermissionsSpec
- * @see PermissionsTest
+ * @see InstallationEventsSpec
+ * @see InstallationEventsTest
  */
-class Permissions
+class InstallationEvents
 {
     /** @var array */
     private $values;
@@ -28,7 +28,7 @@ class Permissions
         return $this->values;
     }
 
-    public static function deserialize(array $data): Permissions
+    public static function deserialize(array $data): InstallationEvents
     {
         return new self($data);
     }

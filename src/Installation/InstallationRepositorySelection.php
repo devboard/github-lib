@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Installation;
 
 /**
- * @see \DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositoryAll
- * @see \DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositorySelected
+ * @see \DevboardLib\GitHub\Installation\InstallationRepositorySelection\InstallationRepositoryAll
+ * @see \DevboardLib\GitHub\Installation\InstallationRepositorySelection\InstallationRepositorySelected
  */
-interface RepositorySelection
+interface InstallationRepositorySelection
 {
     public function all(): bool;
 

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Installation;
 
-use DevboardLib\GitHub\Installation\GitHubInstallationAccessTokenUrl;
+use DevboardLib\GitHub\Installation\InstallationAccessTokenUrl;
 use PhpSpec\ObjectBehavior;
 
-class GitHubInstallationAccessTokenUrlSpec extends ObjectBehavior
+class InstallationAccessTokenUrlSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class GitHubInstallationAccessTokenUrlSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubInstallationAccessTokenUrl::class);
+        $this->shouldHaveType(InstallationAccessTokenUrl::class);
     }
 
     public function it_should_expose_value()

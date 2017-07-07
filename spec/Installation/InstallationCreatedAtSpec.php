@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace spec\DevboardLib\GitHub\Installation;
 
 use DateTime;
-use DevboardLib\GitHub\Installation\CreatedAt;
+use DevboardLib\GitHub\Installation\InstallationCreatedAt;
 use PhpSpec\ObjectBehavior;
 
-class CreatedAtSpec extends ObjectBehavior
+class InstallationCreatedAtSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -17,7 +17,7 @@ class CreatedAtSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(CreatedAt::class);
+        $this->shouldHaveType(InstallationCreatedAt::class);
     }
 
     public function it_should_be_castable_to_string()

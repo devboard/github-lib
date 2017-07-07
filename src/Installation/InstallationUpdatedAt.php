@@ -7,17 +7,17 @@ namespace DevboardLib\GitHub\Installation;
 use DateTime;
 
 /**
- * @see UpdatedAtSpec
- * @see UpdatedAtTest
+ * @see InstallationUpdatedAtSpec
+ * @see InstallationUpdatedAtTest
  */
-class UpdatedAt extends DateTime
+class InstallationUpdatedAt extends DateTime
 {
     public function __toString(): string
     {
         return $this->format('c');
     }
 
-    public static function createFromFormat($format, $time, $object = null): UpdatedAt
+    public static function createFromFormat($format, $time, $object = null): InstallationUpdatedAt
     {
         $date = parent::createFromFormat($format, $time, $object);
 

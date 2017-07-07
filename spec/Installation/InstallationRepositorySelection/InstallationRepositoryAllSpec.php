@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace spec\DevboardLib\GitHub\Installation\RepositorySelection;
+namespace spec\DevboardLib\GitHub\Installation\InstallationRepositorySelection;
 
-use DevboardLib\GitHub\Installation\RepositorySelection;
-use DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositoryAll;
+use DevboardLib\GitHub\Installation\InstallationRepositorySelection;
+use DevboardLib\GitHub\Installation\InstallationRepositorySelection\InstallationRepositoryAll;
 use PhpSpec\ObjectBehavior;
 
-class GitHubInstallationRepositoryAllSpec extends ObjectBehavior
+class InstallationRepositoryAllSpec extends ObjectBehavior
 {
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubInstallationRepositoryAll::class);
-        $this->shouldImplement(RepositorySelection::class);
+        $this->shouldHaveType(InstallationRepositoryAll::class);
+        $this->shouldImplement(InstallationRepositorySelection::class);
     }
 
     public function it_knows_it_allows_access_to_all_repos()

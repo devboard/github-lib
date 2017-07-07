@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Installation;
 
 /**
- * @see GitHubInstallationRepositoriesUrlSpec
- * @see GitHubInstallationRepositoriesUrlTest
+ * @see InstallationRepositoriesUrlSpec
+ * @see InstallationRepositoriesUrlTest
  */
-class GitHubInstallationRepositoriesUrl
+class InstallationRepositoriesUrl
 {
     /** @var string */
     private $value;

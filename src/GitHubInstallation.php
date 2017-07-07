@@ -5,59 +5,59 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub;
 
 use DevboardLib\GitHub\Application\ApplicationId;
-use DevboardLib\GitHub\Installation\CreatedAt;
-use DevboardLib\GitHub\Installation\Events;
-use DevboardLib\GitHub\Installation\GitHubInstallationAccessTokenUrl;
-use DevboardLib\GitHub\Installation\GitHubInstallationAccount;
-use DevboardLib\GitHub\Installation\GitHubInstallationHtmlUrl;
-use DevboardLib\GitHub\Installation\GitHubInstallationId;
-use DevboardLib\GitHub\Installation\GitHubInstallationRepositoriesUrl;
-use DevboardLib\GitHub\Installation\Permissions;
-use DevboardLib\GitHub\Installation\RepositorySelection;
-use DevboardLib\GitHub\Installation\UpdatedAt;
+use DevboardLib\GitHub\Installation\InstallationAccessTokenUrl;
+use DevboardLib\GitHub\Installation\InstallationAccount;
+use DevboardLib\GitHub\Installation\InstallationCreatedAt;
+use DevboardLib\GitHub\Installation\InstallationEvents;
+use DevboardLib\GitHub\Installation\InstallationHtmlUrl;
+use DevboardLib\GitHub\Installation\InstallationId;
+use DevboardLib\GitHub\Installation\InstallationPermissions;
+use DevboardLib\GitHub\Installation\InstallationRepositoriesUrl;
+use DevboardLib\GitHub\Installation\InstallationRepositorySelection;
+use DevboardLib\GitHub\Installation\InstallationUpdatedAt;
 
 /**
- * @see GitHubInstallationSpec
- * @see GitHubInstallationTest
+ * @see InstallationSpec
+ * @see InstallationTest
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  */
 class GitHubInstallation
 {
-    /** @var GitHubInstallationId */
+    /** @var InstallationId */
     private $installationId;
-    /** @var GitHubInstallationAccount */
+    /** @var InstallationAccount */
     private $installationAccount;
     /** @var ApplicationId */
     private $applicationId;
-    /** @var RepositorySelection|null */
+    /** @var InstallationRepositorySelection|null */
     private $repositorySelection;
-    /** @var Permissions */
+    /** @var InstallationPermissions */
     private $permissions;
-    /** @var Events */
+    /** @var InstallationEvents */
     private $events;
-    /** @var GitHubInstallationAccessTokenUrl */
+    /** @var InstallationAccessTokenUrl */
     private $accessTokenUrl;
-    /** @var GitHubInstallationRepositoriesUrl */
+    /** @var InstallationRepositoriesUrl */
     private $repositoriesUrl;
-    /** @var GitHubInstallationHtmlUrl */
+    /** @var InstallationHtmlUrl */
     private $htmlUrl;
-    /** @var CreatedAt */
+    /** @var InstallationCreatedAt */
     private $createdAt;
-    /** @var UpdatedAt */
+    /** @var InstallationUpdatedAt */
     private $updatedAt;
 
     public function __construct(
-        GitHubInstallationId $installationId,
-        GitHubInstallationAccount $installationAccount,
+        InstallationId $installationId,
+        InstallationAccount $installationAccount,
         ApplicationId $applicationId,
-        ?RepositorySelection $repositorySelection,
-        Permissions $permissions,
-        Events $events,
-        GitHubInstallationAccessTokenUrl $accessTokenUrl,
-        GitHubInstallationRepositoriesUrl $repositoriesUrl,
-        GitHubInstallationHtmlUrl $htmlUrl,
-        CreatedAt $createdAt,
-        UpdatedAt $updatedAt
+        ?InstallationRepositorySelection $repositorySelection,
+        InstallationPermissions $permissions,
+        InstallationEvents $events,
+        InstallationAccessTokenUrl $accessTokenUrl,
+        InstallationRepositoriesUrl $repositoriesUrl,
+        InstallationHtmlUrl $htmlUrl,
+        InstallationCreatedAt $createdAt,
+        InstallationUpdatedAt $updatedAt
     ) {
         $this->installationId      = $installationId;
         $this->installationAccount = $installationAccount;
@@ -72,12 +72,12 @@ class GitHubInstallation
         $this->updatedAt           = $updatedAt;
     }
 
-    public function getInstallationId(): GitHubInstallationId
+    public function getInstallationId(): InstallationId
     {
         return $this->installationId;
     }
 
-    public function getInstallationAccount(): GitHubInstallationAccount
+    public function getInstallationAccount(): InstallationAccount
     {
         return $this->installationAccount;
     }
@@ -87,42 +87,42 @@ class GitHubInstallation
         return $this->applicationId;
     }
 
-    public function getRepositorySelection(): ?RepositorySelection
+    public function getRepositorySelection(): ?InstallationRepositorySelection
     {
         return $this->repositorySelection;
     }
 
-    public function getPermissions(): Permissions
+    public function getPermissions(): InstallationPermissions
     {
         return $this->permissions;
     }
 
-    public function getEvents(): Events
+    public function getEvents(): InstallationEvents
     {
         return $this->events;
     }
 
-    public function getAccessTokenUrl(): GitHubInstallationAccessTokenUrl
+    public function getAccessTokenUrl(): InstallationAccessTokenUrl
     {
         return $this->accessTokenUrl;
     }
 
-    public function getRepositoriesUrl(): GitHubInstallationRepositoriesUrl
+    public function getRepositoriesUrl(): InstallationRepositoriesUrl
     {
         return $this->repositoriesUrl;
     }
 
-    public function getHtmlUrl(): GitHubInstallationHtmlUrl
+    public function getHtmlUrl(): InstallationHtmlUrl
     {
         return $this->htmlUrl;
     }
 
-    public function getCreatedAt(): CreatedAt
+    public function getCreatedAt(): InstallationCreatedAt
     {
         return $this->createdAt;
     }
 
-    public function getUpdatedAt(): UpdatedAt
+    public function getUpdatedAt(): InstallationUpdatedAt
     {
         return $this->updatedAt;
     }

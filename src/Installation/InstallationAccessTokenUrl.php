@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Installation;
 
 /**
- * @see GitHubInstallationAccessTokenUrlSpec
- * @see GitHubInstallationAccessTokenUrlTest
+ * @see InstallationAccessTokenUrlSpec
+ * @see InstallationAccessTokenUrlTest
  */
-class GitHubInstallationAccessTokenUrl
+class InstallationAccessTokenUrl
 {
     /** @var string */
     private $value;

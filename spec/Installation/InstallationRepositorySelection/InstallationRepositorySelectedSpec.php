@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace spec\DevboardLib\GitHub\Installation\RepositorySelection;
+namespace spec\DevboardLib\GitHub\Installation\InstallationRepositorySelection;
 
-use DevboardLib\GitHub\Installation\RepositorySelection;
-use DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositorySelected;
+use DevboardLib\GitHub\Installation\InstallationRepositorySelection;
+use DevboardLib\GitHub\Installation\InstallationRepositorySelection\InstallationRepositorySelected;
 use PhpSpec\ObjectBehavior;
 
-class GitHubInstallationRepositorySelectedSpec extends ObjectBehavior
+class InstallationRepositorySelectedSpec extends ObjectBehavior
 {
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubInstallationRepositorySelected::class);
-        $this->shouldImplement(RepositorySelection::class);
+        $this->shouldHaveType(InstallationRepositorySelected::class);
+        $this->shouldImplement(InstallationRepositorySelection::class);
     }
 
     public function it_knows_it_allows_access_to_only_selected_repos()
