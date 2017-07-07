@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Account;
 
 /**
- * @see GitHubAccountApiUrlSpec
- * @see GitHubAccountApiUrlTest
+ * @see AccountLoginSpec
+ * @see AccountLoginTest
  */
-class GitHubAccountApiUrl
+class AccountLogin
 {
     /** @var string */
     private $value;

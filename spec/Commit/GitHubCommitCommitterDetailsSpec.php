@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Commit;
 
-use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Commit\GitHubCommitCommitterDetails;
 use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
@@ -19,7 +19,7 @@ class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
     public function let(
         UserId $userId,
         UserLogin $login,
-        GitHubAccountType $gitHubAccountType,
+        AccountType $gitHubAccountType,
         UserAvatarUrl $avatarUrl,
         UserGravatarId $gravatarId,
         UserHtmlUrl $htmlUrl,
@@ -36,7 +36,7 @@ class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
     public function it_should_expose_all_values_via_getters(
         UserId $userId,
         UserLogin $login,
-        GitHubAccountType $gitHubAccountType,
+        AccountType $gitHubAccountType,
         UserAvatarUrl $avatarUrl,
         UserGravatarId $gravatarId,
         UserHtmlUrl $htmlUrl,
@@ -44,7 +44,7 @@ class GitHubCommitCommitterDetailsSpec extends ObjectBehavior
     ) {
         $this->getUserId()->shouldReturn($userId);
         $this->getLogin()->shouldReturn($login);
-        $this->getGitHubAccountType()->shouldReturn($gitHubAccountType);
+        $this->getAccountType()->shouldReturn($gitHubAccountType);
         $this->getAvatarUrl()->shouldReturn($avatarUrl);
         $this->getGravatarId()->shouldReturn($gravatarId);
         $this->getHtmlUrl()->shouldReturn($htmlUrl);

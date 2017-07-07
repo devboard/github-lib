@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\GitHubRepo;
 use DevboardLib\GitHub\Repo\GitHubRepoEndpoints;
 use DevboardLib\GitHub\Repo\GitHubRepoFullName;
@@ -61,7 +61,7 @@ class GitHubRepoSpec extends ObjectBehavior
 
     public function it_exposes_parts_of_full_name(
         GitHubRepoFullName $fullName,
-        GitHubAccountLogin $userLogin,
+        AccountLogin $userLogin,
         GitHubRepoName $repoName
     ) {
         $fullName->getOwner()->shouldBeCalled()->willReturn($userLogin);

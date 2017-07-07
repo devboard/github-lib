@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Repo\GitHubRepoEndpoints;
 use DevboardLib\GitHub\Repo\GitHubRepoFullName;
 use DevboardLib\GitHub\Repo\GitHubRepoId;
@@ -62,7 +62,7 @@ class GitHubRepo
         return $this->fullName;
     }
 
-    public function getOwnerLogin(): GitHubAccountLogin
+    public function getOwnerLogin(): AccountLogin
     {
         return $this->fullName->getOwner();
     }

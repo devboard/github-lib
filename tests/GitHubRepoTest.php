@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace tests\DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
-use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
-use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
-use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
-use DevboardLib\GitHub\Account\GitHubAccountId;
-use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\AccountApiUrl;
+use DevboardLib\GitHub\Account\AccountAvatarUrl;
+use DevboardLib\GitHub\Account\AccountGravatarId;
+use DevboardLib\GitHub\Account\AccountHtmlUrl;
+use DevboardLib\GitHub\Account\AccountId;
+use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\Type\User;
 use DevboardLib\GitHub\GitHubRepo;
 use DevboardLib\GitHub\Repo\GitHubRepoApiUrl;
@@ -79,16 +79,16 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
             [
                 new GitHubRepoId(1234),
                 new GitHubRepoFullName(
-                    new GitHubAccountLogin('devboard-test'), new GitHubRepoName('super-library')
+                    new AccountLogin('devboard-test'), new GitHubRepoName('super-library')
                 ),
                 new GitHubRepoOwner(
-                    new GitHubAccountId(789),
-                    new GitHubAccountLogin('devboard-test'),
+                    new AccountId(789),
+                    new AccountLogin('devboard-test'),
                     new User(),
-                    new GitHubAccountAvatarUrl('..'),
-                    new GitHubAccountGravatarId('..'),
-                    new GitHubAccountHtmlUrl('..'),
-                    new GitHubAccountApiUrl('..'),
+                    new AccountAvatarUrl('..'),
+                    new AccountGravatarId('..'),
+                    new AccountHtmlUrl('..'),
+                    new AccountApiUrl('..'),
                     false
                 ),
                 false,
@@ -106,7 +106,7 @@ class GitHubRepoTest extends \PHPUnit_Framework_TestCase
             [
                 new GitHubRepoId(1234),
                 new GitHubRepoFullName(
-                    new GitHubAccountLogin('devboard-test'), new GitHubRepoName('super-library')
+                    new AccountLogin('devboard-test'), new GitHubRepoName('super-library')
                 ),
                 null,
                 false,

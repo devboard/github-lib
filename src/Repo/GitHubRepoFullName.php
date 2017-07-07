@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Repo;
 
-use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\AccountLogin;
 
 /**
  * @see GitHubRepoFullNameSpec
@@ -12,12 +12,12 @@ use DevboardLib\GitHub\Account\GitHubAccountLogin;
  */
 class GitHubRepoFullName
 {
-    /** @var GitHubAccountLogin */
+    /** @var AccountLogin */
     private $owner;
     /** @var \DevboardLib\GitHub\Repo\GitHubRepoName */
     private $repoName;
 
-    public function __construct(GitHubAccountLogin $owner, GitHubRepoName $repoName)
+    public function __construct(AccountLogin $owner, GitHubRepoName $repoName)
     {
         $this->owner    = $owner;
         $this->repoName = $repoName;
@@ -27,7 +27,7 @@ class GitHubRepoFullName
     {
         list($owner, $name) = explode('/', $fullName);
 
-        return new self(new GitHubAccountLogin($owner), new GitHubRepoName($name));
+        return new self(new AccountLogin($owner), new GitHubRepoName($name));
     }
 
     public function getValue(): string
@@ -40,7 +40,7 @@ class GitHubRepoFullName
         return $this->getValue();
     }
 
-    public function getOwner(): GitHubAccountLogin
+    public function getOwner(): AccountLogin
     {
         return $this->owner;
     }

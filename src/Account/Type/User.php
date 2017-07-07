@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Account\Type;
 
-use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\AccountType;
 
 /**
  * @see UserSpec
  * @see UserTest
  */
-class User implements GitHubAccountType
+class User implements AccountType
 {
     const NAME = 'User';
 

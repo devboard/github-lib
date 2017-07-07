@@ -8,7 +8,7 @@ namespace DevboardLib\GitHub\Account;
  * @see \DevboardLib\GitHub\Account\Type\Organization
  * @see \DevboardLib\GitHub\Account\Type\Account
  */
-interface GitHubAccountType
+interface AccountType
 {
     public function isOrganization(): bool;
 

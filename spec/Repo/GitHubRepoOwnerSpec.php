@@ -4,26 +4,26 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Repo;
 
-use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
-use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
-use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
-use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
-use DevboardLib\GitHub\Account\GitHubAccountId;
-use DevboardLib\GitHub\Account\GitHubAccountLogin;
-use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\AccountApiUrl;
+use DevboardLib\GitHub\Account\AccountAvatarUrl;
+use DevboardLib\GitHub\Account\AccountGravatarId;
+use DevboardLib\GitHub\Account\AccountHtmlUrl;
+use DevboardLib\GitHub\Account\AccountId;
+use DevboardLib\GitHub\Account\AccountLogin;
+use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Repo\GitHubRepoOwner;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoOwnerSpec extends ObjectBehavior
 {
     public function let(
-        GitHubAccountId $userId,
-        GitHubAccountLogin $login,
-        GitHubAccountType $gitHubAccountType,
-        GitHubAccountAvatarUrl $avatarUrl,
-        GitHubAccountGravatarId $gravatarId,
-        GitHubAccountHtmlUrl $htmlUrl,
-        GitHubAccountApiUrl $apiUrl
+        AccountId $userId,
+        AccountLogin $login,
+        AccountType $gitHubAccountType,
+        AccountAvatarUrl $avatarUrl,
+        AccountGravatarId $gravatarId,
+        AccountHtmlUrl $htmlUrl,
+        AccountApiUrl $apiUrl
     ) {
         $this->beConstructedWith(
             $userId,
@@ -43,17 +43,17 @@ class GitHubRepoOwnerSpec extends ObjectBehavior
     }
 
     public function it_should_expose_all_values_via_getters(
-        GitHubAccountId $userId,
-        GitHubAccountLogin $login,
-        GitHubAccountType $gitHubAccountType,
-        GitHubAccountAvatarUrl $avatarUrl,
-        GitHubAccountGravatarId $gravatarId,
-        GitHubAccountHtmlUrl $htmlUrl,
-        GitHubAccountApiUrl $apiUrl
+        AccountId $userId,
+        AccountLogin $login,
+        AccountType $gitHubAccountType,
+        AccountAvatarUrl $avatarUrl,
+        AccountGravatarId $gravatarId,
+        AccountHtmlUrl $htmlUrl,
+        AccountApiUrl $apiUrl
     ) {
         $this->getUserId()->shouldReturn($userId);
         $this->getLogin()->shouldReturn($login);
-        $this->getGitHubAccountType()->shouldReturn($gitHubAccountType);
+        $this->getAccountType()->shouldReturn($gitHubAccountType);
         $this->getAvatarUrl()->shouldReturn($avatarUrl);
         $this->getGravatarId()->shouldReturn($gravatarId);
         $this->getHtmlUrl()->shouldReturn($htmlUrl);

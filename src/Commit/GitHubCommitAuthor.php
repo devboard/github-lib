@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Commit;
 
-use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorName;
 use DevboardLib\GitHub\User\UserApiUrl;
@@ -88,13 +88,13 @@ class GitHubCommitAuthor
         return $this->authorDetails->getLogin();
     }
 
-    public function getGitHubAccountType(): ?GitHubAccountType
+    public function getAccountType(): ?AccountType
     {
         if (null === $this->authorDetails) {
             return null;
         }
 
-        return $this->authorDetails->getGitHubAccountType();
+        return $this->authorDetails->getAccountType();
     }
 
     public function getAvatarUrl(): ?UserAvatarUrl

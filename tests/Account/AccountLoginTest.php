@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 namespace tests\DevboardLib\GitHub\Account;
 
-use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\AccountLogin;
 
 /**
- * @covers \DevboardLib\GitHub\Account\GitHubAccountLogin
+ * @covers \DevboardLib\GitHub\Account\AccountLogin
  * @group  unit
  */
-class GitHubAccountLoginTest extends \PHPUnit_Framework_TestCase
+class AccountLoginTest extends \PHPUnit_Framework_TestCase
 {
     /** @dataProvider provideAccountLogins */
     public function testItExposesValue(string $login)
     {
-        $sut = new GitHubAccountLogin($login);
+        $sut = new AccountLogin($login);
         $this->assertEquals($login, $sut->getValue());
     }
 
     /** @dataProvider provideAccountLogins */
     public function testItCanBeAutoConvertedToString(string $login)
     {
-        $sut = new GitHubAccountLogin($login);
+        $sut = new AccountLogin($login);
         $this->assertEquals($login, (string) $sut);
     }
 

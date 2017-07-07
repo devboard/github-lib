@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Account;
 
 /**
- * @see GitHubAccountGravatarIdSpec
- * @see GitHubAccountGravatarIdTest
+ * @see AccountGravatarIdSpec
+ * @see AccountGravatarIdTest
  */
-class GitHubAccountGravatarId
+class AccountGravatarId
 {
     /** @var string */
     private $id;

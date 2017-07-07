@@ -78,7 +78,7 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame($authorDetails->getUserId(), $sut->getUserId());
         $this->assertSame($authorDetails->getLogin(), $sut->getLogin());
-        $this->assertSame($authorDetails->getGitHubAccountType(), $sut->getGitHubAccountType());
+        $this->assertSame($authorDetails->getAccountType(), $sut->getAccountType());
         $this->assertSame($authorDetails->getAvatarUrl(), $sut->getAvatarUrl());
         $this->assertSame($authorDetails->getGravatarId(), $sut->getGravatarId());
         $this->assertSame($authorDetails->getHtmlUrl(), $sut->getHtmlUrl());
@@ -103,7 +103,7 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($sut->getAuthorDetails());
         $this->assertNull($sut->getUserId());
         $this->assertNull($sut->getLogin());
-        $this->assertNull($sut->getGitHubAccountType());
+        $this->assertNull($sut->getAccountType());
         $this->assertNull($sut->getAvatarUrl());
         $this->assertNull($sut->getGravatarId());
         $this->assertNull($sut->getHtmlUrl());

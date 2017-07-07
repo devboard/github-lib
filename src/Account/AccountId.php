@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Account;
 
 /**
- * @see GitHubAccountIdSpec
- * @see GitHubAccountIdTest
+ * @see AccountIdSpec
+ * @see AccountIdTest
  */
-class GitHubAccountId
+class AccountId
 {
     /** @var int */
     private $id;
