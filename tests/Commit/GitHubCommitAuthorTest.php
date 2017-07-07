@@ -10,12 +10,12 @@ use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorName;
 use DevboardLib\GitHub\Commit\GitHubCommitAuthor;
 use DevboardLib\GitHub\Commit\GitHubCommitAuthorDetails;
 use DevboardLib\GitHub\Commit\GitHubCommitDate;
-use DevboardLib\GitHub\User\GitHubUserApiUrl;
-use DevboardLib\GitHub\User\GitHubUserAvatarUrl;
-use DevboardLib\GitHub\User\GitHubUserGravatarId;
-use DevboardLib\GitHub\User\GitHubUserHtmlUrl;
-use DevboardLib\GitHub\User\GitHubUserId;
-use DevboardLib\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\User\UserApiUrl;
+use DevboardLib\GitHub\User\UserAvatarUrl;
+use DevboardLib\GitHub\User\UserGravatarId;
+use DevboardLib\GitHub\User\UserHtmlUrl;
+use DevboardLib\GitHub\User\UserId;
+use DevboardLib\GitHub\User\UserLogin;
 
 /**
  * @covers \DevboardLib\GitHub\Commit\GitHubCommitAuthor
@@ -119,13 +119,13 @@ class GitHubCommitAuthorTest extends \PHPUnit_Framework_TestCase
                 new GitHubCommitAuthorEmail('nobody@example.com'),
                 new GitHubCommitDate('2017-02-03 11:22:33'),
                 new GitHubCommitAuthorDetails(
-                    new GitHubUserId(13507412),
-                    new GitHubUserLogin('devboard-test'),
+                    new UserId(13507412),
+                    new UserLogin('devboard-test'),
                     new User(),
-                    new GitHubUserAvatarUrl('https://avatars.githubusercontent.com/u/13507412?v=3'),
-                    new GitHubUserGravatarId(''),
-                    new GitHubUserHtmlUrl('https://github.com/devboard-test'),
-                    new GitHubUserApiUrl('https://api.github.com/users/devboard-test'),
+                    new UserAvatarUrl('https://avatars.Usercontent.com/u/13507412?v=3'),
+                    new UserGravatarId(''),
+                    new UserHtmlUrl('https://github.com/devboard-test'),
+                    new UserApiUrl('https://api.github.com/users/devboard-test'),
                     false
                 ),
             ],

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\User;
 
-use DevboardLib\GitHub\User\GitHubUserGravatarId;
+use DevboardLib\GitHub\User\UserGravatarId;
 use PhpSpec\ObjectBehavior;
 
-class GitHubUserGravatarIdSpec extends ObjectBehavior
+class UserGravatarIdSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class GitHubUserGravatarIdSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubUserGravatarId::class);
+        $this->shouldHaveType(UserGravatarId::class);
     }
 
     public function it_should_expose_value()

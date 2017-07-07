@@ -8,12 +8,12 @@ use DevboardLib\GitHub\Account\GitHubAccountType;
 use DevboardLib\GitHub\Account\Type\Organization;
 use DevboardLib\GitHub\Account\Type\User;
 use DevboardLib\GitHub\Commit\GitHubCommitAuthorDetails;
-use DevboardLib\GitHub\User\GitHubUserApiUrl;
-use DevboardLib\GitHub\User\GitHubUserAvatarUrl;
-use DevboardLib\GitHub\User\GitHubUserGravatarId;
-use DevboardLib\GitHub\User\GitHubUserHtmlUrl;
-use DevboardLib\GitHub\User\GitHubUserId;
-use DevboardLib\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\User\UserApiUrl;
+use DevboardLib\GitHub\User\UserAvatarUrl;
+use DevboardLib\GitHub\User\UserGravatarId;
+use DevboardLib\GitHub\User\UserHtmlUrl;
+use DevboardLib\GitHub\User\UserId;
+use DevboardLib\GitHub\User\UserLogin;
 
 /**
  * @covers \DevboardLib\GitHub\Commit\GitHubCommitAuthorDetails
@@ -25,13 +25,13 @@ class GitHubCommitAuthorDetailsTest extends \PHPUnit_Framework_TestCase
 {
     /** @dataProvider provideArguments */
     public function testCreating(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        UserId $userId,
+        UserLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl,
+        UserAvatarUrl $avatarUrl,
+        UserGravatarId $gravatarId,
+        UserHtmlUrl $htmlUrl,
+        UserApiUrl $apiUrl,
         bool $siteAdmin
     ) {
         $sut = new GitHubCommitAuthorDetails(
@@ -50,13 +50,13 @@ class GitHubCommitAuthorDetailsTest extends \PHPUnit_Framework_TestCase
 
     /** @dataProvider provideArguments */
     public function testSerializationAndDeserialization(
-        GitHubUserId $userId,
-        GitHubUserLogin $login,
+        UserId $userId,
+        UserLogin $login,
         GitHubAccountType $gitHubAccountType,
-        GitHubUserAvatarUrl $avatarUrl,
-        GitHubUserGravatarId $gravatarId,
-        GitHubUserHtmlUrl $htmlUrl,
-        GitHubUserApiUrl $apiUrl,
+        UserAvatarUrl $avatarUrl,
+        UserGravatarId $gravatarId,
+        UserHtmlUrl $htmlUrl,
+        UserApiUrl $apiUrl,
         bool $siteAdmin
     ) {
         $sut = new GitHubCommitAuthorDetails(
@@ -72,33 +72,33 @@ class GitHubCommitAuthorDetailsTest extends \PHPUnit_Framework_TestCase
     {
         return [
             [
-                new GitHubUserId(13507412),
-                new GitHubUserLogin('devboard-test'),
+                new UserId(13507412),
+                new UserLogin('devboard-test'),
                 new User(),
-                new GitHubUserAvatarUrl('https://avatars.githubusercontent.com/u/13507412?v=3'),
-                new GitHubUserGravatarId(''),
-                new GitHubUserHtmlUrl('https://github.com/devboard-test'),
-                new GitHubUserApiUrl('https://api.github.com/users/devboard-test'),
+                new UserAvatarUrl('https://avatars.Usercontent.com/u/13507412?v=3'),
+                new UserGravatarId(''),
+                new UserHtmlUrl('https://github.com/devboard-test'),
+                new UserApiUrl('https://api.github.com/users/devboard-test'),
                 false,
             ],
             [
-                new GitHubUserId(13396338),
-                new GitHubUserLogin('devboard'),
+                new UserId(13396338),
+                new UserLogin('devboard'),
                 new Organization(),
-                new GitHubUserAvatarUrl('https://avatars.githubusercontent.com/u/13396338?v=3'),
-                new GitHubUserGravatarId(''),
-                new GitHubUserHtmlUrl('https://github.com/devboard'),
-                new GitHubUserApiUrl('https://api.github.com/users/devboard'),
+                new UserAvatarUrl('https://avatars.Usercontent.com/u/13396338?v=3'),
+                new UserGravatarId(''),
+                new UserHtmlUrl('https://github.com/devboard'),
+                new UserApiUrl('https://api.github.com/users/devboard'),
                 false,
             ],
             [
-                new GitHubUserId(1),
-                new GitHubUserLogin('octocat'),
+                new UserId(1),
+                new UserLogin('octocat'),
                 new User(),
-                new GitHubUserAvatarUrl('https://avatars.githubusercontent.com/u/1?v=3'),
-                new GitHubUserGravatarId(''),
-                new GitHubUserHtmlUrl('https://github.com/octocat'),
-                new GitHubUserApiUrl('https://api.github.com/users/octocat'),
+                new UserAvatarUrl('https://avatars.Usercontent.com/u/1?v=3'),
+                new UserGravatarId(''),
+                new UserHtmlUrl('https://github.com/octocat'),
+                new UserApiUrl('https://api.github.com/users/octocat'),
                 true,
             ],
         ];

@@ -7,9 +7,9 @@ namespace DevboardLib\GitHub\User;
 use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
 
 /**
- * @see GitHubUserAvatarUrlSpec
- * @see GitHubUserAvatarUrlTest
+ * @see UserAvatarUrlSpec
+ * @see UserAvatarUrlTest
  */
-class GitHubUserAvatarUrl extends GitHubAccountAvatarUrl
+class UserAvatarUrl extends GitHubAccountAvatarUrl
 {
 }

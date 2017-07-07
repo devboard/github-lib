@@ -7,9 +7,9 @@ namespace DevboardLib\GitHub\User;
 use DevboardLib\GitHub\Account\GitHubAccountLogin;
 
 /**
- * @see GitHubUserLoginSpec
- * @see GitHubUserLoginTest
+ * @see UserLoginSpec
+ * @see UserLoginTest
  */
-class GitHubUserLogin extends GitHubAccountLogin
+class UserLogin extends GitHubAccountLogin
 {
 }

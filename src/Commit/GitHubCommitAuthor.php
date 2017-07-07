@@ -7,12 +7,12 @@ namespace DevboardLib\GitHub\Commit;
 use DevboardLib\GitHub\Account\GitHubAccountType;
 use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorName;
-use DevboardLib\GitHub\User\GitHubUserApiUrl;
-use DevboardLib\GitHub\User\GitHubUserAvatarUrl;
-use DevboardLib\GitHub\User\GitHubUserGravatarId;
-use DevboardLib\GitHub\User\GitHubUserHtmlUrl;
-use DevboardLib\GitHub\User\GitHubUserId;
-use DevboardLib\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\User\UserApiUrl;
+use DevboardLib\GitHub\User\UserAvatarUrl;
+use DevboardLib\GitHub\User\UserGravatarId;
+use DevboardLib\GitHub\User\UserHtmlUrl;
+use DevboardLib\GitHub\User\UserId;
+use DevboardLib\GitHub\User\UserLogin;
 
 /**
  * @see GitHubCommitAuthorSpec
@@ -70,7 +70,7 @@ class GitHubCommitAuthor
         return $this->authorDetails;
     }
 
-    public function getUserId(): ?GitHubUserId
+    public function getUserId(): ?UserId
     {
         if (null === $this->authorDetails) {
             return null;
@@ -79,7 +79,7 @@ class GitHubCommitAuthor
         return $this->authorDetails->getUserId();
     }
 
-    public function getLogin(): ?GitHubUserLogin
+    public function getLogin(): ?UserLogin
     {
         if (null === $this->authorDetails) {
             return null;
@@ -97,7 +97,7 @@ class GitHubCommitAuthor
         return $this->authorDetails->getGitHubAccountType();
     }
 
-    public function getAvatarUrl(): ?GitHubUserAvatarUrl
+    public function getAvatarUrl(): ?UserAvatarUrl
     {
         if (null === $this->authorDetails) {
             return null;
@@ -106,7 +106,7 @@ class GitHubCommitAuthor
         return $this->authorDetails->getAvatarUrl();
     }
 
-    public function getGravatarId(): ?GitHubUserGravatarId
+    public function getGravatarId(): ?UserGravatarId
     {
         if (null === $this->authorDetails) {
             return null;
@@ -115,7 +115,7 @@ class GitHubCommitAuthor
         return $this->authorDetails->getGravatarId();
     }
 
-    public function getHtmlUrl(): ?GitHubUserHtmlUrl
+    public function getHtmlUrl(): ?UserHtmlUrl
     {
         if (null === $this->authorDetails) {
             return null;
@@ -124,7 +124,7 @@ class GitHubCommitAuthor
         return $this->authorDetails->getHtmlUrl();
     }
 
-    public function getApiUrl(): ?GitHubUserApiUrl
+    public function getApiUrl(): ?UserApiUrl
     {
         if (null === $this->authorDetails) {
             return null;

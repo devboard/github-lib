@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\User;
 
-use DevboardLib\GitHub\User\GitHubUserEmailAddress;
+use DevboardLib\GitHub\User\UserEmailAddress;
 use PhpSpec\ObjectBehavior;
 
-class GitHubUserEmailAddressSpec extends ObjectBehavior
+class UserEmailAddressSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class GitHubUserEmailAddressSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubUserEmailAddress::class);
+        $this->shouldHaveType(UserEmailAddress::class);
     }
 
     public function it_should_expose_value()
