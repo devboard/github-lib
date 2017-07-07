@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DevboardLib\GitHub\Installation;
+namespace DevboardLib\GitHub\Application;
 
 /**
  * @see ApplicationIdSpec
