@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Account;
+namespace tests\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
+use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
 
 /**
- * @covers \Devboard\GitHub\Account\GitHubAccountHtmlUrl
+ * @covers \DevboardLib\GitHub\Account\GitHubAccountHtmlUrl
  * @group  unit
  */
 class GitHubAccountHtmlUrlTest extends \PHPUnit_Framework_TestCase

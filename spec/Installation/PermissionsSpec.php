@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation;
+namespace spec\DevboardLib\GitHub\Installation;
 
-use Devboard\GitHub\Installation\Permissions;
+use DevboardLib\GitHub\Installation\Permissions;
 use PhpSpec\ObjectBehavior;
 
 class PermissionsSpec extends ObjectBehavior

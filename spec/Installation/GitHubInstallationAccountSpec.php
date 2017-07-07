@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation;
+namespace spec\DevboardLib\GitHub\Installation;
 
-use Devboard\GitHub\Account\GitHubAccountApiUrl;
-use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
-use Devboard\GitHub\Account\GitHubAccountGravatarId;
-use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
-use Devboard\GitHub\Account\GitHubAccountId;
-use Devboard\GitHub\Account\GitHubAccountLogin;
-use Devboard\GitHub\Account\GitHubAccountType;
-use Devboard\GitHub\Installation\GitHubInstallationAccount;
+use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
+use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
+use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
+use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
+use DevboardLib\GitHub\Account\GitHubAccountId;
+use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Installation\GitHubInstallationAccount;
 use PhpSpec\ObjectBehavior;
 
 class GitHubInstallationAccountSpec extends ObjectBehavior

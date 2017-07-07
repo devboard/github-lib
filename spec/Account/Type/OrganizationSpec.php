@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Account\Type;
+namespace spec\DevboardLib\GitHub\Account\Type;
 
-use Devboard\GitHub\Account\Type\Organization;
+use DevboardLib\GitHub\Account\Type\Organization;
 use PhpSpec\ObjectBehavior;
 
 class OrganizationSpec extends ObjectBehavior

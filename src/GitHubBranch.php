@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub;
+namespace DevboardLib\GitHub;
 
-use Devboard\GitHub\Branch\GitHubBranchName;
-use Devboard\GitHub\Repo\GitHubRepoFullName;
+use DevboardLib\GitHub\Branch\GitHubBranchName;
+use DevboardLib\GitHub\Repo\GitHubRepoFullName;
 
 /**
  * @see GitHubBranchSpec

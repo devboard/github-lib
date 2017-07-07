@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Tag;
+namespace DevboardLib\GitHub\Tag;
 
 /**
  * @see GitHubTagNameSpec

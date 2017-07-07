@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Repo;
+namespace tests\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoGitUrl;
+use DevboardLib\GitHub\Repo\GitHubRepoGitUrl;
 
 /**
- * @covers \Devboard\GitHub\Repo\GitHubRepoGitUrl
+ * @covers \DevboardLib\GitHub\Repo\GitHubRepoGitUrl
  * @group  unit
  */
 class GitHubRepoGitUrlTest extends \PHPUnit_Framework_TestCase

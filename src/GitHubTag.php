@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub;
+namespace DevboardLib\GitHub;
 
-use Devboard\GitHub\Repo\GitHubRepoFullName;
-use Devboard\GitHub\Tag\GitHubTagName;
+use DevboardLib\GitHub\Repo\GitHubRepoFullName;
+use DevboardLib\GitHub\Tag\GitHubTagName;
 
 /**
  * @see GitHubTagSpec

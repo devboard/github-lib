@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Repo;
+namespace tests\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoApiUrl;
-use Devboard\GitHub\Repo\GitHubRepoEndpoints;
-use Devboard\GitHub\Repo\GitHubRepoHtmlUrl;
+use DevboardLib\GitHub\Repo\GitHubRepoApiUrl;
+use DevboardLib\GitHub\Repo\GitHubRepoEndpoints;
+use DevboardLib\GitHub\Repo\GitHubRepoHtmlUrl;
 
 /**
- * @covers \Devboard\GitHub\Repo\GitHubRepoEndpoints
+ * @covers \DevboardLib\GitHub\Repo\GitHubRepoEndpoints
  * @group  unit
  */
 class GitHubRepoEndpointsTest extends \PHPUnit_Framework_TestCase

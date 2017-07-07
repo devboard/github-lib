@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Repo;
+namespace DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\GitHubAccountLogin;
 
 /**
  * @see GitHubRepoFullNameSpec
@@ -14,7 +14,7 @@ class GitHubRepoFullName
 {
     /** @var GitHubAccountLogin */
     private $owner;
-    /** @var \Devboard\GitHub\Repo\GitHubRepoName */
+    /** @var \DevboardLib\GitHub\Repo\GitHubRepoName */
     private $repoName;
 
     public function __construct(GitHubAccountLogin $owner, GitHubRepoName $repoName)

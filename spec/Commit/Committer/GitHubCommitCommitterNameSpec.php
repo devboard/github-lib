@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Commit\Committer;
+namespace spec\DevboardLib\GitHub\Commit\Committer;
 
-use Devboard\GitHub\Commit\Committer\GitHubCommitCommitterName;
+use DevboardLib\GitHub\Commit\Committer\GitHubCommitCommitterName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitCommitterNameSpec extends ObjectBehavior

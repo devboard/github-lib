@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\User;
+namespace tests\DevboardLib\GitHub\User;
 
-use Devboard\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\User\GitHubUserLogin;
 
 /**
- * @covers \Devboard\GitHub\User\GitHubUserLogin
+ * @covers \DevboardLib\GitHub\User\GitHubUserLogin
  * @group  unit
  */
 class GitHubUserLoginTest extends \PHPUnit_Framework_TestCase

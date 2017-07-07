@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation\RepositorySelection;
+namespace spec\DevboardLib\GitHub\Installation\RepositorySelection;
 
-use Devboard\GitHub\Installation\RepositorySelection;
-use Devboard\GitHub\Installation\RepositorySelection\GitHubInstallationRepositoryAll;
+use DevboardLib\GitHub\Installation\RepositorySelection;
+use DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositoryAll;
 use PhpSpec\ObjectBehavior;
 
 class GitHubInstallationRepositoryAllSpec extends ObjectBehavior

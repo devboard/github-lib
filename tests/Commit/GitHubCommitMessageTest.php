@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Commit;
+namespace tests\DevboardLib\GitHub\Commit;
 
-use Devboard\GitHub\Commit\GitHubCommitMessage;
+use DevboardLib\GitHub\Commit\GitHubCommitMessage;
 
 /**
- * @covers \Devboard\GitHub\Commit\GitHubCommitMessage
+ * @covers \DevboardLib\GitHub\Commit\GitHubCommitMessage
  * @group  unit
  */
 class GitHubCommitMessageTest extends \PHPUnit_Framework_TestCase

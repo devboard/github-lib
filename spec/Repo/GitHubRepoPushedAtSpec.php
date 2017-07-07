@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Repo;
+namespace spec\DevboardLib\GitHub\Repo;
 
 use DateTime;
-use Devboard\GitHub\Repo\GitHubRepoPushedAt;
+use DevboardLib\GitHub\Repo\GitHubRepoPushedAt;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoPushedAtSpec extends ObjectBehavior

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\User;
+namespace tests\DevboardLib\GitHub\User;
 
-use Devboard\GitHub\User\GitHubUserEmailAddress;
+use DevboardLib\GitHub\User\GitHubUserEmailAddress;
 
 /**
- * @covers \Devboard\GitHub\User\GitHubUserEmailAddress
+ * @covers \DevboardLib\GitHub\User\GitHubUserEmailAddress
  * @group  unit
  */
 class GitHubUserEmailAddressTest extends \PHPUnit_Framework_TestCase

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Repo;
+namespace spec\DevboardLib\GitHub\Repo;
 
 use DateTime;
-use Devboard\GitHub\Repo\GitHubRepoCreatedAt;
+use DevboardLib\GitHub\Repo\GitHubRepoCreatedAt;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoCreatedAtSpec extends ObjectBehavior

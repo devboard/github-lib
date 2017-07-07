@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation;
+namespace spec\DevboardLib\GitHub\Installation;
 
-use Devboard\GitHub\Installation\RepositorySelection\GitHubInstallationRepositoryAll;
-use Devboard\GitHub\Installation\RepositorySelection\GitHubInstallationRepositorySelected;
-use Devboard\GitHub\Installation\RepositorySelectionFactory;
-use Devboard\GitHub\Installation\RepositorySelectionFactoryException;
+use DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositoryAll;
+use DevboardLib\GitHub\Installation\RepositorySelection\GitHubInstallationRepositorySelected;
+use DevboardLib\GitHub\Installation\RepositorySelectionFactory;
+use DevboardLib\GitHub\Installation\RepositorySelectionFactoryException;
 use PhpSpec\ObjectBehavior;
 
 class RepositorySelectionFactorySpec extends ObjectBehavior

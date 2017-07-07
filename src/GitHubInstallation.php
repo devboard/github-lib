@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub;
+namespace DevboardLib\GitHub;
 
-use Devboard\GitHub\Installation\ApplicationId;
-use Devboard\GitHub\Installation\CreatedAt;
-use Devboard\GitHub\Installation\Events;
-use Devboard\GitHub\Installation\GitHubInstallationAccessTokenUrl;
-use Devboard\GitHub\Installation\GitHubInstallationAccount;
-use Devboard\GitHub\Installation\GitHubInstallationHtmlUrl;
-use Devboard\GitHub\Installation\GitHubInstallationId;
-use Devboard\GitHub\Installation\GitHubInstallationRepositoriesUrl;
-use Devboard\GitHub\Installation\Permissions;
-use Devboard\GitHub\Installation\RepositorySelection;
-use Devboard\GitHub\Installation\UpdatedAt;
+use DevboardLib\GitHub\Installation\ApplicationId;
+use DevboardLib\GitHub\Installation\CreatedAt;
+use DevboardLib\GitHub\Installation\Events;
+use DevboardLib\GitHub\Installation\GitHubInstallationAccessTokenUrl;
+use DevboardLib\GitHub\Installation\GitHubInstallationAccount;
+use DevboardLib\GitHub\Installation\GitHubInstallationHtmlUrl;
+use DevboardLib\GitHub\Installation\GitHubInstallationId;
+use DevboardLib\GitHub\Installation\GitHubInstallationRepositoriesUrl;
+use DevboardLib\GitHub\Installation\Permissions;
+use DevboardLib\GitHub\Installation\RepositorySelection;
+use DevboardLib\GitHub\Installation\UpdatedAt;
 
 /**
  * @see GitHubInstallationSpec

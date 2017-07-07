@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub;
+namespace spec\DevboardLib\GitHub;
 
-use Devboard\GitHub\Account\GitHubAccountLogin;
-use Devboard\GitHub\GitHubRepo;
-use Devboard\GitHub\Repo\GitHubRepoEndpoints;
-use Devboard\GitHub\Repo\GitHubRepoFullName;
-use Devboard\GitHub\Repo\GitHubRepoId;
-use Devboard\GitHub\Repo\GitHubRepoName;
-use Devboard\GitHub\Repo\GitHubRepoOwner;
-use Devboard\GitHub\Repo\GitHubRepoStats;
-use Devboard\GitHub\Repo\GitHubRepoTimestamps;
+use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\GitHubRepo;
+use DevboardLib\GitHub\Repo\GitHubRepoEndpoints;
+use DevboardLib\GitHub\Repo\GitHubRepoFullName;
+use DevboardLib\GitHub\Repo\GitHubRepoId;
+use DevboardLib\GitHub\Repo\GitHubRepoName;
+use DevboardLib\GitHub\Repo\GitHubRepoOwner;
+use DevboardLib\GitHub\Repo\GitHubRepoStats;
+use DevboardLib\GitHub\Repo\GitHubRepoTimestamps;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoSpec extends ObjectBehavior

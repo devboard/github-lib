@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub;
+namespace spec\DevboardLib\GitHub;
 
-use Devboard\GitHub\Stats;
+use DevboardLib\GitHub\Stats;
 use PhpSpec\ObjectBehavior;
 
 abstract class StatsSpec extends ObjectBehavior

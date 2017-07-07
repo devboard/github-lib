@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Repo;
+namespace spec\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoApiUrl;
+use DevboardLib\GitHub\Repo\GitHubRepoApiUrl;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoApiUrlSpec extends ObjectBehavior

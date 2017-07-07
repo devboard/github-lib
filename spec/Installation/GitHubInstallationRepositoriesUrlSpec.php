@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation;
+namespace spec\DevboardLib\GitHub\Installation;
 
-use Devboard\GitHub\Installation\GitHubInstallationRepositoriesUrl;
+use DevboardLib\GitHub\Installation\GitHubInstallationRepositoriesUrl;
 use PhpSpec\ObjectBehavior;
 
 class GitHubInstallationRepositoriesUrlSpec extends ObjectBehavior

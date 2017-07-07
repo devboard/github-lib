@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Commit;
+namespace tests\DevboardLib\GitHub\Commit;
 
-use Devboard\GitHub\Commit\GitHubCommitSha;
+use DevboardLib\GitHub\Commit\GitHubCommitSha;
 
 /**
- * @covers \Devboard\GitHub\Commit\GitHubCommitSha
+ * @covers \DevboardLib\GitHub\Commit\GitHubCommitSha
  * @group  unit
  */
 class GitHubCommitShaTest extends \PHPUnit_Framework_TestCase

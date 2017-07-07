@@ -2,32 +2,32 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub;
+namespace tests\DevboardLib\GitHub;
 
-use Devboard\GitHub\Account\GitHubAccountApiUrl;
-use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
-use Devboard\GitHub\Account\GitHubAccountGravatarId;
-use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
-use Devboard\GitHub\Account\GitHubAccountId;
-use Devboard\GitHub\Account\GitHubAccountLogin;
-use Devboard\GitHub\Account\Type\User;
-use Devboard\GitHub\GitHubRepo;
-use Devboard\GitHub\Repo\GitHubRepoApiUrl;
-use Devboard\GitHub\Repo\GitHubRepoCreatedAt;
-use Devboard\GitHub\Repo\GitHubRepoEndpoints;
-use Devboard\GitHub\Repo\GitHubRepoFullName;
-use Devboard\GitHub\Repo\GitHubRepoHtmlUrl;
-use Devboard\GitHub\Repo\GitHubRepoId;
-use Devboard\GitHub\Repo\GitHubRepoName;
-use Devboard\GitHub\Repo\GitHubRepoOwner;
-use Devboard\GitHub\Repo\GitHubRepoPushedAt;
-use Devboard\GitHub\Repo\GitHubRepoSize;
-use Devboard\GitHub\Repo\GitHubRepoStats;
-use Devboard\GitHub\Repo\GitHubRepoTimestamps;
-use Devboard\GitHub\Repo\GitHubRepoUpdatedAt;
+use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
+use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
+use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
+use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
+use DevboardLib\GitHub\Account\GitHubAccountId;
+use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\Type\User;
+use DevboardLib\GitHub\GitHubRepo;
+use DevboardLib\GitHub\Repo\GitHubRepoApiUrl;
+use DevboardLib\GitHub\Repo\GitHubRepoCreatedAt;
+use DevboardLib\GitHub\Repo\GitHubRepoEndpoints;
+use DevboardLib\GitHub\Repo\GitHubRepoFullName;
+use DevboardLib\GitHub\Repo\GitHubRepoHtmlUrl;
+use DevboardLib\GitHub\Repo\GitHubRepoId;
+use DevboardLib\GitHub\Repo\GitHubRepoName;
+use DevboardLib\GitHub\Repo\GitHubRepoOwner;
+use DevboardLib\GitHub\Repo\GitHubRepoPushedAt;
+use DevboardLib\GitHub\Repo\GitHubRepoSize;
+use DevboardLib\GitHub\Repo\GitHubRepoStats;
+use DevboardLib\GitHub\Repo\GitHubRepoTimestamps;
+use DevboardLib\GitHub\Repo\GitHubRepoUpdatedAt;
 
 /**
- * @covers \Devboard\GitHub\GitHubRepo
+ * @covers \DevboardLib\GitHub\GitHubRepo
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

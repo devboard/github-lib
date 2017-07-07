@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Commit\Author;
+namespace spec\DevboardLib\GitHub\Commit\Author;
 
-use Devboard\GitHub\Commit\Author\GitHubCommitAuthorName;
+use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubCommitAuthorNameSpec extends ObjectBehavior

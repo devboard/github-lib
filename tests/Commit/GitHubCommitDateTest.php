@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Commit;
+namespace tests\DevboardLib\GitHub\Commit;
 
 use DateTime;
-use Devboard\GitHub\Commit\GitHubCommitDate;
+use DevboardLib\GitHub\Commit\GitHubCommitDate;
 
 /**
- * @covers \Devboard\GitHub\Commit\GitHubCommitDate
+ * @covers \DevboardLib\GitHub\Commit\GitHubCommitDate
  * @group  unit
  */
 class GitHubCommitDateTest extends \PHPUnit_Framework_TestCase

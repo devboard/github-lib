@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Account;
+namespace spec\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
+use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
 use PhpSpec\ObjectBehavior;
 
 class GitHubAccountAvatarUrlSpec extends ObjectBehavior

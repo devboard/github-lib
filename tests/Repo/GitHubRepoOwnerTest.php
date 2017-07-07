@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Repo;
+namespace tests\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Account\GitHubAccountApiUrl;
-use Devboard\GitHub\Account\GitHubAccountAvatarUrl;
-use Devboard\GitHub\Account\GitHubAccountGravatarId;
-use Devboard\GitHub\Account\GitHubAccountHtmlUrl;
-use Devboard\GitHub\Account\GitHubAccountId;
-use Devboard\GitHub\Account\GitHubAccountLogin;
-use Devboard\GitHub\Account\GitHubAccountType;
-use Devboard\GitHub\Account\Type\Organization;
-use Devboard\GitHub\Account\Type\User;
-use Devboard\GitHub\Repo\GitHubRepoOwner;
+use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
+use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
+use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
+use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
+use DevboardLib\GitHub\Account\GitHubAccountId;
+use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\Type\Organization;
+use DevboardLib\GitHub\Account\Type\User;
+use DevboardLib\GitHub\Repo\GitHubRepoOwner;
 
 /**
- * @covers \Devboard\GitHub\Repo\GitHubRepoOwner
+ * @covers \DevboardLib\GitHub\Repo\GitHubRepoOwner
  * @group  unit
  */
 class GitHubRepoOwnerTest extends \PHPUnit_Framework_TestCase

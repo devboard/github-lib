@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Repo;
+namespace spec\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoName;
+use DevboardLib\GitHub\Repo\GitHubRepoName;
 use PhpSpec\ObjectBehavior;
 
 class GitHubRepoNameSpec extends ObjectBehavior

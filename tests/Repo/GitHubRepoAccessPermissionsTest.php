@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Repo;
+namespace tests\DevboardLib\GitHub\Repo;
 
-use Devboard\GitHub\Repo\GitHubRepoAccessPermissions;
+use DevboardLib\GitHub\Repo\GitHubRepoAccessPermissions;
 
 /**
- * @covers \Devboard\GitHub\Repo\GitHubRepoAccessPermissions
+ * @covers \DevboardLib\GitHub\Repo\GitHubRepoAccessPermissions
  * @group  unit
  */
 class GitHubRepoAccessPermissionsTest extends \PHPUnit_Framework_TestCase

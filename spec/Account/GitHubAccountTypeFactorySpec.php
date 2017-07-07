@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Account;
+namespace spec\DevboardLib\GitHub\Account;
 
-use Devboard\GitHub\Account\GitHubAccountTypeFactory;
-use Devboard\GitHub\Account\GitHubAccountTypeFactoryException;
-use Devboard\GitHub\Account\Type\Organization;
-use Devboard\GitHub\Account\Type\User;
+use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
+use DevboardLib\GitHub\Account\GitHubAccountTypeFactoryException;
+use DevboardLib\GitHub\Account\Type\Organization;
+use DevboardLib\GitHub\Account\Type\User;
 use PhpSpec\ObjectBehavior;
 
 class GitHubAccountTypeFactorySpec extends ObjectBehavior

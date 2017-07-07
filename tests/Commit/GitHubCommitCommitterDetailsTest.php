@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Commit;
+namespace tests\DevboardLib\GitHub\Commit;
 
-use Devboard\GitHub\Account\GitHubAccountType;
-use Devboard\GitHub\Account\Type\Organization;
-use Devboard\GitHub\Account\Type\User;
-use Devboard\GitHub\Commit\GitHubCommitCommitterDetails;
-use Devboard\GitHub\User\GitHubUserApiUrl;
-use Devboard\GitHub\User\GitHubUserAvatarUrl;
-use Devboard\GitHub\User\GitHubUserGravatarId;
-use Devboard\GitHub\User\GitHubUserHtmlUrl;
-use Devboard\GitHub\User\GitHubUserId;
-use Devboard\GitHub\User\GitHubUserLogin;
+use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\Type\Organization;
+use DevboardLib\GitHub\Account\Type\User;
+use DevboardLib\GitHub\Commit\GitHubCommitCommitterDetails;
+use DevboardLib\GitHub\User\GitHubUserApiUrl;
+use DevboardLib\GitHub\User\GitHubUserAvatarUrl;
+use DevboardLib\GitHub\User\GitHubUserGravatarId;
+use DevboardLib\GitHub\User\GitHubUserHtmlUrl;
+use DevboardLib\GitHub\User\GitHubUserId;
+use DevboardLib\GitHub\User\GitHubUserLogin;
 
 /**
- * @covers \Devboard\GitHub\Commit\GitHubCommitCommitterDetails
+ * @covers \DevboardLib\GitHub\Commit\GitHubCommitCommitterDetails
  * @group  unit
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

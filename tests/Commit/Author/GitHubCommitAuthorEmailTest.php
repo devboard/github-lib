@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace tests\Devboard\GitHub\Commit\Author;
+namespace tests\DevboardLib\GitHub\Commit\Author;
 
-use Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail;
+use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorEmail;
 
 /**
- * @covers \Devboard\GitHub\Commit\Author\GitHubCommitAuthorEmail
+ * @covers \DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorEmail
  * @group  unit
  */
 class GitHubCommitAuthorEmailTest extends \PHPUnit_Framework_TestCase

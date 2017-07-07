@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\Installation;
+namespace spec\DevboardLib\GitHub\Installation;
 
-use Devboard\GitHub\Installation\ApplicationId;
+use DevboardLib\GitHub\Installation\ApplicationId;
 use PhpSpec\ObjectBehavior;
 
 class ApplicationIdSpec extends ObjectBehavior

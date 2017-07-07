@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devboard\GitHub\Installation\RepositorySelection;
+namespace DevboardLib\GitHub\Installation\RepositorySelection;
 
-use Devboard\GitHub\Installation\RepositorySelection;
+use DevboardLib\GitHub\Installation\RepositorySelection;
 
 /**
  * @see GitHubInstallationRepositorySelectedSpec

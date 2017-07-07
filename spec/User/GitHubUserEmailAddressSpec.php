@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\Devboard\GitHub\User;
+namespace spec\DevboardLib\GitHub\User;
 
-use Devboard\GitHub\User\GitHubUserEmailAddress;
+use DevboardLib\GitHub\User\GitHubUserEmailAddress;
 use PhpSpec\ObjectBehavior;
 
 class GitHubUserEmailAddressSpec extends ObjectBehavior
