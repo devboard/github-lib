@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub;
 
+use DevboardLib\GitHub\Application\ApplicationId;
 use DevboardLib\GitHub\GitHubInstallation;
-use DevboardLib\GitHub\Installation\ApplicationId;
 use DevboardLib\GitHub\Installation\CreatedAt;
 use DevboardLib\GitHub\Installation\Events;
 use DevboardLib\GitHub\Installation\GitHubInstallationAccessTokenUrl;
