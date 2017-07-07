@@ -5,39 +5,39 @@ declare(strict_types=1);
 namespace spec\DevboardLib\GitHub;
 
 use DevboardLib\GitHub\Application\ApplicationId;
-use DevboardLib\GitHub\GitHubInstallation;
-use DevboardLib\GitHub\Installation\CreatedAt;
-use DevboardLib\GitHub\Installation\Events;
-use DevboardLib\GitHub\Installation\GitHubInstallationAccessTokenUrl;
-use DevboardLib\GitHub\Installation\GitHubInstallationAccount;
-use DevboardLib\GitHub\Installation\GitHubInstallationHtmlUrl;
-use DevboardLib\GitHub\Installation\GitHubInstallationId;
-use DevboardLib\GitHub\Installation\GitHubInstallationRepositoriesUrl;
-use DevboardLib\GitHub\Installation\Permissions;
-use DevboardLib\GitHub\Installation\RepositorySelection;
-use DevboardLib\GitHub\Installation\UpdatedAt;
+use DevboardLib\GitHub\Installation;
+use DevboardLib\GitHub\Installation\InstallationAccessTokenUrl;
+use DevboardLib\GitHub\Installation\InstallationAccount;
+use DevboardLib\GitHub\Installation\InstallationCreatedAt;
+use DevboardLib\GitHub\Installation\InstallationEvents;
+use DevboardLib\GitHub\Installation\InstallationHtmlUrl;
+use DevboardLib\GitHub\Installation\InstallationId;
+use DevboardLib\GitHub\Installation\InstallationPermissions;
+use DevboardLib\GitHub\Installation\InstallationRepositoriesUrl;
+use DevboardLib\GitHub\Installation\InstallationRepositorySelection;
+use DevboardLib\GitHub\Installation\InstallationUpdatedAt;
 use PhpSpec\ObjectBehavior;
 
-class GitHubInstallationSpec extends ObjectBehavior
+class InstallationSpec extends ObjectBehavior
 {
     public function let(
-        GitHubInstallationId $installationId,
-        GitHubInstallationAccount $installationAccount,
+        InstallationId $installationId,
+        InstallationAccount $installationAccount,
         ApplicationId $applicationId,
-        RepositorySelection $repositorySelection,
-        Permissions $permissions,
-        Events $events,
-        GitHubInstallationAccessTokenUrl $accessTokenUrl,
-        GitHubInstallationRepositoriesUrl $repositoriesUrl,
-        GitHubInstallationHtmlUrl $htmlUrl,
-        CreatedAt $createdAt,
-        UpdatedAt $updatedAt
+        InstallationRepositorySelection $InstallationRepositorySelection,
+        InstallationPermissions $permissions,
+        InstallationEvents $events,
+        InstallationAccessTokenUrl $accessTokenUrl,
+        InstallationRepositoriesUrl $repositoriesUrl,
+        InstallationHtmlUrl $htmlUrl,
+        InstallationCreatedAt $createdAt,
+        InstallationUpdatedAt $updatedAt
     ) {
         $this->beConstructedWith(
             $installationId,
             $installationAccount,
             $applicationId,
-            $repositorySelection,
+            $InstallationRepositorySelection,
             $permissions,
             $events,
             $accessTokenUrl,
@@ -50,26 +50,26 @@ class GitHubInstallationSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubInstallation::class);
+        $this->shouldHaveType(Installation::class);
     }
 
     public function it_should_expose_all_values_via_getters(
-        GitHubInstallationId $installationId,
-        GitHubInstallationAccount $installationAccount,
+        InstallationId $installationId,
+        InstallationAccount $installationAccount,
         ApplicationId $applicationId,
-        RepositorySelection $repositorySelection,
-        Permissions $permissions,
-        Events $events,
-        GitHubInstallationAccessTokenUrl $accessTokenUrl,
-        GitHubInstallationRepositoriesUrl $repositoriesUrl,
-        GitHubInstallationHtmlUrl $htmlUrl,
-        CreatedAt $createdAt,
-        UpdatedAt $updatedAt
+        InstallationRepositorySelection $InstallationRepositorySelection,
+        InstallationPermissions $permissions,
+        InstallationEvents $events,
+        InstallationAccessTokenUrl $accessTokenUrl,
+        InstallationRepositoriesUrl $repositoriesUrl,
+        InstallationHtmlUrl $htmlUrl,
+        InstallationCreatedAt $createdAt,
+        InstallationUpdatedAt $updatedAt
     ) {
         $this->getInstallationId()->shouldReturn($installationId);
         $this->getInstallationAccount()->shouldReturn($installationAccount);
         $this->getApplicationId()->shouldReturn($applicationId);
-        $this->getRepositorySelection()->shouldReturn($repositorySelection);
+        $this->getInstallationRepositorySelection()->shouldReturn($InstallationRepositorySelection);
         $this->getPermissions()->shouldReturn($permissions);
         $this->getEvents()->shouldReturn($events);
         $this->getAccessTokenUrl()->shouldReturn($accessTokenUrl);

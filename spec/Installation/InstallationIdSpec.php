@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Installation;
 
-use DevboardLib\GitHub\Installation\GitHubInstallationId;
+use DevboardLib\GitHub\Installation\InstallationId;
 use PhpSpec\ObjectBehavior;
 
-class GitHubInstallationIdSpec extends ObjectBehavior
+class InstallationIdSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class GitHubInstallationIdSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubInstallationId::class);
+        $this->shouldHaveType(InstallationId::class);
     }
 
     public function it_should_expose_value()

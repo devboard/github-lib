@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Installation;
 
-use DevboardLib\GitHub\Installation\GitHubInstallationHtmlUrl;
+use DevboardLib\GitHub\Installation\InstallationHtmlUrl;
 use PhpSpec\ObjectBehavior;
 
-class GitHubInstallationHtmlUrlSpec extends ObjectBehavior
+class InstallationHtmlUrlSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class GitHubInstallationHtmlUrlSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubInstallationHtmlUrl::class);
+        $this->shouldHaveType(InstallationHtmlUrl::class);
     }
 
     public function it_should_expose_value()

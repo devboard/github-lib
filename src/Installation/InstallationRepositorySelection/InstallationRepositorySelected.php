@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace DevboardLib\GitHub\Installation\RepositorySelection;
+namespace DevboardLib\GitHub\Installation\InstallationRepositorySelection;
 
-use DevboardLib\GitHub\Installation\RepositorySelection;
+use DevboardLib\GitHub\Installation\InstallationRepositorySelection;
 
 /**
- * @see GitHubInstallationRepositorySelectedSpec
- * @see GitHubInstallationRepositorySelectedTest
+ * @see InstallationRepositorySelectedSpec
+ * @see InstallationRepositorySelectedTest
  */
-class GitHubInstallationRepositorySelected implements RepositorySelection
+class InstallationRepositorySelected implements InstallationRepositorySelection
 {
     const NAME = 'selected';
 
