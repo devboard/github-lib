@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Account;
 
-use DevboardLib\GitHub\Account\GitHubAccountId;
+use DevboardLib\GitHub\Account\AccountId;
 use PhpSpec\ObjectBehavior;
 
-class GitHubAccountIdSpec extends ObjectBehavior
+class AccountIdSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class GitHubAccountIdSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubAccountId::class);
+        $this->shouldHaveType(AccountId::class);
     }
 
     public function it_should_expose_value()

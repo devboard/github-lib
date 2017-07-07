@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace tests\DevboardLib\GitHub\Commit;
 
-use DevboardLib\GitHub\Account\GitHubAccountType;
+use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Account\Type\Organization;
 use DevboardLib\GitHub\Account\Type\User;
 use DevboardLib\GitHub\Commit\GitHubCommitCommitterDetails;
@@ -27,7 +27,7 @@ class GitHubCommitCommitterDetailsTest extends \PHPUnit_Framework_TestCase
     public function testCreating(
         UserId $userId,
         UserLogin $login,
-        GitHubAccountType $gitHubAccountType,
+        AccountType $gitHubAccountType,
         UserAvatarUrl $avatarUrl,
         UserGravatarId $gravatarId,
         UserHtmlUrl $htmlUrl,
@@ -40,7 +40,7 @@ class GitHubCommitCommitterDetailsTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame($userId, $sut->getUserId());
         $this->assertSame($login, $sut->getLogin());
-        $this->assertSame($gitHubAccountType, $sut->getGitHubAccountType());
+        $this->assertSame($gitHubAccountType, $sut->getAccountType());
         $this->assertSame($avatarUrl, $sut->getAvatarUrl());
         $this->assertSame($gravatarId, $sut->getGravatarId());
         $this->assertSame($htmlUrl, $sut->getHtmlUrl());
@@ -52,7 +52,7 @@ class GitHubCommitCommitterDetailsTest extends \PHPUnit_Framework_TestCase
     public function testSerializationAndDeserialization(
         UserId $userId,
         UserLogin $login,
-        GitHubAccountType $gitHubAccountType,
+        AccountType $gitHubAccountType,
         UserAvatarUrl $avatarUrl,
         UserGravatarId $gravatarId,
         UserHtmlUrl $htmlUrl,

@@ -8,12 +8,12 @@ use DevboardLib\GitHub\Account\Type\Organization;
 use DevboardLib\GitHub\Account\Type\User;
 
 /**
- * @see GitHubAccountTypeFactorySpec
- * @see GitHubAccountTypeFactoryTest
+ * @see AccountTypeFactorySpec
+ * @see AccountTypeFactoryTest
  */
-class GitHubAccountTypeFactory
+class AccountTypeFactory
 {
-    public static function create(string $name): GitHubAccountType
+    public static function create(string $name): AccountType
     {
         if (Organization::NAME === $name) {
             return new Organization();
@@ -21,6 +21,6 @@ class GitHubAccountTypeFactory
             return new User();
         }
 
-        throw GitHubAccountTypeFactoryException::create($name);
+        throw AccountTypeFactoryException::create($name);
     }
 }

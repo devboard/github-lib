@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Account;
 
-use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
+use DevboardLib\GitHub\Account\AccountApiUrl;
 use PhpSpec\ObjectBehavior;
 
-class GitHubAccountApiUrlSpec extends ObjectBehavior
+class AccountApiUrlSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class GitHubAccountApiUrlSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubAccountApiUrl::class);
+        $this->shouldHaveType(AccountApiUrl::class);
     }
 
     public function it_should_expose_value()

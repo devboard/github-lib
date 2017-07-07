@@ -4,32 +4,32 @@ declare(strict_types=1);
 
 namespace tests\DevboardLib\GitHub\Account;
 
-use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
+use DevboardLib\GitHub\Account\AccountAvatarUrl;
 
 /**
- * @covers \DevboardLib\GitHub\Account\GitHubAccountGravatarId
+ * @covers \DevboardLib\GitHub\Account\AccountAvatarUrl
  * @group  unit
  */
-class GitHubAccountGravatarIdTest extends \PHPUnit_Framework_TestCase
+class AccountAvatarUrlTest extends \PHPUnit_Framework_TestCase
 {
     /** @dataProvider provideAccountIds */
     public function testItExposesValue(string $id)
     {
-        $sut = new GitHubAccountGravatarId($id);
+        $sut = new AccountAvatarUrl($id);
         $this->assertEquals($id, $sut->getValue());
     }
 
     /** @dataProvider provideAccountIds */
     public function testItCanBeAutoConvertedToString(string $id)
     {
-        $sut = new GitHubAccountGravatarId($id);
+        $sut = new AccountAvatarUrl($id);
         $this->assertEquals($id, (string) $sut);
     }
 
     public function provideAccountIds()
     {
         return [
-            ['f9879d71855b5ff21e4963273a886bfc'],
+            ['https://avatars.Usercontent.com/u/13507412?v=3'],
         ];
     }
 }

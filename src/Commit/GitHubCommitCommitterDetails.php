@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Commit;
 
-use DevboardLib\GitHub\Account\GitHubAccountType;
-use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
+use DevboardLib\GitHub\Account\AccountType;
+use DevboardLib\GitHub\Account\AccountTypeFactory;
 use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
 use DevboardLib\GitHub\User\UserGravatarId;
@@ -23,7 +23,7 @@ class GitHubCommitCommitterDetails
     private $userId;
     /** @var UserLogin */
     private $login;
-    /** @var GitHubAccountType */
+    /** @var AccountType */
     private $gitHubAccountType;
     /** @var UserAvatarUrl */
     private $avatarUrl;
@@ -39,7 +39,7 @@ class GitHubCommitCommitterDetails
     public function __construct(
         UserId $userId,
         UserLogin $login,
-        GitHubAccountType $gitHubAccountType,
+        AccountType $gitHubAccountType,
         UserAvatarUrl $avatarUrl,
         UserGravatarId $gravatarId,
         UserHtmlUrl $htmlUrl,
@@ -66,7 +66,7 @@ class GitHubCommitCommitterDetails
         return $this->login;
     }
 
-    public function getGitHubAccountType(): GitHubAccountType
+    public function getAccountType(): AccountType
     {
         return $this->gitHubAccountType;
     }
@@ -101,7 +101,7 @@ class GitHubCommitCommitterDetails
         return [
             'userId'            => $this->userId->getValue(),
             'login'             => (string) $this->login,
-            'GitHubAccountType' => (string) $this->gitHubAccountType,
+            'accountType'       => (string) $this->gitHubAccountType,
             'avatarUrl'         => (string) $this->avatarUrl,
             'gravatarId'        => (string) $this->gravatarId,
             'htmlUrl'           => (string) $this->htmlUrl,
@@ -115,7 +115,7 @@ class GitHubCommitCommitterDetails
         return new self(
             new UserId($data['userId']),
             new UserLogin($data['login']),
-            GitHubAccountTypeFactory::create($data['GitHubAccountType']),
+            AccountTypeFactory::create($data['accountType']),
             new UserAvatarUrl($data['avatarUrl']),
             new UserGravatarId($data['gravatarId']),
             new UserHtmlUrl($data['htmlUrl']),

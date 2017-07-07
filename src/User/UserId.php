@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\User;
 
-use DevboardLib\GitHub\Account\GitHubAccountId;
+use DevboardLib\GitHub\Account\AccountId;
 
 /**
  * @see UserIdSpec
  * @see UserIdTest
  */
-class UserId extends GitHubAccountId
+class UserId extends AccountId
 {
 }

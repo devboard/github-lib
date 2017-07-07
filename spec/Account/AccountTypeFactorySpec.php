@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Account;
 
-use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
-use DevboardLib\GitHub\Account\GitHubAccountTypeFactoryException;
+use DevboardLib\GitHub\Account\AccountTypeFactory;
+use DevboardLib\GitHub\Account\AccountTypeFactoryException;
 use DevboardLib\GitHub\Account\Type\Organization;
 use DevboardLib\GitHub\Account\Type\User;
 use PhpSpec\ObjectBehavior;
 
-class GitHubAccountTypeFactorySpec extends ObjectBehavior
+class AccountTypeFactorySpec extends ObjectBehavior
 {
     public function let()
     {
@@ -19,7 +19,7 @@ class GitHubAccountTypeFactorySpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubAccountTypeFactory::class);
+        $this->shouldHaveType(AccountTypeFactory::class);
     }
 
     public function it_will_return_organization()
@@ -34,6 +34,6 @@ class GitHubAccountTypeFactorySpec extends ObjectBehavior
 
     public function it_will_throw_exception_on_unknown_string()
     {
-        $this->shouldThrow(GitHubAccountTypeFactoryException::class)->duringCreate('SomeRandomName');
+        $this->shouldThrow(AccountTypeFactoryException::class)->duringCreate('SomeRandomName');
     }
 }

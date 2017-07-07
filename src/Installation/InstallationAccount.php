@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Installation;
 
-use DevboardLib\GitHub\Account\GitHubAccountApiUrl;
-use DevboardLib\GitHub\Account\GitHubAccountAvatarUrl;
-use DevboardLib\GitHub\Account\GitHubAccountGravatarId;
-use DevboardLib\GitHub\Account\GitHubAccountHtmlUrl;
-use DevboardLib\GitHub\Account\GitHubAccountId;
-use DevboardLib\GitHub\Account\GitHubAccountLogin;
-use DevboardLib\GitHub\Account\GitHubAccountType;
-use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
+use DevboardLib\GitHub\Account\AccountApiUrl;
+use DevboardLib\GitHub\Account\AccountAvatarUrl;
+use DevboardLib\GitHub\Account\AccountGravatarId;
+use DevboardLib\GitHub\Account\AccountHtmlUrl;
+use DevboardLib\GitHub\Account\AccountId;
+use DevboardLib\GitHub\Account\AccountLogin;
+use DevboardLib\GitHub\Account\AccountType;
+use DevboardLib\GitHub\Account\AccountTypeFactory;
 
 /**
  * @see InstallationAccountSpec
@@ -19,31 +19,31 @@ use DevboardLib\GitHub\Account\GitHubAccountTypeFactory;
  */
 class InstallationAccount
 {
-    /** @var GitHubAccountId */
+    /** @var AccountId */
     private $userId;
-    /** @var GitHubAccountLogin */
+    /** @var AccountLogin */
     private $login;
-    /** @var GitHubAccountType */
+    /** @var AccountType */
     private $gitHubAccountType;
-    /** @var GitHubAccountAvatarUrl */
+    /** @var AccountAvatarUrl */
     private $avatarUrl;
-    /** @var GitHubAccountGravatarId */
+    /** @var AccountGravatarId */
     private $gravatarId;
-    /** @var GitHubAccountHtmlUrl */
+    /** @var AccountHtmlUrl */
     private $htmlUrl;
-    /** @var GitHubAccountApiUrl */
+    /** @var AccountApiUrl */
     private $apiUrl;
     /** @var bool */
     private $siteAdmin;
 
     public function __construct(
-        GitHubAccountId $userId,
-        GitHubAccountLogin $login,
-        GitHubAccountType $gitHubAccountType,
-        GitHubAccountAvatarUrl $avatarUrl,
-        GitHubAccountGravatarId $gravatarId,
-        GitHubAccountHtmlUrl $htmlUrl,
-        GitHubAccountApiUrl $apiUrl,
+        AccountId $userId,
+        AccountLogin $login,
+        AccountType $gitHubAccountType,
+        AccountAvatarUrl $avatarUrl,
+        AccountGravatarId $gravatarId,
+        AccountHtmlUrl $htmlUrl,
+        AccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
         $this->userId            = $userId;
@@ -56,37 +56,37 @@ class InstallationAccount
         $this->siteAdmin         = $siteAdmin;
     }
 
-    public function getUserId(): GitHubAccountId
+    public function getUserId(): AccountId
     {
         return $this->userId;
     }
 
-    public function getLogin(): GitHubAccountLogin
+    public function getLogin(): AccountLogin
     {
         return $this->login;
     }
 
-    public function getGitHubAccountType(): GitHubAccountType
+    public function getAccountType(): AccountType
     {
         return $this->gitHubAccountType;
     }
 
-    public function getAvatarUrl(): GitHubAccountAvatarUrl
+    public function getAvatarUrl(): AccountAvatarUrl
     {
         return $this->avatarUrl;
     }
 
-    public function getGravatarId(): GitHubAccountGravatarId
+    public function getGravatarId(): AccountGravatarId
     {
         return $this->gravatarId;
     }
 
-    public function getHtmlUrl(): GitHubAccountHtmlUrl
+    public function getHtmlUrl(): AccountHtmlUrl
     {
         return $this->htmlUrl;
     }
 
-    public function getApiUrl(): GitHubAccountApiUrl
+    public function getApiUrl(): AccountApiUrl
     {
         return $this->apiUrl;
     }
@@ -101,7 +101,7 @@ class InstallationAccount
         return [
             'userId'            => $this->userId->getValue(),
             'login'             => (string) $this->login,
-            'GitHubAccountType' => (string) $this->gitHubAccountType,
+            'accountType'       => (string) $this->gitHubAccountType,
             'avatarUrl'         => (string) $this->avatarUrl,
             'gravatarId'        => (string) $this->gravatarId,
             'htmlUrl'           => (string) $this->htmlUrl,
@@ -113,13 +113,13 @@ class InstallationAccount
     public static function deserialize(array $data): InstallationAccount
     {
         return new self(
-            new GitHubAccountId($data['userId']),
-            new GitHubAccountLogin($data['login']),
-            GitHubAccountTypeFactory::create($data['GitHubAccountType']),
-            new GitHubAccountAvatarUrl($data['avatarUrl']),
-            new GitHubAccountGravatarId($data['gravatarId']),
-            new GitHubAccountHtmlUrl($data['htmlUrl']),
-            new GitHubAccountApiUrl($data['apiUrl']),
+            new AccountId($data['userId']),
+            new AccountLogin($data['login']),
+            AccountTypeFactory::create($data['accountType']),
+            new AccountAvatarUrl($data['avatarUrl']),
+            new AccountGravatarId($data['gravatarId']),
+            new AccountHtmlUrl($data['htmlUrl']),
+            new AccountApiUrl($data['apiUrl']),
             $data['siteAdmin']
         );
     }

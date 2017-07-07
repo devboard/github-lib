@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace tests\DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Account\GitHubAccountLogin;
+use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\Type\User;
 use DevboardLib\GitHub\Branch\GitHubBranchName as BranchName;
 use DevboardLib\GitHub\Commit\Author\GitHubCommitAuthorEmail;
@@ -66,7 +66,7 @@ class GitHubBranchTest extends \PHPUnit_Framework_TestCase
         return [
             [
                 new RepoFullName(
-                    new GitHubAccountLogin('devboard-test'), new GitHubRepoName('super-library')
+                    new AccountLogin('devboard-test'), new GitHubRepoName('super-library')
                 ),
                 new BranchName('master'),
                 new GitHubCommit(

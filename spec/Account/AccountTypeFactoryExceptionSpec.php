@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Account;
 
-use DevboardLib\GitHub\Account\GitHubAccountTypeFactoryException;
+use DevboardLib\GitHub\Account\AccountTypeFactoryException;
 use Exception;
 use PhpSpec\ObjectBehavior;
 
-class GitHubAccountTypeFactoryExceptionSpec extends ObjectBehavior
+class AccountTypeFactoryExceptionSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -17,12 +17,12 @@ class GitHubAccountTypeFactoryExceptionSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(GitHubAccountTypeFactoryException::class);
+        $this->shouldHaveType(AccountTypeFactoryException::class);
         $this->shouldHaveType(Exception::class);
     }
 
     public function it_has_custom_message()
     {
-        $this->getMessage()->shouldReturn('Unknown GitHubAccountType with name: message');
+        $this->getMessage()->shouldReturn('Unknown AccountType with name: message');
     }
 }
