@@ -99,14 +99,14 @@ class GitHubCommitCommitterDetails
     public function serialize(): array
     {
         return [
-            'userId'            => $this->userId->getValue(),
-            'login'             => (string) $this->login,
-            'accountType'       => (string) $this->gitHubAccountType,
-            'avatarUrl'         => (string) $this->avatarUrl,
-            'gravatarId'        => (string) $this->gravatarId,
-            'htmlUrl'           => (string) $this->htmlUrl,
-            'apiUrl'            => (string) $this->apiUrl,
-            'siteAdmin'         => $this->siteAdmin,
+            'userId'      => $this->userId->getValue(),
+            'login'       => (string) $this->login,
+            'accountType' => (string) $this->gitHubAccountType,
+            'avatarUrl'   => (string) $this->avatarUrl,
+            'gravatarId'  => (string) $this->gravatarId,
+            'htmlUrl'     => (string) $this->htmlUrl,
+            'apiUrl'      => (string) $this->apiUrl,
+            'siteAdmin'   => $this->siteAdmin,
         ];
     }
 
